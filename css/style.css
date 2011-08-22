@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*	Reset
+
+-----------------------------------------------------------------------*/
+*			{ padding:0; margin:0; border:0	}
+
+/* Containers
+-----------------------------------------------------------------------*/
+body		{ background-color:#fff}
+
+#wrapper	{ top:0px; width:900px; margin:0 auto; background-color:#fff	}
+
+#top		{ width:100%; height:25px; background-color:#000 }
+
+#banner		{	}
+
+#topnav		{	}
+#topnav	ul	{ width:100%; background-color:#C93; float:left }
+#topnav ul li	{ display:inline; }
+#topnav ul li a	{ padding:10px 30px; float:left; color: #fff; font-family:Verdana, Geneva, 		                  sans-serif; font-size:16px; font-weight:bold; 				  																	                  text-decoration:none	}
+#topnav a:hover	{ background-color:#FFF; color:#000}
+
+#content	{ padding-top:50px; width:100%; height:415px;}
+
+#login		{ float:left;text-align:left; position:relative; top:70px; width:230px; height:250px; 	              border: 1px #666 solid; margin-right:45px; margin-left:10px; border-radius:15px;               padding:3px; }
+
+#l2			{ margin-top:15px; margin-left:7px; margin-right:7px; margin-bottom:15px; font-family:Arial, Helvetica,              sans-serif; font-weight:bold; font-size:13px}
+
+#l3			{ margin:auto 10px}
+
+#user		{border:1px #CCC solid; width:100%; height:25px; margin-bottom:10px; }
+
+#head		{ background-color:#7E7574; padding:5px; border-top-left-radius:10px;                  border-top-right-radius:10px; padding:5px; color:#fff; font-family:Arial,                   Helvetica, sans-serif; font-weight:bold }
+
+#submit		{ background-color:#C00; color:#FFF; padding:4px 8px; font-weight:bold; }
+#submit:hover	{background-color:#F00}
+
+#content img	{
+	text-align:right;
+	
+}
+
+#contact	{ text-align:center; padding:10px 0;width:100%; height:30px; border-top:1px #000 dashed; border-bottom:1px #000 dashed; }
+
+
+#footer		{ margin-bottom:20px; text-align:center; padding-top:15px; width:100%; height:30px; background-color: #C93 }
+
+
+
+.thin-brdr-btm { border-bottom:1px #FFF solid;}
+
+.thick-brdr-btm { border-bottom:3px #FFF solid;}
