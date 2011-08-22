@@ -39,7 +39,7 @@ image3.src="Lighthouse.jpg"
 
 		<div id="topnav">
 			<ul>
-				<li><a href="index.htm">Home</a></li>
+				<li><a href="index.php">Home</a></li>
 				<li><a href="about-husai.htm">About</a></li>
 				<li><a href="husai-products.htm">Products</a></li>
 				<li><a href="husai-services.htm">Services</a></li>
