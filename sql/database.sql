@@ -23,6 +23,8 @@ CREATE  TABLE IF NOT EXISTS `husai`.`Account` (
   `Civil_Status` VARCHAR(50) NULL ,
   `Occupation` VARCHAR(100) NULL ,
   `Referred_by` VARCHAR(100) NULL ,
+  `Username` VARCHAR(50) NOT NULL ,
+  `Password` VARCHAR(50) NOT NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
