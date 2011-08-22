@@ -26,7 +26,6 @@ image3.src="images/Lighthouse.jpg"
  
 
 <div id="wrapper">
-
 	<div id="top" class="thin-brdr-btm"></div>
 	
     <div id="banner" class ="thick-brdr-btm">
