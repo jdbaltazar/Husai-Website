@@ -8,7 +8,7 @@
 
 /* Containers
 -----------------------------------------------------------------------*/
-body		{ background-color:#fff}
+body		{ background-color:#D6D6D6}
 
 #wrapper	{ top:0px; width:900px; margin:0 auto; background-color:#fff	}
 
@@ -16,15 +16,17 @@ body		{ background-color:#fff}
 
 #banner		{	}
 
-#topnav		{	}
+#topnav		{ margin-bottom:25px;}
 #topnav	ul	{ width:100%; background-color:#C93; float:left }
 #topnav ul li	{ display:inline; }
-#topnav ul li a	{ padding:10px 30px; float:left; color: #fff; font-family:Verdana, Geneva, 		                  sans-serif; font-size:16px; font-weight:bold; 				  																	                  text-decoration:none	}
+#topnav ul li a	{ padding:10px 30px; float:left; color: #fff; font-family:Verdana, Geneva, 	sans-serif; font-size:16px; font-weight:bold; 				  																	                  text-decoration:none	}
 #topnav a:hover	{ background-color:#FFF; color:#000}
 
-#content	{ padding-top:50px; width:100%; height:415px;}
+#content	{ margin-top:40px; padding-top:30px;padding-bottom:20px; width:100%; height:100%;}
 
-#login		{ float:left;text-align:left; position:relative; top:70px; width:230px; height:250px; 	              border: 1px #666 solid; margin-right:45px; margin-left:10px; border-radius:15px;               padding:3px; }
+#content hr	{background-color:#960; height:2px; }
+
+#login		{ float:left;text-align:left; position:relative; top:20px; width:230px; height:250px; 	              border: 1px #666 solid; margin-right:30px; margin-left:20px; border-radius:15px;               padding:3px; }
 
 #l2			{ margin-top:15px; margin-left:7px; margin-right:7px; margin-bottom:15px; font-family:Arial, Helvetica,              sans-serif; font-weight:bold; font-size:13px}
 
@@ -42,13 +44,37 @@ body		{ background-color:#fff}
 	
 }
 
-#contact	{ text-align:center; padding:10px 0;width:100%; height:30px; border-top:1px #000 dashed; border-bottom:1px #000 dashed; }
+
+#footer		{ margin-bottom:20px; text-align:center; padding-top:10px; width:100%; height:30px; background-color: #C93; clear:both }
 
 
-#footer		{ margin-bottom:20px; text-align:center; padding-top:15px; width:100%; height:30px; background-color: #C93 }
+#leftside	{padding-left:10px; padding-top:10px; height:100%;width:220px; font-size:20px; font-family:Verdana, Geneva,                 sans-serif; display:inline-block; float:left}
+
+#leftside p	{ margin-bottom:10px}
+#leftside p a{ text-decoration:none; color:#000; padding-left:15px}
+#leftside a:hover	{ color:#C90}
+
+#rightside	{ margin-left:270px; width:550px; height:100%;display:inline-block float:right; padding:5px; } 
+
+#rightside hr	{background-color:#960; height:3px; }
+#rightside img { width:150px; height:150px; padding-top:20px; padding-right:30px}
+
+#search 	{width:150px; height:23px;border:1px #666 solid; font-size:12px;}
+
+#searchB	{background-color:#F00; color:#FFF; font-size:12px;width:50px; height:25px; font-weight:bold}
 
 
+#contact	{ margin-top:20px; text-align:center; padding:10px 0;width:100%; height:30px; border-top:1px #000 dashed; border-bottom:1px #000 dashed;clear:both }
+
+
+#searchB:hover	{background-color:#FF2F2F}
+
+#motto		{ margin:0 12px;padding:20px; font-size:20px; font-family:"Comic Sans MS", cursive}
 
 .thin-brdr-btm { border-bottom:1px #FFF solid;}
 
 .thick-brdr-btm { border-bottom:3px #FFF solid;}
+
+.product_title	{ font-size:30px;font-weight:bold	}
+
+.bold		{ font-weight:bold}
