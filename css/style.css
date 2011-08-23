@@ -22,11 +22,11 @@ body		{ background-color:#D6D6D6}
 #topnav ul li a	{ padding:10px 30px; float:left; color: #fff; font-family:Verdana, Geneva, 	sans-serif; font-size:16px; font-weight:bold; 				  																	                  text-decoration:none	}
 #topnav a:hover	{ background-color:#FFF; color:#000}
 
-#content	{ margin-top:40px; padding-top:30px;padding-bottom:20px; width:100%; height:100%;}
+#content	{ margin-top:40px; padding-top:20px;padding-bottom:20px; width:100%; height:100%;}
 
 #content hr	{background-color:#960; height:2px; }
 
-#login		{ float:left;text-align:left; position:relative; top:20px; width:230px; height:250px; 	              border: 1px #666 solid; margin-right:30px; margin-left:20px; border-radius:15px;               padding:3px; }
+#login		{ float:left;text-align:left; position:relative; top:10px; width:230px; height:250px; 	              border: 1px #666 solid; margin-right:10px; margin-left:35px; border-radius:15px;               padding:3px; }
 
 #l2			{ margin-top:15px; margin-left:7px; margin-right:7px; margin-bottom:15px; font-family:Arial, Helvetica,              sans-serif; font-weight:bold; font-size:13px}
 
@@ -39,10 +39,10 @@ body		{ background-color:#D6D6D6}
 #submit		{ background-color:#C00; color:#FFF; padding:4px 8px; font-weight:bold; }
 #submit:hover	{background-color:#F00}
 
-#content img	{
-	text-align:right;
-	
-}
+
+#slide	{ float:right; text-align:center; width:570px; margin-right:20px; background-color:#000}
+
+
 
 
 #footer		{ margin-bottom:20px; text-align:center; padding-top:10px; width:100%; height:30px; background-color: #C93; clear:both }
@@ -69,7 +69,7 @@ body		{ background-color:#D6D6D6}
 
 #searchB:hover	{background-color:#FF2F2F}
 
-#motto		{ margin:0 12px;padding:20px; font-size:20px; font-family:"Comic Sans MS", cursive}
+#motto		{ margin:0 12px;padding:20px; font-size:20px; font-family:"Comic Sans MS", cursive; clear:both}
 
 .thin-brdr-btm { border-bottom:1px #FFF solid;}
 

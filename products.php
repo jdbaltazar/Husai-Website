@@ -10,11 +10,11 @@
 <script type="text/javascript">
 <!--
 var image1=new Image()
-image1.src="Jellyfish.jpg"
+image1.src="1.jpg"
 var image2=new Image()
-image2.src="Koala.jpg"
+image2.src="2.jpg"
 var image3=new Image()
-image3.src="Lighthouse.jpg"
+image3.src="3.jpg"
 //-->
 </script>
 <!-- InstanceBeginEditable name="head" -->

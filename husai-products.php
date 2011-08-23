@@ -5,16 +5,16 @@
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
 <!-- InstanceEndEditable -->
-<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 
 <script type="text/javascript">
 <!--
 var image1=new Image()
-image1.src="1.jpg"
+image1.src="images/1.jpg"
 var image2=new Image()
-image2.src="2.jpg"
+image2.src="images/2.jpg"
 var image3=new Image()
-image3.src="3.jpg"
+image3.src="images/3.jpg"
 //-->
 </script>
 <!-- InstanceBeginEditable name="head" -->
@@ -30,16 +30,16 @@ image3.src="3.jpg"
 	<div id="top" class="thin-brdr-btm"></div>
 	
     <div id="banner" class ="thick-brdr-btm">
-    	<img src="logo.png" />
+    	<img src="images/logo.png" />
     </div>
 	
 	<!-- InstanceBeginEditable name="content" -->
     <div id="topnav">
     	<ul>
-        	<li><a href = "index.html">Home</a></li>
-            <li><a href = "husai-about.html">About</a></li>
-            <li><a href = "husai-products.html">Products</a></li>
-            <li><a href = "husai-services.html">Services</a></li>            
+        	<li><a href = "index.php">Home</a></li>
+            <li><a href = "husai-about.php">About</a></li>
+            <li><a href = "husai-products.php">Products</a></li>
+            <li><a href = "husai-services.php">Services</a></li>            
         
       </ul>
     </div>
@@ -71,15 +71,15 @@ image3.src="3.jpg"
                 <hr />
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
-                <img src = "Koala.jpg">
-                <img src = "Koala.jpg">
-                 <img src = "Koala.jpg">
-                <img src = "Koala.jpg">
-                  <img src = "Koala.jpg">
-                   <img src = "Koala.jpg">
-                   <img src = "Koala.jpg">
-                     <img src = "Koala.jpg">
-                     <img src = "Koala.jpg">
+                <img src = "images/Koala.jpg">
+                <img src = "images/Koala.jpg">
+                 <img src = "images/Koala.jpg">
+                <img src = "images/Koala.jpg">
+                  <img src = "images/Koala.jpg">
+                   <img src = "images/Koala.jpg">
+                   <img src = "images/Koala.jpg">
+                     <img src = "images/Koala.jpg">
+                     <img src = "images/Koala.jpg">
 
       </div>
    
@@ -87,7 +87,7 @@ image3.src="3.jpg"
     <!-- InstanceEndEditable -->
     <div id = "contact">
     	<a href = "http://www.facebook.com/pages/HUSAI-Health-Beauty-Haven/116544565063">
-    		<img src="f.png">      
+    		<img src="images/f.png">      
     	</a>
   </div>
     	
