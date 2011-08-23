@@ -71,7 +71,7 @@ image3.src="images/3.jpg"
                 <hr />
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
-                <img src = "images/Koala.jpg">
+                <img src = "images/3.jpg" name="hello" value"aaaaaaaaa">
                 <img src = "images/Koala.jpg">
                  <img src = "images/Koala.jpg">
                 <img src = "images/Koala.jpg">
