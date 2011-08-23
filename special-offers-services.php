@@ -5,16 +5,16 @@
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
 <!-- InstanceEndEditable -->
-<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
 <script type="text/javascript">
 <!--
 var image1=new Image()
-image1.src="images/1.jpg"
+image1.src="1.jpg"
 var image2=new Image()
-image2.src="images/2.jpg"
+image2.src="2.jpg"
 var image3=new Image()
-image3.src="images/3.jpg"
+image3.src="3.jpg"
 //-->
 </script>
 <!-- InstanceBeginEditable name="head" -->
@@ -36,22 +36,24 @@ image3.src="images/3.jpg"
 	<!-- InstanceBeginEditable name="content" -->
     <div id="topnav">
     	<ul>
-        	<li><a href = "index.php">Home</a></li>
-            <li><a href = "husai-about.php">About</a></li>
-            <li><a href = "husai-products.php">Products</a></li>
-            <li><a href = "husai-services.php">Services</a></li>            
+        		<li><a href = "index.php">Home</a></li>
+				<li><a href = "husai-about.php">About</a></li>
+				<li><a href = "husai-products.php">Products</a></li>
+				<li><a href = "husai-services.php">Services</a></li>         
         
-      </ul>
+        </ul>
     </div>
-    <div id = "content">   	  
-		<div id = "leftside">
-			<p><a href = "new-products.php">&raquo; New Products</a></p>
-			<p><a href = "special-offers-products.php">&raquo; Special Offers</a></p>
-			<p>&nbsp;</p>            
-			<p class = "bold">View By Category:</p>           
-			<p><a href = "face-products.php">&raquo; Face</a></p>
-			<p><a href = "body-products.php">&raquo; Body</a></p>
-			<p><a href = "salon-products.php">&raquo; Salon </a></p>
+    
+    <div id = "content">
+    	<div id = "leftside">
+      		<p><a href = "new-services.php">&raquo; New Services</a></p>
+            <p><a href = "special-offers-services.php">&raquo; Special Offers</a></p>
+            <p>&nbsp;</p>            
+            <p class = "bold">View By Category:</p>           
+            <p><a href = "face-services.php">&raquo; Face</a></p>
+            <p><a href = "body-services.php">&raquo; Body</a></p>
+            <p><a href = "salon-services.php">&raquo; Salon</a></p>
+            <p><a href = "dental-services.php">&raquo; Dental</a></p>
 			<p>&nbsp;</p>
 			<form>
 				<table>
@@ -60,31 +62,31 @@ image3.src="images/3.jpg"
 						<td><input type = "submit"  value = "search" id = "searchB" /></td>
 					</tr>
 				</table>
-			 </form>
+			</form>
 		</div>
          
         <div id = "rightside">
-			<p class = "product_title">Products</p> 
+			<p class = "product_title">Services</p> 					
 			<p>&nbsp;</p>
 			<hr />
-			<p><a href = "husai-products.php">Products &raquo;</a>
-			<p>&nbsp;</p>                
-			<img src = "images/Koala.jpg">
-			<img src = "images/Koala.jpg">
-			<img src = "images/Koala.jpg">
-			<img src = "images/Koala.jpg">
-			<img src = "images/Koala.jpg">
-			<img src = "images/Koala.jpg">
-			<img src = "images/Koala.jpg">
-			<img src = "images/Koala.jpg">
-			<img src = "images/Koala.jpg">
-
-		</div>   
+			<p><a href = "husai-services.php">Services &raquo;</a>
+				<a href = "special-offers-services.php">Special Offers &raquo;</a></p>
+			<p>&nbsp;</p>
+			<img src = "images/Penguins.jpg">
+			<img src = "images/Penguins.jpg">
+			<img src = "images/Penguins.jpg">
+			<img src = "images/Penguins.jpg">
+			<img src = "images/Penguins.jpg">
+			<img src = "images/Penguins.jpg">
+			<img src = "images/Penguins.jpg">
+			<img src = "images/Penguins.jpg">
+			<img src = "images/Penguins.jpg">
+     	</div>
     </div>
     <!-- InstanceEndEditable -->
     <div id = "contact">
     	<a href = "http://www.facebook.com/pages/HUSAI-Health-Beauty-Haven/116544565063">
-    		<img src="images/f.png">      
+    		<img src="f.png">      
     	</a>
   </div>
     	

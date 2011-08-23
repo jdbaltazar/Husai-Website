@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*	Reset
+
+-----------------------------------------------------------------------*/
+*			{ padding:0; margin:0; border:0	}
+
+/* Containers
+-----------------------------------------------------------------------*/
+body		{ background-color:#D6D6D6}
+
+#wrapper	{ top:0px; width:900px; margin:0 auto; background-color:#fff	}
+
+#top		{ width:100%; height:25px; background-color:#000 }
+
+#banner		{	}
+
+#topnav		{ margin-bottom:25px;}
+#topnav	ul	{ width:100%; background-color:#C93; float:left }
+#topnav ul li	{ display:inline; }
+#topnav ul li a	{ padding:10px 30px; float:left; color: #fff; font-family:Verdana, Geneva, 	sans-serif; font-size:16px; font-weight:bold; 				  																	                  text-decoration:none	}
+#topnav a:hover	{ background-color:#FFF; color:#000}
+
+#content	{ margin-top:40px; padding-top:20px;padding-bottom:20px; width:100%; height:100%;}
+
+#content hr	{background-color:#960; height:2px; }
+
+#login		{ float:left;text-align:left; position:relative; top:10px; width:230px; height:250px; 	              border: 1px #666 solid; margin-right:10px; margin-left:35px; border-radius:15px;               padding:3px; }
+
+#l2			{ margin-top:15px; margin-left:7px; margin-right:7px; margin-bottom:15px; font-family:Arial, Helvetica,              sans-serif; font-weight:bold; font-size:13px}
+
+#l3			{ margin:auto 10px}
+
+#user		{border:1px #CCC solid; width:100%; height:25px; margin-bottom:10px; }
+
+#head		{ background-color:#7E7574; padding:5px; border-top-left-radius:10px;                  border-top-right-radius:10px; padding:5px; color:#fff; font-family:Arial,                   Helvetica, sans-serif; font-weight:bold }
+
+#submit		{ background-color:#C00; color:#FFF; padding:4px 8px; font-weight:bold; }
+#submit:hover	{background-color:#F00}
+
+
+#slide	{ float:right; text-align:center; width:570px; margin-right:20px; background-color:#000}
+
+
+#footer		{ margin-bottom:20px; text-align:center; padding-top:10px; width:100%; height:30px; background-color: #C93; clear:both }
+
+
+#leftside	{padding-left:10px; padding-top:10px; height:100%;width:220px; font-size:18px; font-family:"Comic Sans MS", cursive; display:inline-block; float:left}
+
+#leftside p	{ margin-bottom:6px}
+#leftside p a{ text-decoration:none; color:#000; padding-left:15px; color:#999}
+#leftside a:hover	{ color:#C90}
+
+#rightside	{ margin-left:270px; width:550px; height:100%;display:inline-block float:right; padding:5px; font-family:"Comic Sans MS", cursive; } 
+
+#rightside hr	{background-color:#960; height:3px; }
+#rightside img { width:150px; height:150px; padding-top:20px; padding-right:30px}
+
+#search 	{width:150px; height:23px;border:1px #666 solid; font-size:12px;}
+
+#searchB	{background-color:#F00; color:#FFF; font-size:12px;width:50px; height:25px; font-weight:bold}
+
+
+#contact	{ margin-top:20px; text-align:center; padding:10px 0;width:100%; height:30px; border-top:1px #000 dashed; border-bottom:1px #000 dashed;clear:both }
+
+
+#searchB:hover	{background-color:#FF2F2F}
+
+a		{text-decoration:none; color:#666;}
+a:hover		{color:#C90}
+
+#motto		{ margin:0 12px;padding:20px; font-size:20px; font-family:"Comic Sans MS", cursive; clear:both}
+
+.thin-brdr-btm { border-bottom:1px #FFF solid;}
+
+.thick-brdr-btm { border-bottom:3px #FFF solid;}
+
+.product_title	{ font-size:30px;font-weight:bold	}
+
+.bold		{ font-weight:bold}
