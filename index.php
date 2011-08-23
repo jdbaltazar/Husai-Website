@@ -46,7 +46,7 @@ image3.src="images/3.jpg"
     <div id = "content">
   
      <div id = "login">
-      <form method = "get" action = "http:/facebook.com/">
+      <form method = "post" action="accountverify.php">
         
           <p id = "head">MEMBER LOGIN</p>
           <div id = "l2">
@@ -56,7 +56,7 @@ image3.src="images/3.jpg"
             </p>
             <p>Password</p>
             <p>
-              <input type = "password" name = "username" id = "user" />
+              <input type = "password" name = "password" id = "user" />
             </p>
             <p align="center">
               <input type = "submit"  value = "login" id ="submit" />

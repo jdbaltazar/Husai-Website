@@ -4,6 +4,9 @@ $found_account = "false";
 $username = $_POST['username'];
 $password = $_POST['password'];
 
+echo $username;
+echo $password;
+
 $con = mysql_connect("localhost","root","");
 if (!$con)
 {
