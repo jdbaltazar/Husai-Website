@@ -14,10 +14,10 @@ mysql_select_db("husai", $con);
 	if (!mysql_query($add_acct,$con))
 	{
 		//die('Error: ' . mysql_error());
-		header('Location: http://localhost/Husai-Website/create-account.php');
+		header('Location: create-account.php');
 	}
 	else{
-		header('Location: http://localhost/Husai-Website/index.php');
+		header('Location: index.php');
 	}
 
 mysql_close($con);

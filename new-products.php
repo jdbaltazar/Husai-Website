@@ -1,3 +1,41 @@
+<?php 
+
+session_start();
+$found_account = "false";
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+echo $username;
+echo $password;
+
+$con = mysql_connect("localhost","root","");
+if (!$con)
+{
+	die('Could not connect: ' . mysql_error());
+}
+
+mysql_select_db("husai", $con);
+
+$result = mysql_query("SELECT * FROM account");
+
+while($row = mysql_fetch_array($result))
+{
+	if($row['Username']== $username){
+		if($row['Password']== $password){
+			$found_account = "true";
+		}else{
+			$found_account = "false";
+		}
+		break;
+	}
+
+}
+
+mysql_close($con);
+
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/HUSAI.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -5,16 +43,16 @@
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
 <!-- InstanceEndEditable -->
-<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
 <script type="text/javascript">
 <!--
 var image1=new Image()
-image1.src="images/1.jpg"
+image1.src="1.jpg"
 var image2=new Image()
-image2.src="images/2.jpg"
+image2.src="2.jpg"
 var image3=new Image()
-image3.src="images/3.jpg"
+image3.src="3.jpg"
 //-->
 </script>
 <!-- InstanceBeginEditable name="head" -->
@@ -40,12 +78,14 @@ image3.src="images/3.jpg"
             <li><a href = "husai-about.php">About</a></li>
             <li><a href = "husai-products.php">Products</a></li>
             <li><a href = "husai-services.php">Services</a></li>            
+                
         
-      </ul>
+        </ul>
     </div>
-    <div id = "content">   	  
+    
+    <div id = "content">
 		<div id = "leftside">
-			<p><a href = "new-products.php">&raquo; New Products</a></p>
+		    <p><a href = "new-products.php">&raquo; New Products</a></p>
 			<p><a href = "special-offers-products.php">&raquo; Special Offers</a></p>
 			<p>&nbsp;</p>            
 			<p class = "bold">View By Category:</p>           
@@ -60,15 +100,16 @@ image3.src="images/3.jpg"
 						<td><input type = "submit"  value = "search" id = "searchB" /></td>
 					</tr>
 				</table>
-			 </form>
+			</form>
 		</div>
-         
-        <div id = "rightside">
+	 
+		<div id = "rightside">
 			<p class = "product_title">Products</p> 
 			<p>&nbsp;</p>
 			<hr />
 			<p><a href = "husai-products.php">Products &raquo;</a>
-			<p>&nbsp;</p>                
+				<a href = "new-products.php">New Products &raquo;</a></p>
+			<p>&nbsp;</p>
 			<img src = "images/Koala.jpg">
 			<img src = "images/Koala.jpg">
 			<img src = "images/Koala.jpg">
@@ -79,12 +120,13 @@ image3.src="images/3.jpg"
 			<img src = "images/Koala.jpg">
 			<img src = "images/Koala.jpg">
 
-		</div>   
+
+		</div>
     </div>
     <!-- InstanceEndEditable -->
     <div id = "contact">
     	<a href = "http://www.facebook.com/pages/HUSAI-Health-Beauty-Haven/116544565063">
-    		<img src="images/f.png">      
+    		<img src="f.png">      
     	</a>
   </div>
     	

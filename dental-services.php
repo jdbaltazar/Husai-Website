@@ -36,16 +36,16 @@ image3.src="3.jpg"
 	<!-- InstanceBeginEditable name="content" -->
     <div id="topnav">
     	<ul>
-        	<li><a href = "index.php">Home</a></li>
-            <li><a href = "husai-about.php">About</a></li>
-            <li><a href = "husai-products.php">Products</a></li>
-            <li><a href = "husai-services.php">Services</a></li>            
+            <li><a href = "index.php">Home</a></li>
+			<li><a href = "husai-about.php">About</a></li>
+			<li><a href = "husai-products.php">Products</a></li>
+			<li><a href = "husai-services.php">Services</a></li>            
         
         </ul>
     </div>
     
     <div id = "content">
-       <div id = "leftside">
+		<div id = "leftside">
         	<p><a href = "new-services.php">&raquo; New Services</a></p>
             <p><a href = "special-offers-services.php">&raquo; Special Offers</a></p>
             <p>&nbsp;</p>            
@@ -62,16 +62,19 @@ image3.src="3.jpg"
 						<td><input type = "text" name = "text" id = "search" /> </td>
 						<td><input type = "submit"  value = "search" id = "searchB" /></td>
 					</tr>
-				</table> 
-			</form>
-            
-		</div>
+				</table>
+		  
+			 
+			</form>            
+      </div>
       
-		<div id = "rightside">
-			<p class = "product_title">Services</p>
+       <div id = "rightside">
+			<p class = "product_title">Services</p> 
+					
 			<p>&nbsp;</p>
-			<hr/>
-			<p><a href = "husai-services.php">Services &raquo;</a></p>			  
+			<hr />
+			<p><a href = "husai-services.php">Services &raquo;</a>
+				<a href = "dental-services.php">Dental &raquo;</a></p>
 			<p>&nbsp;</p>
 			<img src = "images/Penguins.jpg">
 			<img src = "images/Penguins.jpg">
@@ -82,12 +85,12 @@ image3.src="3.jpg"
 			<img src = "images/Penguins.jpg">
 			<img src = "images/Penguins.jpg">
 			<img src = "images/Penguins.jpg">
-        </div>
-    </div>
+         </div>   
+	</div>
     <!-- InstanceEndEditable -->
     <div id = "contact">
     	<a href = "http://www.facebook.com/pages/HUSAI-Health-Beauty-Haven/116544565063">
-    		<img src="images/f.png">      
+    		<img src="f.png">      
     	</a>
   </div>
     	
