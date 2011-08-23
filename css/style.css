@@ -26,7 +26,18 @@ body		{ background-color:#D6D6D6}
 
 #content hr	{background-color:#960; height:2px; }
 
-#login		{ float:left;text-align:left; position:relative; top:10px; width:230px; height:250px; 	              border: 1px #666 solid; margin-right:10px; margin-left:35px; border-radius:15px;               padding:3px; }
+#login		{
+	float:left;
+	text-align:left;
+	position:relative;
+	top:10px;
+	width:230px;
+	border: 1px #666 solid;
+	margin-right:10px;
+	margin-left:35px;
+	border-radius:15px;
+	padding:3px;
+}
 
 #createacct		{ float:right;text-align:left; position:relative; top:10px; width:330px; 	              border: 1px #666 solid; margin-right:30px; margin-left:10px; border-radius:15px;               padding:3px; }
 
@@ -86,3 +97,25 @@ body		{ background-color:#D6D6D6}
 .product_title	{ font-size:30px;font-weight:bold	}
 
 .bold		{ font-weight:bold}
+
+.notice{
+	margin-left:10px;
+	font-family:Lucida Grande; 
+	color:black; 
+	font-size:10px;
+}
+
+.importantNotice{
+	font-family:Lucida Grande; 
+	color:red; 
+	font-size:12px; 
+	font-weight:bold;
+}
+
+.toplinks{
+	float:right;
+	padding: 15px 0 0 0;
+	margin: 0;
+	list-style: none;
+	text-align: right;
+}

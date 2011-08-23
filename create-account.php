@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Untitled Document</title>
+<title>HUSAI::Create Account</title>
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 
@@ -85,6 +85,13 @@ image3.src="images/3.jpg"
 			  <option value="3">March</option>
 			  <option value="4">April</option>
 			  <option value="5">May</option>
+			  <option value="6">June</option>
+			  <option value="7">July</option>
+			  <option value="8">August</option>
+			  <option value="9">September</option>
+			  <option value="10">October</option>
+			  <option value="11">November</option>
+			  <option value="12">December</option>
             </select> <label for="bday"></label> <select name="bday" class="date" id="bday">
 			<?php
 			for($i=1; $i<=31; $i++){
