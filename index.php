@@ -92,7 +92,7 @@ image3.src="images/3.jpg"
           </p>
          </div>
         
-          <div id = "motto">" Our philosophy is to be the premier choice for all your health and beauty needs. Our staff is well trained and we only use the best ingredients on the market. Our goal is to offer you with the desirable treatments essential to make your wishes come into reality."</div>
+          <div id = "motto">"Our philosophy is to be the premier choice for all your health and beauty needs. Our staff is well trained and we only use the best ingredients on the market. Our goal is to offer you with the desirable treatments essential to make your wishes come into reality."</div>
     </div>
     <!-- InstanceEndEditable -->
     <div id = "contact">
