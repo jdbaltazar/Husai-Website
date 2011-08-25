@@ -10,7 +10,7 @@ mysql_select_db("husai", $con);
 
 	
 	$bdate = $_POST['byear']."-".$_POST['bmonth']."-".$_POST['bday'];
-	$add_acct = "insert into account VALUES('".$_POST['username']."', '".$_POST['password']."','".$_POST['name']."','".$_POST['address']."', '".$bdate."', '".$_POST['sex']."', '".$_POST['telephone']."','".$_POST['businessAd']."','".$_POST['businessPhone']."','".$_POST['civilStatus']."','".$_POST['occupation']."','".$_POST['referredby']."');";
+	$add_acct = "insert into account VALUES('".$_POST['username']."', '".$_POST['password']."','".$_POST['type']."','".$_POST['status']."','".$_POST['name']."','".$_POST['address']."', '".$bdate."', '".$_POST['sex']."', '".$_POST['telephone']."','".$_POST['businessAd']."','".$_POST['businessPhone']."','".$_POST['civilStatus']."','".$_POST['occupation']."','".$_POST['referredby']."');";
 	if (!mysql_query($add_acct,$con))
 	{
 		//die('Error: ' . mysql_error());
