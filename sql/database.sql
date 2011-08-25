@@ -15,6 +15,7 @@ CREATE  TABLE IF NOT EXISTS `husai`.`Account` (
   `Username` VARCHAR(50) NOT NULL ,
   `Password` VARCHAR(50) NOT NULL ,
   `Type` ENUM('Husai Administrator','Husai Customer') NOT NULL ,
+  `Status` ENUM('Activated','Deactivated') NOT NULL ,
   `Name` VARCHAR(100) NOT NULL ,
   `Address` VARCHAR(500) NOT NULL ,
   `Birthdate` DATE NOT NULL ,
