@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Untitled Document</title>
+<title>HUSAI::Home</title>
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 
@@ -62,13 +62,20 @@ image3.src="images/3.jpg"
               <input type = "submit"  value = "login" id ="submit" />
             </p>
           </div>
+          <div class="notice">
+            <p><span class="importantNotice">Important:</span><br />
+              <br />
+            </p>
+            <p>*USERNAME and PASSWORD ARE CASE-SENSITIVE.<br />
+              *DO NOT FORGET TO LOGOUT YOUR ACCOUNT ONCE YOU COMPLETED YOUR SESSION.</p>
+        </div>
           <p id="l3">&nbsp;</p>
        
       </form>
        </div>
        
       <div id = "slide">
-          <p><img src="images/1.jpg" name="slide" />       </p>
+      <p><img src="images/1.jpg" name="slide" />       </p>
           <p>
             <script>
                 <!--

@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Untitled Document</title>
+<title>HUSAI::Create Account</title>
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="css/style.css"
 	media="screen" />
@@ -24,8 +24,6 @@ image3.src="images/3.jpg"
 </head>
 
 <body>
-
-
 
 	<div id="wrapper">
 
