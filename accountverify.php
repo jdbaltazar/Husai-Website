@@ -31,23 +31,16 @@ while($row = mysql_fetch_array($result))
 }
 
 mysql_close($con);
-?>
 
-<html>
-<head>
-<title>Verify Registration</title>
-</head>
-<body>
-
-
-<?php
 if($found_account == "true"){
-	echo 	'<b>SUCCESSFULLY LOGGED IN</b>';
+	$_SESSION['has_user'] = 1;
+	$_SESSION['session_user'] = $username;
+	header('Location: home_login.php');
+}else{
+	mysql_close($con);
+	session_destroy();
+	header('Location: index.php');
 }
-else{
-	echo 	'<b>ACCOUNT NOT FOUND!</b>';
-}
-?>
-</body>
 
-</html>
+?>
+

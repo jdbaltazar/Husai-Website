@@ -1,6 +1,6 @@
 <?php 
 
-session_start();
+/* session_start();
 $found_account = "false";
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -30,9 +30,9 @@ while($row = mysql_fetch_array($result))
 	}
 
 }
-
+ 
 mysql_close($con);
-
+ */
 
 ?>
 
@@ -110,6 +110,11 @@ image3.src="3.jpg"
 			<p><a href = "husai-products.php">Products &raquo;</a>
 				<a href = "new-products.php">New Products &raquo;</a></p>
 			<p>&nbsp;</p>
+			<?php 
+			for($i=0; $i<12; $i++)
+				echo '<img src = "images/Koala.jpg">';
+			?>
+<!-- 			<img src = "images/Koala.jpg">
 			<img src = "images/Koala.jpg">
 			<img src = "images/Koala.jpg">
 			<img src = "images/Koala.jpg">
@@ -118,8 +123,7 @@ image3.src="3.jpg"
 			<img src = "images/Koala.jpg">
 			<img src = "images/Koala.jpg">
 			<img src = "images/Koala.jpg">
-			<img src = "images/Koala.jpg">
-
+ -->
 
 		</div>
     </div>

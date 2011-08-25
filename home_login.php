@@ -1,3 +1,6 @@
+<?php 
+			session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/HUSAI.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -46,30 +49,21 @@ image3.src="images/3.jpg"
     <div id = "content">
   
      <div id = "login">
-      <form method = "post" action="accountverify.php">
+      <form method = "post" action="logout.php">
         
           <p id = "head">MEMBER LOGIN</p>
-          <div id = "l2">
-            <p>Username</p>
-            <p>
-              <input type = "username" name = "username" id = "user" />
-            </p>
-            <p>Password</p>
-            <p>
-              <input type = "password" name = "password" id = "user" />
-            </p>
-            <p align="center">
-              <input type = "submit"  value = "login" id ="submit" />
+          <div id = "loginmsg">
+            <p>Welcome, <strong><?php echo "".$_SESSION['session_user'].""; ?></strong>!</p>
+            <p>&nbsp;</p>
+            <p>Let Husai take your salon and spa experience to a more exclusive level.</p>
+            <p>&nbsp;</p>
+            <p>Connect with us, shop online or get tips on health and beauty.</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p align="right">
+              <input type = "submit"  value = "logout" id ="submit" />
             </p>
           </div>
-          <div class="notice">
-            <p><span class="importantNotice">Important:</span><br />
-              <br />
-            </p>
-            <p>*USERNAME and PASSWORD ARE CASE-SENSITIVE.<br />
-              *DO NOT FORGET TO LOGOUT YOUR ACCOUNT ONCE YOU COMPLETED YOUR SESSION.</p>
-        </div>
-          <p id="l3">&nbsp;</p>
        
       </form>
        </div>
