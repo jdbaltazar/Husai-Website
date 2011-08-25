@@ -27,7 +27,6 @@ while($row = mysql_fetch_array($result))
 		}
 		break;
 	}
-
 }
 
 mysql_close($con);
