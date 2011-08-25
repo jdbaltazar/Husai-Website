@@ -3,15 +3,59 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen"> 
 </head>
 
 <body>
-<form method="post" action="accountverify.php">
-  <label for="username">Username:</label>
-  <input type="text" name="username" id="username" />
-  <label for="password">Password:</label>
-  <input type="password" name="password" id="password" />
-  <input type="submit" name="loginBtn" id="loginBtn" value="Login" />
-</form>
+<div id = "wrapper">
+    	<div id = "leftside">
+            <div id = "fw-head">   
+              <h2 id = "fw-title">Husai Health & Beauty Haven</h2>
+              
+          </div>
+             
+             <div id = "content">
+					<div id = "title">
+                    	  <div id = "cap">Sign In</div>      
+                    </div>     
+                     
+                    <div id = "login-box">                    
+                    	<form>
+                        	<table cellspacing="10">
+                            	<tr>
+                                	<td width="58" align = "right">Email</td>
+                                    <td width="216"><input type = "text" name = "email" id = "field" /></td>
+                                </tr>
+                                <tr>
+                                	<td align = "right"> Password</td>
+                                    <td><input type = "password" name = "password" id = "field" /></td>
+                                </tr>
+                                <tr>
+                                	<td></td>
+                                    <td ><input type = "submit" name = "submit" value = "Sign In" id = "submit" /></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>    
+                   
+             </div>
+    	</div>
+        
+        <div id ="rightside">
+        	<div id = "pic"><img src = "images/bg-logo.gif"></div>
+            
+            <div id = "nav">	
+            	<p><a href = "">Home</a></p>
+            	<p><a href = "">Sevices</a></p>
+                <p><a href = "">Products</a></p>
+                <p><a href = "">About Us</a></p>
+            	
+            </div>
+            
+          
+            
+        </div>
+        
+    </div>
 </body>
-</html>	
+</html>

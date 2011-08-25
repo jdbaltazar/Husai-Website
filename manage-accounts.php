@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Husai::Home</title>
+<title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"> 
 </head>
 
@@ -16,10 +16,10 @@
              
              <div id = "content">
 					<div id = "title">
-                    	  <div id = "cap">Title</div>      
+                    	  <div id = "cap">Manage Accounts</div>      
                     </div>        
                     <div id = "con">                    
-                     content here...
+                     	<p><a href = "">Add Account</a><span>|</span><span><a href = "">My Account</a></span></p>
                      </div>      
              </div>
     	</div>
@@ -32,15 +32,16 @@
             	<p><a href = "">Sevices</a></p>
                 <p><a href = "">Products</a></p>
                 <p><a href = "">About Us</a></p>
+                <p><a href = "">Manage Accounts</a></p>
             	
             </div>
             
             <div id = "login">
-            	<p>Members Area</p>
+            	<p>Hello Admin!</p>
                 <table cellspacing="10">
                 	<tr>
                     	<td><img src = "images/user.png"></td>
-                        <td><a href = "login.html">Log-in</a></td>
+                        <td><a href = "">Log-out</a></td>
                     </tr>
                 </table>
             </div>
