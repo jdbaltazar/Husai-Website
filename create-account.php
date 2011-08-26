@@ -46,7 +46,7 @@ image3.src="images/3.jpg"
 		<div id="content">
 
 			<div id="createacct">
-				<form method="post" action="add-account.php">
+				<form method="post" action="save-account-module.php">
 
 					<p id="head">ACCOUNT INFORMATION</p>
 					<div id="l2">
