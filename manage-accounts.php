@@ -49,7 +49,7 @@ else{
 				</div>
 
 				<div id="account-list">
-					<table border="5" cellpadding="10" cellspacing="10" align="center">
+					<table border="1" cellpadding="10" cellspacing="10" align="center">
 						<th>Username</th>
 						<th>Customer Name</th>
 						<th>Status</th>
