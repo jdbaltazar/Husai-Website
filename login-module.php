@@ -1,11 +1,8 @@
 <?php
-session_start();
+
 $found_account = "false";
 $username = $_POST['username'];
 $password = $_POST['password'];
-
-echo $username;
-echo $password;
 
 $con = mysql_connect("localhost","root","");
 if (!$con)
@@ -30,23 +27,15 @@ while($row = mysql_fetch_array($result))
 }
 
 mysql_close($con);
-?>
 
-<html>
-<head>
-<title>Verify Registration</title>
-</head>
-<body>
-
-
-<?php
 if($found_account == "true"){
-	echo 	'<b>SUCCESSFULLY LOGGED IN</b>';
+	
+	session_start();
+	$_SESSION['username'] = $username;
+	header('location: admin-home.php');
 }
 else{
-	echo 	'<b>ACCOUNT NOT FOUND!</b>';
+	header('location: login.php');
 }
-?>
-</body>
 
-</html>
+?>
