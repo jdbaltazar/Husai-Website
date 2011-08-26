@@ -8,6 +8,7 @@
 
 body {
 	background: #FFF
+
 }
 
 #wrapper {
@@ -134,15 +135,22 @@ body {
 	clear: both;
 	margin: 50px 60px;
 	padding: 40px 80px;
-	text-align: center;
+	text-align: left;
 	background-color: #FFF;
 	margin-top: 100px;
 }
 
-#field {
+.field {
 	width: 200px;
 	height: 25px;
-	border: 1px #8282FF solid
+	border: 1px #8282FF solid;
+}
+
+.menulist{
+	width: 80%;
+	height: 25px;
+	border: 1px #8282FF solid;
+	text-align:left;
 }
 
 #submit {
@@ -197,6 +205,22 @@ span {
 	height: 200px;
 }
 
+#logo {
+	
+}
+
+tle {
+	padding-top: 30px;
+	position: relative;
+	width: 504px;
+	left: 81px;
+	height: 30px;
+	background: url('../images/bg-h2.gif') no-repeat;
+	text-align: right;
+	font-size: 24px;
+	padding-bottom: 20px;
+}
+
 #fw-title {
 	position: relative;
 	top: 53px;
@@ -206,11 +230,49 @@ span {
 	color: #FFF;
 	font-family: Tahoma, Geneva, sans-serif
 }
+.labeldiv{
+	border-left:none;
+	border-right:none;
+	border-top:dotted 1px;
+	border-bottom:none;
+	background:#FFF0F5;
+	color:#999;
+	width:auto;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:left;
 
-#logo {
-	
 }
-#admin-nav	{
-		padding-left:15px;
-	
+
+.labeldiv_footer{
+	border-left:none;
+	border-right:none;
+	border-bottom:dotted 1px;
+	border-top:none;
+	background:#FFF0F5;
+	color:#999;
+	width:auto;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:left;
 }
+
+.labels{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;
+	font-weight:600;
+}
+
+<
+div
+id
+=
+"space"></div>
+<div
+id
+=
+"title">
+<div
+id
+=
+"cap">Title</div>
+</div>
+

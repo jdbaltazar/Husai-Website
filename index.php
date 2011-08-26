@@ -23,6 +23,7 @@
              <div id = "content">
 					<div id = "title">
                     	  <div id = "cap">Home</div>      
+
                     </div>        
                     <div id = "con">                    
                      content here...
@@ -47,6 +48,7 @@
                 	<tr>
                     	<td><img src = "images/user.png"></td>
                         <td><a href = "login.php">Log-in</a></td>
+
                     </tr>
                 </table>
             </div>
