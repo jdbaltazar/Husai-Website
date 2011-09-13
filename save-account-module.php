@@ -28,10 +28,10 @@ mysql_select_db("husai", $con);
 	if (!mysql_query($add_acct,$con))
 	{
 		//die('Error: ' . mysql_error());
-		header('Location: create-account.php');
+		header('Location: admin/add-customer-account.php');
 	}
 	else{
-		header('Location: index.php');
+		header('Location: admin/manage-accounts.php');
 	}
 
 mysql_close($con);

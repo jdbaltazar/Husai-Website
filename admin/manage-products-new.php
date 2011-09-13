@@ -43,9 +43,9 @@
             </table>
             <p>&nbsp;</p>
         
-            <p id = "subtitle">ADD NEW PRODUCTS</p>
+            <p id = "subtitle">ADD HUSAI PRODUCT</p>
             <form method = "post" action = "" >
-              <table>
+              <table id  ="add-table">
                     <tr>
                         <td align="right">Product Name: </td>
                         <td><input type = "text" name = "service-name"/ id = "text-field"></td>
@@ -59,12 +59,21 @@
                         <td align="right">Description: </td>
                         <td><input type = "text" name = "service-desc" id = "text-field"/></td>
                     </tr>
-                     <tr>
+                    <tr>
+                        <td align="right">Category: </td>
+                        <td><select name="product-category" id="text-field">								
+								<option value = "Face Product">Face Product</option>
+                                <option value = "Body Product">Body Product</option>
+								<option value = "Hair Product">Hair Product</option>
+							</select> 
+                        </td>
+                    </tr> 
+                    <tr>
                         <td align="right">Image: </td>
                         <td><input type = "text" name = "service-image" id = "text-field"/></td>
                         <td><input type = "submit" value = "Upload" id = "upload"></td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td>&nbsp;</td>
                         <td></td>               		
                         <td>&nbsp;</td>
@@ -79,11 +88,37 @@
                   <p>&nbsp;</p>
                
             </form>
+            <br><br>
+             <p id = "header-servicelist">List of Products</p>
+              <form>
+                  <table width="610" id = "services-list" cellspacing="0">
+                    <th width="62"><input type = "checkbox"/></th>
+                    <th width="112">Category</th>
+                    <th width="295">Name of Product</th>
+                    <th width="121">Status</th>
+                    <hr>
+                    <tr>
+                        <td><input type = "checkbox"/></td>
+                        <td>aa</td>
+                        <td><a href = "product-profile.php">aa</a></td>               
+                        <td>aa</td>
+                        
+                    </tr>
+                     <tr>
+                        <td><input type = "checkbox"/></td>
+                        <td>aa</td>
+                        <td><a href = "#">aa</a></td>               
+                        <td>aa</td>
+                        
+                    </tr>
+                    
+                  </table>
+            </form>
 
         </div>
     <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="content-right" -->
         <div id = "content-right"> 
-        	<div>            	
+        	<!--<div>            	
             	<ul>
                 	<li><a href = "manage-products-new.php">&raquo; What's New?</a></li>
                     <li><a href = "manage-products-special.php">&raquo; Special / Discounted Offers</a></li>
@@ -92,7 +127,7 @@
                     <li><a href = "manage-products-hair.php">&raquo; Hair</a></li>
                     
                 </ul>
-            </div> 
+            </div> -->
 
         </div>
         <!-- InstanceEndEditable -->

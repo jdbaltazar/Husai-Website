@@ -4,6 +4,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
+
+<script language="JavaScript"
+type="text/javascript"> 
+
+function checkAll(form){
+	
+
+if(form.allbox.checked)
+   {
+  		form.chuva.checked = true;
+		form.chuva2.checked = true;
+   }
+else
+	{
+  		form.chuva.checked = false;
+		form.chuva2.checked = false;		
+	}
+}
+</script>
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
 <!-- InstanceBeginEditable name="head" -->
@@ -43,10 +62,10 @@
             </table>
             <p>&nbsp;</p>
          
-            <p id = "subtitle">ADD NEW SERVICES</p>
+            <p id = "subtitle">ADD HUSAI SERVICE</p>
             
             <form method = "post" action = "" >
-              <table width="345">
+              <table width="345" id = "add-table">
                     <tr>
                         <td align="right">Service Name: </td>
                         <td><input type = "text" name = "service-name"/ id = "text-field"></td>
@@ -60,7 +79,16 @@
                         <td align="right">Description: </td>
                         <td><input type = "text" name = "service-desc" id = "text-field"/></td>
                     </tr>
-                     <tr>
+                   	<tr>
+                        <td align="right">Category: </td>
+                        <td><select name="service-category" id="text-field">								
+								<option value = "Face Service">Face Service</option>
+                                <option value = "Body Service">Body Service</option>
+								<option value = "Hair Service">Hair Service</option>
+							</select> 
+                        </td>
+                    </tr> 
+					<tr>
                         <td align="right">Image: </td>
                         <td><input type = "text" name = "service-image" id = "text-field"/></td>
                         <td><input type = "submit" value = "Upload" id = "upload"></td>
@@ -79,11 +107,37 @@
                 </table>
                   <p>&nbsp;</p>
                
-          </form>
+              </form>
+              <br><br>
+              <p id = "header-servicelist">List of Services</p>  
+              <form method = "" action = "#">
+                  <table width="610" id = "services-list" cellspacing="0">
+                    <th width="62"><input type = "checkbox" name = "allbox" onClick="checkAll(this.form)"/></th>
+                    <th width="112">Category</th>
+                    <th width="295">Name of Service</th>
+                    <th width="121">Status</th>
+                    <hr>
+                    <tr>
+                        <td><input type = "checkbox" name = "chuva"/></td>
+                        <td>aa</td>
+                        <td><a href = "service-profile.php">Chuvaness</a></td>               
+                        <td>aa</td>
+                        
+                    </tr>
+                     <tr>
+                        <td><input type = "checkbox" name = "chuva2"/></td>
+                        <td>aa</td>
+                        <td><a href = "#">aa</a></td>               
+                        <td>aa</td>
+                        
+                    </tr>
+                    
+                  </table>
+            </form>
         </div>
     <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="content-right" -->
        <div id = "content-right"> 
-        	<div>            	
+        	<!--<div>            	
             	<ul>
                 	<li><a href = "manage-services-new.php">&raquo; What's New?</a></li>
                     <li><a href = "manage-services-special.php">&raquo; Special / Discounted Offers</a></li>
@@ -92,7 +146,7 @@
                     <li><a href = "manage-services-hair.php">&raquo; Hair</a></li>
                     
                 </ul>
-            </div> 
+            </div> -->
 
         </div>
         <!-- InstanceEndEditable -->

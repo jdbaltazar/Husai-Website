@@ -180,11 +180,12 @@ body {
 	
 }
 
-#content-left form	{
+#add-table	{
 	margin-left:150px;	
+	width:345px;
 }
 
-#content-left form	table{
+#add-table{
 	border:1px #CCC solid;	
 	padding:10px;
 	background-color:#F1DAEA;
@@ -255,7 +256,26 @@ body {
 	border:1px #CCC solid;
 	width:500px;
 	text-align:center;
+	font-size:15px;
 	
+}
+
+#customer-table th{
+	border: thin #999 solid;
+	text-align:center;	
+}
+#customer-table tr td{
+	text-align:center;
+	border: thin #999 solid;	
+}
+
+#customer-table tr:hover{
+	color:#FFF;
+	background-color:#936;	
+}
+
+#customer-table tr{
+	height:25px;	
 }
 
 #add-customer a	{
@@ -383,4 +403,179 @@ body {
 		margin-bottom:0px;
 		background-color:#55002B;		
 		height:24px;
+}
+
+/*
+	create account
+*/
+
+#createacct {	
+	margin:20px 70px;
+	width:auto;	
+	background-color:#E9E9E9;
+	background-color:#F1DAEA;
+
+}
+
+#createacct form	{
+	margin:0px;
+	}
+
+.til{
+	margin-bottom:7px;
+}
+
+#user2	{
+	border:1px #CCC solid;
+	width:250px;
+	height:25px;
+}
+
+
+#user{
+	border:1px #CCC solid;
+	height:25px;
+	
+}
+
+
+
+#l2			{ margin-top:15px; margin-left:120px; margin-right:7px; margin-bottom:15px; font-family:Arial, Helvetica,              sans-serif; font-weight:bold; font-size:13px; width:250px;}
+#header-account		{
+	 background-color:#7E7574; 
+	 background-color:#936;
+	 padding:5px;
+	 border-top-left-radius:10px;    
+	 border-top-right-radius:10px;
+	 padding:5px; 
+	 color:#fff; 
+	 font-family:Arial,Helvetica, sans-serif; 
+	 font-weight:bold 
+}
+
+
+
+#submit-account	{ 
+	color:#FFF;
+	background-color:#936;
+	padding:4px 8px; 
+	font-weight:bold; 
+}
+#submit-account:hover	{ background-color:#903}
+
+/* 
+	manage services
+*/
+
+#header-servicelist{
+	margin:-12px 15px;
+
+	font-size:18px;
+	color:#FFF;
+	background-color:#936;
+	text-align:center;
+	width:610px;
+	padding:3px 0px;
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;
+	font-family:Georgia, "Times New Roman", Times, serif;	
+}
+
+#services-list	{
+	
+	border:1px #CCC solid; 
+	margin:10px 15px;
+	font-size:15px;
+}
+
+#services-list th{
+	border: thin #999 solid;
+	text-align:center;	
+}
+#services-list tr td{
+	text-align:center;
+	border: thin #999 solid;	
+}
+
+#services-list tr{
+	height:25px;	
+}
+
+#services-list tr:hover{
+	background-color:#936;
+	color:#FFF
+}
+
+
+/*
+	service profile
+*/
+
+#service-product-pic{
+	width:190px;
+	height:120px;
+	border:5px #CCC double;
+	text-align:center;
+	padding-top:20px;
+	margin:10px 40px;
+}
+
+#service-product-pic img{
+	width:150px;
+	height:100px;
+}
+
+#service-desc	{
+	margin:0px 30px;
+	padding-left:60px;
+}
+
+
+
+#s1	{
+	border:1px #999 solid;
+	height:25px;
+	width:300px;
+}
+
+#s2	{
+	border:1px #999 solid;
+	height:25px;
+	width:70px;
+}
+
+#s3	{
+	border:1px #999 solid;
+	width:100px;
+	height:25px;
+}
+#check-new-service	{
+	margin:0px 40px;
+	padding-left:60px;
+}
+
+#new-other	{
+	margin-left:25px;
+}
+#new-other	input{
+	width:300px;
+	height:25px;
+	border: 1px #999 solid;
+}
+.bold{
+	font-weight:bold;
+}
+
+#update-btn	{
+	width:90px;
+	height:35px;
+	border:1px #999 solid;
+	background-color:#666;
+	color:#FFF;
+	font-weight:bold;
+	margin-left:300px;
+}
+
+#update-btn:hover	{
+	background-color:#333
 }

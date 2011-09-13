@@ -1,3 +1,11 @@
+<?php 
+			session_start();
+			if(isset($_SESSION['has_user'])){
+				header('Location: ../admin/manage-accounts.php');
+			}
+			
+			
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template-husai.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -20,7 +28,7 @@ image3.src="../images/4.jpg"
 <!-- InstanceEndEditable -->
 </head>
 
-<body>
+<body onload="document.login_form.username.focus();">
 
 	<div id = "wrapper">
     
@@ -36,9 +44,6 @@ image3.src="../images/4.jpg"
     	  <ul>
            <li><a href = "home.php">Home</a></li>
     	    <li><a href = "husai-services-new.php">Services</a></li>
-                <ul>
-                	<li><a href = "#">Sample</a></li>
-                </ul>
     	    <li><a href = "husai-products-new.php">Products</a></li>
     	    <li><a href = "husai-about.php">About</a></li>
   	    </ul>
@@ -92,13 +97,13 @@ image3.src="../images/4.jpg"
                 </table>
         	</div>
         	<div id = "login-div">
-            	<form>
+				<form name="login_form" method="post" action="login_verify.php">
                 	<p>User ID:</p>
                     <input type = "text" name = "username" id = "input" />
                   	
                     <p id = "password">Password:</p>
-                    <input type = "password" name = "username" id = "input" />
-                    <p>  <input type = "submit" name = "username" value="login" id = "submit"/> </p>
+                    <input type = "password" name = "password" id = "input" />
+                    <p>  <input type = "submit" name = "login" value="login" id = "submit"/> </p>
                 </form>
                 
                 <a href = "http://www.facebook.com/pages/HUSAI-Health-Beauty-Haven/116544565063">
