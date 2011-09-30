@@ -63,7 +63,7 @@ mysql_close($con);
 			<table id="page-title">
 				<tr>
 					<td><img src="../images/purpletitle.png" /></td>
-					<td>Services &raquo; What's New?</td>
+					<td>Services &raquo; Browse All</td>
 				</tr>
 			</table>
 			<table width="560" border="2" cellspacing="15" cellpadding="0"
@@ -96,7 +96,7 @@ mysql_close($con);
 		<div id="content-right">
 			<div>
 				<ul>
-					<li><a href="../services">&raquo; What's New?</a></li>
+					<li><a href="../services">&raquo; Browse All</a></li>
 					<li><a href="../services/discounted-services.php">&raquo; Special /
 							Discounted Offers</a></li>
 					<li><a href="../services/face-services.php">&raquo; Face</a></li>

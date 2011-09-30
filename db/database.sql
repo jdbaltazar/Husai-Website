@@ -80,6 +80,7 @@ DROP TABLE IF EXISTS `husai`.`Availed_Service` ;
 CREATE  TABLE IF NOT EXISTS `husai`.`Availed_Service` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `Date` DATE NOT NULL ,
+  `Therapist` VARCHAR(100) NULL ,
   `Remarks` VARCHAR(500) NULL ,
   `Username` VARCHAR(50) NOT NULL ,
   `Service_id` INT NOT NULL ,
@@ -105,7 +106,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `husai`.`Bought_Product` ;
 
 CREATE  TABLE IF NOT EXISTS `husai`.`Bought_Product` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `Date` DATE NOT NULL ,
   `Quantity` INT NOT NULL ,
   `Remarks` VARCHAR(500) NULL ,

@@ -83,7 +83,7 @@ mysql_close($con);
         <div id = "content-right"> 
         	<div>            	
             	<ul>
-                	<li><a href="../services">&raquo; What's New?</a></li>
+                	<li><a href="../services">&raquo; Browse All</a></li>
 					<li><a href="../services/discounted-services.php">&raquo; Special /
 							Discounted Offers</a></li>
 					<li><a href="../services/face-services.php">&raquo; Face</a></li>
