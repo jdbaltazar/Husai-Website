@@ -6,7 +6,7 @@ if(isset($_SESSION['session_user'])&&isset($_SESSION['session_user_type'])&&isse
 	}
 	exit;
 }else{
-	include("../");
+		include("../actions/logout.php");
 	exit;
 }
 

@@ -85,7 +85,7 @@ image3.src="../images/4.jpg"
     <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="content-right" -->
         <div id = "content-right">
         	 <div id = "loggedin-div">
-             	<p>Hello <a href="userprofile.php?id=<?php echo "".$_SESSION['session_user'].""; ?>"><?php echo "".$_SESSION['session_user'].""; ?></a>! </p>
+             	<p>Hello <a href="../profile"><?php echo "".$_SESSION['session_user'].""; ?></a>! </p>
              </div>
             
         </div>
