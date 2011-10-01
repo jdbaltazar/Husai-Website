@@ -8,7 +8,8 @@ if (!$con)
 
 mysql_select_db(DB_NAME, $con);
 
-$result = mysql_query("SELECT availed_service.date, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$_SESSION['session_user']."' order by availed_service.date desc");
+require("../../application/views/services-availed/generate-query.php");
+$result = mysql_query("".$query."");
 
 mysql_close($con);
 ?>
@@ -59,12 +60,12 @@ mysql_close($con);
                     <td>Services Availed</td>
                 </tr>
             </table>
-            
+            <form action="../services-availed" method="post">
              <table width="450" id = "service-search" cellspacing="10">
             	<tr>
-                	<td width="251"><input type = "text" name = "searchfield" id = "service-product-searchfield"/></td>
+                	<td width="251"><input type = "text" name = "service_searchfield" value="<?php echo $_SESSION['service_searchfield']; ?>" id = "service-product-searchfield"/></td>
                 	<td width="97">
-                    	<select name = "service-cat" id = "service-cat">                    		
+                    	<select name = "service_search_cat" id = "service-cat">                    		
                     		<option name = "">All</option>
                     		<option name = "">Therapist</option>
                     		<option name = "">Treatment</option>
@@ -74,7 +75,7 @@ mysql_close($con);
                     <td width="304"><input type = "submit" value = "Search" id = "search-but"/></td>
                 </tr>
             </table>
-            
+            </form>
             <table width = "850" id  = "recordlist" cellspacing="0">
             
             	<th width="98">Date</th>

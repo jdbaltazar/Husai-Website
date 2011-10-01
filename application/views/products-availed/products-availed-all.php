@@ -10,7 +10,7 @@ mysql_select_db(DB_NAME, $con);
 
 $result = mysql_query("SELECT bought_product.date, product.product_name, bought_product.quantity, product.category from bought_product join product on product.id=bought_product.product_id where bought_product.username='".$_SESSION['session_user']."' order by bought_product.date desc");
 
-include("../../application/views/products-availed/products-search.php");
+//search goes here
 
 mysql_close($con);
 ?>
@@ -83,8 +83,8 @@ mysql_close($con);
 			<form name="search" action="../products-availed" method="post">
 				<table width="450" id="service-search" cellspacing="10">
 					<tr>
-						<td width="251"><input type="text" name="product-searchfield"
-							id="product-searchfield" /></td>
+						<td width="251"><input type="text" name="searchfield"
+							id="service-product-searchfield" /></td>
 						<td width="97"><select name="product-cat" id="product-cat">
 								<option name="">All</option>
 								<option name="">Product</option>

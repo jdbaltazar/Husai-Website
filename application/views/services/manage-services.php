@@ -129,7 +129,7 @@ else
 						echo "<tr>";
 						echo "<td><input type=\"checkbox\" /></td>";
 						echo "<td>".$row["Category"]."</td>";
-						echo "<td><a href = \"service-profile.php\">".$row["Service_Name"]."</a></td>";
+						echo "<td><a href = \"../services/view/service-profile.php?id=".$row[0]."\">".$row["Service_Name"]."</a></td>";
 						echo "<td>".$row["Status"]."</td>";
 						echo "</tr>";
 					}

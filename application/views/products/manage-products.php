@@ -127,7 +127,7 @@ mysql_close($con);
 						echo "<tr>";
 						echo "<td><input type=\"checkbox\" /></td>";
 						echo "<td>".$row["Category"]."</td>";
-						echo "<td><a href = \"service-profile.php\">".$row["Product_Name"]."</a></td>";
+						echo "<td><a href = \"../products/view/product-profile.php?id=".$row[0]."\">".$row["Product_Name"]."</a></td>";
 						echo "<td>".$row["Status"]."</td>";
 						echo "</tr>";
 					}
