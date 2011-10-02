@@ -70,7 +70,7 @@ mysql_close($con);
             	<tr>
                 	<td width="39"> <img src = "../images/purpletitle.png" /></td>
                     <td width="821">Services Availed &raquo; <?php echo $_GET['name']?></td>
-                    <td width="53" id = "viewSP"><?php echo '<a href="../accounts/view/account-profile.php?id='.$_GET['id'].'">'?>Back</a></td>
+                    <td width="53" id = "viewSP"><?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'?>Back</a></td>
                 </tr>
             </table>
    		 <p>&nbsp;</p>

@@ -4,7 +4,7 @@ if(isset($_SESSION['session_user'])&&isset($_SESSION['session_user_type'])&&isse
 	if($_SESSION['session_user_type'] == 'Husai Customer'){		
 		include("../../application/views/membership/membership.php");
 	}else if($_SESSION['session_user_type'] == 'Husai Administrator'){
-		include("../../application/views/membership/manage-membership.php");
+		include("../../application/views/membership/add-avail.php");
 	}
 	exit;
 }else{

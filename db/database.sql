@@ -135,11 +135,12 @@ DROP TABLE IF EXISTS `husai`.`Husai` ;
 
 CREATE  TABLE IF NOT EXISTS `husai`.`Husai` (
   `Name` VARCHAR(200) NOT NULL ,
-  `Description` VARCHAR(500) NULL ,
   `Address` VARCHAR(500) NOT NULL ,
-  `Telephone` VARCHAR(500) NOT NULL ,
+  `Contact_Nos` VARCHAR(500) NOT NULL ,
   `Email` VARCHAR(200) NOT NULL ,
   `Website` VARCHAR(200) NULL ,
+  `Mission` VARCHAR(800) NULL ,
+  `Vision` VARCHAR(800) NULL ,
   PRIMARY KEY (`Name`) )
 ENGINE = InnoDB;
 
@@ -167,6 +168,22 @@ CREATE  TABLE IF NOT EXISTS `husai`.`News` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `Description` VARCHAR(500) NOT NULL ,
   `Date` TIMESTAMP NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `husai`.`Husai_Branch`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `husai`.`Husai_Branch` ;
+
+CREATE  TABLE IF NOT EXISTS `husai`.`Husai_Branch` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `Name` VARCHAR(45) NOT NULL ,
+  `Address` VARCHAR(500) NOT NULL ,
+  `Contact_Nos` VARCHAR(200) NOT NULL ,
+  `Operating_Schedule` VARCHAR(200) NOT NULL ,
+  `Visibility` VARCHAR(50) NOT NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 

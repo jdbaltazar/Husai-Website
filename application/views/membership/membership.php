@@ -26,11 +26,16 @@
     	<!-- InstanceBeginEditable name="navigation" -->
     	<div id="nav">
     	  <ul>
-            <li><a href="../">Home</a></li>
+           <li><a href="../">Home</a></li>
 				<li><a href="../services">Services</a></li>
 				<li><a href="../products">Products</a></li>
 				<li><a href="../about">About</a></li>
 				  <?php require '../../application/views/includelinks.php';?>
+            
+            <!-- if logged in 
+            <li><a href = "services-availed.php">Availed Services</a></li>
+            <li><a href = "products-availed.php">Availed Products</a></li>
+            -->
   	    </ul>
   	  </div>
     
@@ -59,7 +64,7 @@
                  <div id = "discountedget">
                      <p>10% discount on food at Paru-Parong Bukid</p>
                      <p>20% discount on their Tree House and Rest House</p>
-                     <p>10% discount on Kayaking</p>
+                     <p>10% duscount on Kayaking</p>
                      <p>15% discount on any Workshop</p>
                  </div>
                  <p id  = "caption2">You can avail:</p>
@@ -87,7 +92,7 @@
        
         <!-- InstanceEndEditable -->
         <div id = "footer">
-        	<p id="fw-foottext" class="fw-footertext">Copyright Â©2011</p> 
+        	<p id="fw-foottext" class="fw-footertext">Copyright ©2011</p> 
         </div>
     
     </div>

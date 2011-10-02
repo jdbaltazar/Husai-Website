@@ -5,6 +5,7 @@ if(isset($_SESSION['session_user'])&&isset($_SESSION['session_user_type'])&&isse
 		echo '<li><a href = "../../products-availed">Availed Products</a></li>';
 	}else if($_SESSION['session_user_type'] == 'Husai Administrator'){
 		echo '<li><a href = "../../accounts">Accounts</a></li>';
+		echo '<li><a href = "../../membership">Membership</a></li>';
 	}
 }
 

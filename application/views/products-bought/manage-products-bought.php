@@ -66,7 +66,7 @@ mysql_close($con);
             	<tr>
                 	<td width="38"> <img src = "../images/purpletitle.png" /></td>
                     <td width="822">Products Bought &raquo; <?php echo $_GET['name']?></td>
-                    <td width="53" id = "viewSP"><?php echo '<a href="../accounts/view/account-profile.php?id='.$_GET['id'].'">'?>Back</a></td>
+                    <td width="53" id = "viewSP"><?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'?>Back</a></td>
                 </tr>
             </table>
             <p>&nbsp;</p>

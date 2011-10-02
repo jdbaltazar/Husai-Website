@@ -86,8 +86,10 @@ mysql_close($con);
             	<tr>
                 	<td width="37"> <img src = "../images/purpletitle.png" /></td>
                     <td width="619">Customer Profile </td>
-                    <td width="119" id = "viewSP"><a href = "manage-availed-services.php">Services Availed</a></td>
-                    <td width="134" id = "viewSP"><a href = "manage-availed-products.php">Products Bought</a></td>
+                    
+                    
+                    <td width="119" id = "viewSP"><?php echo '<a href="../services-availed/index.php?id='.$username.'&name='.$name.'">'?>Services Availed</a></td>
+                    <td width="134" id = "viewSP"><?php echo '<a href="../products-bought/index.php?id='.$username.'&name='.$name.'">'?>Products Bought</a></td>
                 </tr>
             </table>
     <p>&nbsp;</p>
@@ -99,9 +101,27 @@ mysql_close($con);
                 	<td width="159" id = "field-name1">Username:</td>
                 	<td width="440" id = "field-name2"><input type = "text" name = "username" /></td>
                 </tr>
+                <tr>
+                	<td width="159" id = "field-name1">Password:</td>
+                	<td width="440" id = "field-name2"><input type = "password" name = "password" /></td>
+                </tr>
+                <tr>
+                	<td width="159" id = "field-name1">Re-enter Password:</td>
+                	<td width="440" id = "field-name2"><input type = "password" name = "password2" /></td>
+                </tr>
             	<tr>
-                	<td id = "field-name1">Account status:</td>
-                	<td id = "field-name2"><input type = "text" name = "accountstatus" /></td>                	
+                	<td id = "field-name1">Account Type:</td>
+                	<td id = "field-name2" align="left"><select name="account_type">
+								<option value = "Husai Customer">Husai Customer</option>
+								<option value = "Husai Administrator">Husai Administrator</option>
+							</select> <br /></td>                	
+                </tr> 
+                <tr>
+                	<td id = "field-name1">Account Status:</td>
+                	<td id = "field-name2" align="left"><select name="account_status"	>
+								<option value = "Activated">Activated</option>
+								<option value = "Deactivated">Deactivated</option>
+							</select> <br /></td>                	
                 </tr>    
              </table>
              
@@ -148,6 +168,13 @@ mysql_close($con);
 							</select> <br /></td>                	
                 </tr> 
                 <tr>
+                	<td id = "field-name1">Sex:</td>
+                	<td id = "field-name2" align="left"><select name="civilStatus" id="status">
+								<option value = "Male">Male</option>
+								<option value = "Female">Female</option>
+							</select> <br /></td>                	
+                </tr> 
+                <tr>
                 	<td id = "field-name1">Civil Status:</td>
                 	<td id = "field-name2" align="left"><select name="civilStatus" id="status">
 								<option value = "Single">Single</option>
@@ -181,7 +208,7 @@ mysql_close($con);
                 	<td id = "field-name2"><input type = "text" name = "businesscontact" /></td>                	
                 </tr> 
                 <tr>
-                	<td id = "field-name1">Referenced By:</td>
+                	<td id = "field-name1">Referred By:</td>
                 	<td id = "field-name2"><input type = "text" name = "referencedby" /></td>                	
                 </tr> 
              </table>
