@@ -28,10 +28,12 @@ while($row = mysql_fetch_array($result))
 {
 	if($row['Username']== $username){
 		if($row['Password']== $password){
-			$_SESSION['session_user'] = $username;
-			$_SESSION['session_user_type'] = $row['Type'];
-			$_SESSION['authenticated'] = "true";
-			break;
+			if($row['Status']== "Activated"){
+				$_SESSION['session_user'] = $username;
+				$_SESSION['session_user_type'] = $row['Type'];
+				$_SESSION['authenticated'] = "true";
+				break;
+			}
 		}else{
 			break;
 		}

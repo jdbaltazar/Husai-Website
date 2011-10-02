@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+#desctable{
+	margin:0px 50px;
+}
+
+#serviceprofile-desc	{
+	margin-right:80px;
+	padding-left:50px;	
+	margin-top:50px;
+	
+}
+
+#desctable{
+	width:580px;
+	font-size:16px;
+}
+#service-profile-pic{		
+	text-align:center;	
+	margin-left:100px;
+	margin-top:50px;
+	float: left;
+}
