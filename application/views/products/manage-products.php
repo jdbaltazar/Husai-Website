@@ -81,7 +81,7 @@ mysql_close($con);
 			<table id="page-title">
 				<tr>
 					<td><img src="../images/purpletitle.png" /></td>
-					<td>Manage Products &raquo; What's New?</td>
+					<td>Manage Products</td>
 				</tr>
 			</table>
 			<p>&nbsp;</p>
@@ -112,10 +112,10 @@ mysql_close($con);
 					<p id="header-servicelist">List of Products</p>
 					<form>
 						<table width="850" id="services-list" cellspacing="0">
-							<th width="62"><input type="checkbox" /></th>
-							<th width="112">Category</th>
-							<th width="295">Name of Product</th>
-							<th width="121">Status</th>
+							<!--  <th width="62"><input type="checkbox" /></th> -->
+							<th width="112" id="services-list2">Category</th>
+							<th width="295" id="services-list2">Name of Product</th>
+							<th width="121" id="services-list2">Status</th>
 							
 							
 							
@@ -125,7 +125,7 @@ mysql_close($con);
 
 					while($row = mysql_fetch_array($result)){
 						echo "<tr>";
-						echo "<td><input type=\"checkbox\" /></td>";
+						//echo "<td><input type=\"checkbox\" /></td>";
 						echo "<td>".$row["Category"]."</td>";
 						echo "<td><a href = \"../products/view/product-profile.php?id=".$row[0]."\">".$row["Product_Name"]."</a></td>";
 						echo "<td>".$row["Status"]."</td>";
@@ -137,7 +137,6 @@ mysql_close($con);
 					
 
 				</table>
-					</form>
 		
 		</div>
 		<!-- InstanceEndEditable -->

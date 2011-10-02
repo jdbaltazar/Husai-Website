@@ -87,7 +87,7 @@ else
 			<table id="page-title">
 				<tr>
 					<td><img src="../images/purpletitle.png" /></td>
-					<td>Manage Services &raquo; What's New?</td>
+					<td>Manage Services</td>
 				</tr>
 			</table>
 			<p>&nbsp;</p>
@@ -117,8 +117,8 @@ else
 					<p id="header-servicelist">List of Services</p>
 					<form method="" action="#">
 						<table width="850" id="services-list" cellspacing="0">
-							<th width="62"><input type="checkbox" name="allbox"
-								onClick="checkAll(this.form)" /></th>
+							<!--  <th width="62"><input type="checkbox" name="allbox"
+								onClick="checkAll(this.form)" /></th> -->
 							<th width="112">Category</th>
 							<th width="295">Name of Service</th>
 							<th width="121">Status</th>
@@ -127,7 +127,7 @@ else
 
 					while($row = mysql_fetch_array($result)){
 						echo "<tr>";
-						echo "<td><input type=\"checkbox\" /></td>";
+						//echo "<td><input type=\"checkbox\" /></td>";
 						echo "<td>".$row["Category"]."</td>";
 						echo "<td><a href = \"../services/view/service-profile.php?id=".$row[0]."\">".$row["Service_Name"]."</a></td>";
 						echo "<td>".$row["Status"]."</td>";

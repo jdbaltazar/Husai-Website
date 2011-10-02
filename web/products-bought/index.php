@@ -4,7 +4,11 @@ if(isset($_SESSION['session_user'])&&isset($_SESSION['session_user_type'])&&isse
 	if($_SESSION['session_user_type'] == 'Husai Customer'){		
 		include("../../application/views/products-bought/products-bought-all.php");
 	}else if($_SESSION['session_user_type'] == 'Husai Administrator'){
-		include("../../application/views/products-bought/manage-products-bought.php");
+		if(isset($_GET['id'])&&isset($_GET['name'])){
+			include("../../application/views/products-bought/manage-products-bought.php");
+		}else{
+			header('Location: ../accounts/');
+		}
 	}
 	exit;
 }else{

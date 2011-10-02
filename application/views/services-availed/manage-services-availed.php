@@ -1,3 +1,24 @@
+<?php require("../../config/config.php"); ?>
+<?php
+if(!(isset($_GET['id'])&&isset($_GET['name']))){
+	header('Location: ../index.php');
+}
+
+$con = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD);
+if (!$con)
+{
+	die('Could not connect: ' . mysql_error());
+}
+
+mysql_select_db(DB_NAME, $con);
+
+if(!isset($query))
+	$query = "SELECT availed_service.date, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$_GET['id']."' order by availed_service.date desc";
+$result = mysql_query("".$query);
+
+mysql_close($con);
+?>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="../../../../Users/juanita/Desktop/HUSAI/Templates/template-husai.dwt" codeOutsideHTMLIsLocked="false" -->
@@ -48,8 +69,8 @@
        	  <table width="929" id = "page-title">
             	<tr>
                 	<td width="39"> <img src = "../images/purpletitle.png" /></td>
-                    <td width="821">Availed Services </td>
-                    <td width="53" id = "viewSP"><a href = "manage-customer-profile.php">Back</a></td>
+                    <td width="821">Services Availed &raquo; <?php echo $_GET['name']?></td>
+                    <td width="53" id = "viewSP"><?php echo '<a href="../accounts/view/account-profile.php?id='.$_GET['id'].'">'?>Back</a></td>
                 </tr>
             </table>
    		 <p>&nbsp;</p>
@@ -83,27 +104,28 @@
                 	<td id = "add-td"><input type = "submit" value = "Add" id = "add-btn" /></td>
                 </tr>
             </table>
+            
          </div>
          
    		 <p>&nbsp;</p>
    		 <p>&nbsp;</p>
-         
+          <form name="search" action="../services-availed/search.php?id=<?php echo $_GET['id']?>&name=<?php echo $_GET['name']?>" method="post">
 	<table width="450" id = "service-search" cellspacing="10">
             	<tr>
-                	<td width="251"><input type = "text" name = "searchfield" id = "service-product-searchfield"/></td>
+                	<td width="251"><input type = "text" name = "service_searchfield" id = "service-product-searchfield"/></td>
                 	<td width="97">
-                    	<select name = "service-cat" id = "service-cat">                    		
+                    	<select name = "service_search_cat" id = "service-cat">                    		
                     		<option name = "">All</option>
                     		<option name = "">Date</option>
                     		<option name = "">Therapist</option>
-                    		<option name = "">Treatment</option>
-                    		<option name = "">Product</option>
-                    		<option name = "">Amount</option>
+                    		<option name = "">Service</option>
+                    		<option name = "">Type</option>
                     	</select>
                     </td>
                     <td width="304"><input type = "submit" value = "Search" id = "search-but"/></td>
                 </tr>
             </table>
+            </form>
            
             <table width = "850" id  = "recordlist" cellspacing="0">
             
@@ -112,13 +134,16 @@
             	<th width="341">Name of Service</th>            	         
             	<th width="162">Type Of Service</th>
                  
-                <tr>
-                	<td>09/09/09</td>
-                    <td>aaaaa</td>
-                    <td>bbbbb</td>
-                    <td>ccccc</td>
-                   
-                </tr>
+                <?php
+				while($row = mysql_fetch_array($result)){
+					echo "<tr>";
+					echo "<td>".$row[0]."</td>";
+                    echo "<td>".$row[1]."</td>";
+                    echo "<td>".$row[2]."</td>";
+                    echo "<td>".$row[3]."</td>";
+                    echo "</tr>";
+				}
+				?>
                
             </table>
             

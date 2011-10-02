@@ -110,7 +110,7 @@ mysql_close($con);
 							else
 							echo 'class="trow2"';
 							
-							echo '<tr><td><a href="../accounts/view/account-profile.php?id='.$row[0].'">'.$row['Name']."</td><td>".$row['Username']."</td><td>".$row['Status']."</td></tr>";
+							echo '<tr><td><a href="../accounts/index.php?id='.$row[0].'">'.$row['Name']."</td><td>".$row['Username']."</td><td>".$row['Status']."</td></tr>";
 													
 							$i++;
 						}
