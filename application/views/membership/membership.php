@@ -59,7 +59,7 @@
                  <div id = "discountedget">
                      <p>10% discount on food at Paru-Parong Bukid</p>
                      <p>20% discount on their Tree House and Rest House</p>
-                     <p>10% duscount on Kayaking</p>
+                     <p>10% discount on Kayaking</p>
                      <p>15% discount on any Workshop</p>
                  </div>
                  <p id  = "caption2">You can avail:</p>
