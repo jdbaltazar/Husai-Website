@@ -9,7 +9,10 @@ if (!$con)
 
 mysql_select_db(DB_NAME, $con);
 
-$husai_customers = mysql_query("select Name, Username, Status from account WHERE Username!='".$_SESSION['session_user']."';");
+if(!isset($query))
+$query = "select Name, Username, Status from account WHERE Username!='".$_SESSION['session_user']."'";
+
+$result = mysql_query("".$query);
 
 mysql_close($con);
 
@@ -70,23 +73,23 @@ mysql_close($con);
                     </tr>
                     <tr>
                         <td align="right">Password: </td>
-                        <td><a href = "">[Change Password]</a></td>
+                        <td><a href = "../profile/">[Change Password]</a></td>
                     </tr>    
                                              
                 </table>
             </div> 
             <p>&nbsp;</p>
             <p>&nbsp;</p>
-            
+            <form name="search" action="../accounts/search.php" method="post">
             	  <table width="871" id = "account-search" cellspacing="10">
             	<tr>
                 	<td width="503"><p id = "add-customer"><a href = "../accounts/add">Add Customer Account</a></p></td>
-                	<td width="258"><input type = "text" name = "searchfield" id = "service-product-searchfield"/></td>
+                	<td width="258"><input type = "text" name = "account_searchfield" id = "service-product-searchfield"/></td>
                 	
                     <td width="62"><input type = "submit" value = "Search" id = "search-but"/></td>
                 </tr>
             </table>
-            
+            </form>
             
 <p>&nbsp;</p>
             <p id = "header-customer">Customers Accounts</p>          
@@ -97,7 +100,7 @@ mysql_close($con);
 
        <?php
         $i = 0;
-						while($row = mysql_fetch_array($husai_customers))
+						while($row = mysql_fetch_array($result))
 						{
 							
 						echo '<tr ';

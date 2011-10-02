@@ -95,7 +95,7 @@ image3.src="../images/4.jpg"
 		<div id="content-right">
 			<div id="loggedin-div">
 				<p>
-					Hello <a href="userprofile.php"><?php echo $_SESSION['session_user']; ?></a>!
+					Hello <a href="../profile/"><?php echo $_SESSION['session_user']; ?></a>!
 				</p>
 			</div>
 
