@@ -13,8 +13,9 @@ if (!$con)
 mysql_select_db(DB_NAME, $con);
 
 if(!isset($query))
-	$query = "SELECT bought_product.date, product.product_name, bought_product.quantity, product.category from bought_product join product on product.id=bought_product.product_id where bought_product.username='".$_SESSION['session_user']."' order by bought_product.date desc";
+	$query = "SELECT bought_product.date, product.product_name, bought_product.quantity, product.category from bought_product join product on product.id=bought_product.product_id where bought_product.username='".$_GET['id']."' order by bought_product.date desc";
 $result = mysql_query("".$query);
+$products = mysql_query("SELECT id, Product_Name FROM product where Status='Available'");
 
 mysql_close($con);
 ?>
@@ -71,34 +72,39 @@ mysql_close($con);
             </table>
             <p>&nbsp;</p>
          <p id ="add-availed-header">Add Bought Product</p>
-         <div id = "add-availed-div">
-			<table width="546" cellspacing="15">
-            	<tr>
-                	<td width="158" align="right">Date of Treatment:</td>                    
-                	<td width="337"><input id = "input-from" type="text" value="2011/09/09" readonly name="fromDate" style = "width:80px"><span style = "margin-left:15px; "><input type="button" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
-                </tr>
-                <tr>
-                	<td align="right">Therapist:</td>
-                    <td><input type="text" name = "therapist" id = "add-avail-input" /></td>
-                </tr>
-                <tr>
-                	<td align="right">Service/Treatment:</td>
-                    <td><input type="text" name = "therapist" id = "add-avail-input"/></td>
-                </tr>
-                <tr>
-                	<td align="right">Type of Treatment:</td>
-                    <td><select name = "" id = "service-cat">                    		
-                    		<option name = "">Face</option>
-                    		<option name = "">Body</option>
-                    		<option name = "">Hair</option>                    		
-                    	</select></td>
-                </tr>
-                <tr>
-                	<td></td>
-                	<td id = "add-td"><input type = "submit" value = "Add" id = "add-btn" /></td>
-                </tr>
-            </table>
-         </div>
+         <form method="post" action="../save-bought-product.php">
+           <div id = "add-availed-div">
+             <table width="546" cellspacing="15">
+               <tr>
+                 <td width="158" align="right">Date Bought:</td>                    
+                 <td width="337"><input id = "input-from" type="text" value="2011/09/09" readonly name="date-availed" style = "width:80px"><span style = "margin-left:15px; "><input type="button" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
+                 </tr>
+               <tr>
+                 <td align="right">Product:</td>
+                 <td><select name = "product" id = "service-cat">
+                   <?php
+								while($row = mysql_fetch_array($products))
+								{
+									echo "<option value=".$row['id'].">".$row['Product_Name']."</option>";
+								}
+								?>
+  </select></td>
+                 </tr>
+               <tr>
+                 <td align="right">Quantity:</td>
+                 <td><input type="hidden" name="username" value="<?php echo $_GET['id'];?>"/><input type="hidden" name="id" value="<?php echo $_GET['name'];?>"/><input name = "quantity" type="text" id = "add-avail-input" size="10" maxlength="11"/></td>
+                 </tr>
+               <tr>
+                 <td align="right">Remarks</td>
+                 <td><input type="text" name = "remarks" id = "add-avail-input"/></td>
+                 </tr>
+               <tr>
+                 <td></td>
+                 <td id = "add-td"><input type = "submit" value = "Add" id = "add-btn" /></td>
+                 </tr>
+              </table>
+           </div>
+         </form>
             <p>&nbsp;</p>
             <p>&nbsp;</p>
             <form name="search" action="../products-bought/search.php?id=<?php echo $_GET['id']?>&name=<?php echo $_GET['name']?>" method="post">

@@ -15,6 +15,7 @@ mysql_select_db(DB_NAME, $con);
 if(!isset($query))
 	$query = "SELECT availed_service.date, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$_GET['id']."' order by availed_service.date desc";
 $result = mysql_query("".$query);
+$services = mysql_query("SELECT id, Service_Name FROM service where Status='Available'");
 
 mysql_close($con);
 ?>
@@ -77,35 +78,39 @@ mysql_close($con);
          
    		 <p>&nbsp;</p>
          <p id ="add-availed-header">Add Availed Service</p>
-         <div id = "add-availed-div">
-			<table width="546" cellspacing="15">
-            	<tr>
-                	<td width="158" align="right">Date of Treatment:</td>                    
-                	<td width="337"><input id = "input-from" type="text" value="2011/09/09" readonly name="fromDate" style = "width:80px"><span style = "margin-left:15px; "><input type="button" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
-                </tr>
-                <tr>
-                	<td align="right">Therapist:</td>
-                    <td><input type="text" name = "therapist" id = "add-avail-input" /></td>
-                </tr>
-                <tr>
-                	<td align="right">Service/Treatment:</td>
-                    <td><input type="text" name = "therapist" id = "add-avail-input"/></td>
-                </tr>
-                <tr>
-                	<td align="right">Type of Treatment:</td>
-                    <td><select name = "" id = "service-cat">                    		
-                    		<option name = "">Face</option>
-                    		<option name = "">Body</option>
-                    		<option name = "">Hair</option>                    		
-                    	</select></td>
-                </tr>
-                <tr>
-                	<td></td>
-                	<td id = "add-td"><input type = "submit" value = "Add" id = "add-btn" /></td>
-                </tr>
-            </table>
-            
-         </div>
+         <<form action="../save-availed-service.php" method="post">
+             <div id = "add-availed-div">
+               <table width="546" cellspacing="15">
+                 <tr>
+                   <td width="158" align="right">Date of Treatment:</td>                    
+                   <td width="337"><input id = "input-from" type="text" value="2011/09/09" readonly name="treatment-date" style = "width:80px"><span style = "margin-left:15px; "><input type="button" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
+                   </tr>
+                 <tr>
+                   <td align="right">Therapist:</td>
+                   <td><input type="hidden" name="id" value="<?php echo $_GET['id'];?>"/><input type="hidden" name="name" value="<?php echo $_GET['name'];?>"/><input type="text" name = "therapist" id = "add-avail-input" /></td>
+                   </tr>
+                 <tr>
+                   <td align="right">Service/Treatment:</td>
+                   <td><select name = "service" id = "service-cat">
+                     <?php
+								while($row = mysql_fetch_array($services))
+								{
+									echo "<option value=".$row['id'].">".$row['Service_Name']."</option>";
+								}
+								?>
+                   </select></td>
+                   </tr>
+                 <tr>
+                   <td align="right">Remarks:</td>
+                   <td><input name = "remarks" type="text" id = "add-avail-input" maxlength="500" /></td>
+                   </tr>
+                 <tr>
+                   <td></td>
+                   <td id = "add-td"><input type = "submit" value = "Add" id = "add-btn" /></td>
+                   </tr>
+                </table>
+             </div>
+         </form>
          
    		 <p>&nbsp;</p>
    		 <p>&nbsp;</p>
