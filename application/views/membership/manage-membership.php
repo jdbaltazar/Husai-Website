@@ -109,44 +109,91 @@ mysql_close($con);
             </div> 
             
             
+            <?php while($row = mysql_fetch_array($husai_main_result)){?>
              <p>&nbsp;</p>
              
             <div id = "addnewbranch">
                	   
-                    <p id = "newBranchHeader">MAIN BRANCH</p>
+                    <p id = "newBranchHeader">MAIN</p>
+                    <form method="" action="">
+                    	<table id = "addnewbrachtable" cellspacing="10">
+                        	<tr>
+                            	<td align="right">Name :</td>
+                            	<td><input type = "text" name = "branchname" value="<?php echo $row["Name"]?>"/></td>                                
+                            </tr>
+                            <tr>
+                            	<td align="right">Address :</td>
+                            	<td><input type = "text" name = "branchaddress" value="<?php echo $row["Address"]?>"/></td>
+                            </tr>
+                            <tr>
+                            	<td align="right">Contact No/s. :</td>
+                            	<td><input type = "text" name = "contact" value="<?php echo $row["Contact_Nos"]?>"/></td>
+                            </tr>
+                            <tr>
+                            	<td align="right">Operating Schedule :</td>
+                            	<td><input type = "text" name = "schedule" value="<?php echo $row["Operating_Schedule"]?>"/></td>
+                            </tr>
+                            
+                            <tr>
+                            	<td align="right">Email :</td>
+                            	<td><input type = "text" name = "schedule" value="<?php echo $row["Email"]?>"/></td>
+                            </tr>
+                            
+                            <tr>
+                            	<td align="right">Website :</td>
+                            	<td><input type = "text" name = "schedule" value="<?php echo $row["Website"]?>"/></td>
+                            </tr>
+                        </table>
+                        <input type = "submit" value = "Update" id = "addbranchbutton" />
+                    </form>
+                    
+              
+              </div>
+              <?php }?>
+              <!-- update branches -->
+              
+              <?php while($row = mysql_fetch_array($husai_branch_result)){?>
+             <p>&nbsp;</p>
+              
+              <div id = "addnewbranch">
+               	   
+                    <p id = "newBranchHeader">Update Branch</p>
                     <form method="" action="">
                     	<table id = "addnewbrachtable" cellspacing="10">
                         	<tr>
                             	<td align="right">Branch Name :</td>
-                            	<td><input type = "text" name = "branchname"/></td>                                
+                            	<td><input type = "text" name = "branchname" value="<?php echo $row["Name"]?>"/></td>                                
                             </tr>
                             <tr>
                             	<td align="right">Branch Address :</td>
-                            	<td><input type = "text" name = "branchaddress"/></td>
+                            	<td><input type = "text" name = "branchaddress" value="<?php echo $row["Address"]?>"/></td>
                             </tr>
                             <tr>
                             	<td align="right">Contact No/s. :</td>
-                            	<td><input type = "text" name = "contact"/></td>
+                            	<td><input type = "text" name = "contact" value="<?php echo $row["Contact_Nos"]?>"/></td>
                             </tr>
                             <tr>
                             	<td align="right">Operating Schedule :</td>
-                            	<td><input type = "text" name = "schedule"/></td>
+                            	<td><input type = "text" name = "schedule" value="<?php echo $row["Operating_Schedule"]?>"/></td>
                             </tr>
                             <tr>
                             	<td align="right">Visibility :</td>
                             	<td><select name="visibility">
-								<option value = "Visible">Visible</option>
-								<option value = "Hidden">Hidden</option>
+								<option <?php if($row["Visibility"]=='Visible'){ echo 'selected="selected"';}?> value = "Visible">Visible</option>
+								<option <?php if($row["Visibility"]=='Hidden'){ echo 'selected="selected"';}?>value = "Hidden">Hidden</option>
 							</select> </td>
                             </tr>
                         </table>
                         
-                        <input type = "submit" value = "Add" id = "addbranchbutton" />
+                        <input type = "submit" value = "Update" id = "addbranchbutton" />
                         
                     </form>
                     
               
               </div>
+              
+              <?php }?>
+              <!-- update branches -->
               
              <p>&nbsp;</p>
              
@@ -186,20 +233,6 @@ mysql_close($con);
                     
               
               </div>
-               
-           <div id = "contact-information">            
-    
-            <p id = "branchname">MAIN BRANCH</p>
-                      <p class ="italize">4th Flr. UYTINGKOC Bldg. Avenida Veteranos, 6500 Tacloban City, Philippines</p>
-                      <p class ="italize">(053) 5238415 or 09088887230 </p>                 	
-          			  <p class ="italize">Mon - Sun: 9:00 am	- 9:00 pm</p>
-            <p>&nbsp;</p>
-            <p id = "branchname">CARIGARA BRANCH</p>
-                     <p class ="italize">Baybay , Real St , Carigara</p>
-                     <p class ="italize">(053) 331-1218</p>
-                     <p class ="italize">Mon - Sun: 9:00 am - 8:00 pm</p>
-            <p>&nbsp;</p>
-            </div>
           
             
         </div>

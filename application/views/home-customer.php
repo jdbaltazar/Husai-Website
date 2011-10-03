@@ -55,7 +55,7 @@ image3.src="../images/4.jpg"
                 </tr>
             </table>
             
-            <div id = "about-div">News here...
+            <div id = "about-div">Latest News...
             </div>
          	<div id = "slideshow">
             	 <p><img src="1.jpg" name="slide" />       </p>

@@ -91,7 +91,7 @@ mysql_close($con);
             </table>
             
             <div id="createacct">
-				<form method="post" action="../update-account-module.php">
+				<form method="post" action="../../profile/update/">
 
 					<p id="header-account">ACCOUNT INFORMATION</p>
 					<div id="l2">

@@ -137,6 +137,7 @@ CREATE  TABLE IF NOT EXISTS `husai`.`Husai` (
   `Name` VARCHAR(200) NOT NULL ,
   `Address` VARCHAR(500) NOT NULL ,
   `Contact_Nos` VARCHAR(500) NOT NULL ,
+  `Operating_Schedule` VARCHAR(200) NOT NULL ,
   `Email` VARCHAR(200) NOT NULL ,
   `Website` VARCHAR(200) NULL ,
   `Mission` VARCHAR(800) NULL ,
