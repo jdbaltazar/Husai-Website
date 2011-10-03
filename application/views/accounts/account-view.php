@@ -26,11 +26,14 @@ $results = mysql_query("select * from account where Username = '$user_id'");
 
 while($row = mysql_fetch_array($results)){
 	$username = $row['Username'];
+	$password = $row['Password'];
+	$account_type = $row['Type'];
 	$account_status = $row['Status'];
 	$name = $row['Name'];
 	$address = $row['Address'];
 	$birthday = $row['Birthdate'];
 	$civil_status = $row['Civil_Status'];
+	$sex = $row['Sex'];
 	$occupation = $row['Occupation'];
 	$contact_no = $row['Telephone'];
 	$business_address = $row['Business_Address'];
@@ -99,28 +102,28 @@ mysql_close($con);
             	 
             	<tr>
                 	<td width="159" id = "field-name1">Username:</td>
-                	<td width="440" id = "field-name2"><input type = "text" name = "username" /></td>
+                	<td width="440" id = "field-name2"><input type = "text" name = "username" value="<?php echo $username; ?>"/></td>
                 </tr>
                 <tr>
                 	<td width="159" id = "field-name1">Password:</td>
-                	<td width="440" id = "field-name2"><input type = "password" name = "password" /></td>
+                	<td width="440" id = "field-name2"><input type = "password" name = "password" value="<?php echo $password; ?>"/></td>
                 </tr>
                 <tr>
                 	<td width="159" id = "field-name1">Re-enter Password:</td>
-                	<td width="440" id = "field-name2"><input type = "password" name = "password2" /></td>
+                	<td width="440" id = "field-name2"><input type = "password" name = "password2" value="<?php echo $password; ?>" /></td>
                 </tr>
             	<tr>
                 	<td id = "field-name1">Account Type:</td>
                 	<td id = "field-name2" align="left"><select name="account_type">
-								<option value = "Husai Customer">Husai Customer</option>
-								<option value = "Husai Administrator">Husai Administrator</option>
+								<option value = "Husai Customer" <?php if($account_type=='Husai Customer'){echo 'selected="selected"'; }?>>Husai Customer</option>
+								<option value = "Husai Administrator" <?php if($account_type=='Husai Administrator'){echo 'selected="selected"'; }?>>Husai Administrator</option>
 							</select> <br /></td>                	
                 </tr> 
                 <tr>
                 	<td id = "field-name1">Account Status:</td>
                 	<td id = "field-name2" align="left"><select name="account_status"	>
-								<option value = "Activated">Activated</option>
-								<option value = "Deactivated">Deactivated</option>
+								<option value = "Activated" <?php if($account_status=='Activated'){echo 'selected="selected"'; }?> >Activated</option>
+								<option value = "Deactivated" <?php if($account_type=='Deactivated'){echo 'selected="selected"'; }?>>Deactivated</option>
 							</select> <br /></td>                	
                 </tr>    
              </table>
@@ -130,11 +133,11 @@ mysql_close($con);
             	 
             	<tr>
                 	<td width="158" id = "field-name1">Name:</td>
-                	<td width="441" id = "field-name2"><input type = "text" name = "customername" /></td>
+                	<td width="441" id = "field-name2"><input type = "text" name = "customername" value="<?php echo $name; ?>"/></td>
                 </tr>
             	<tr>
                 	<td id = "field-name1">Address:</td>
-                	<td id = "field-name2"><input type = "text" name = "address" /></td>                	
+                	<td id = "field-name2"><input type = "text" name = "address" value="<?php echo $address; ?>"/></td>                	
                 </tr>    
                 <tr>
                 	<td id = "field-name1">Birthday:</td>
@@ -170,27 +173,27 @@ mysql_close($con);
                 <tr>
                 	<td id = "field-name1">Sex:</td>
                 	<td id = "field-name2" align="left"><select name="civilStatus" id="status">
-								<option value = "Male">Male</option>
-								<option value = "Female">Female</option>
+								<option value = "Male" <?php if($sex=='Male'){echo 'selected="selected"'; }?> >Male</option>
+								<option value = "Female" <?php if($sex=='Female'){echo 'selected="selected"'; }?> >Female</option>
 							</select> <br /></td>                	
                 </tr> 
                 <tr>
                 	<td id = "field-name1">Civil Status:</td>
                 	<td id = "field-name2" align="left"><select name="civilStatus" id="status">
-								<option value = "Single">Single</option>
-								<option value = "Married">Married</option>
-								<option value = "Widowed">Widowed</option>
+								<option value = "Single" <?php if($civil_status=='Single'){echo 'selected="selected"'; }?> >Single</option>
+								<option value = "Married" <?php if($civil_status=='Married'){echo 'selected="selected"'; }?> >Married</option>
+								<option value = "Widowed" <?php if($civil_status=='Widowed'){echo 'selected="selected"'; }?> >Widowed</option>
 							</select> <br /></td>                	
                 </tr> 
                 <tr>
                 	
                 	<td id = "field-name1">Occupation:</td>
-                	<td id = "field-name2"><input type = "text" name = "occupation" /></td>                	
+                	<td id = "field-name2"><input type = "text" name = "occupation" value="<?php echo $occupation; ?>"/></td>                	
                 </tr> 
                 <tr>
                 	
                 	<td id = "field-name1">Contact No.:</td>
-                	<td id = "field-name2"><input type = "text" name = "contact" /></td>                	
+                	<td id = "field-name2"><input type = "text" name = "contact"  value="<?php echo $contact_no; ?>" /></td>                	
                 </tr> 
                 
               </table>             
@@ -200,16 +203,16 @@ mysql_close($con);
              	<tr>
                 	
                 	<td width="160" id = "field-name1">Business Address:</td>
-                	<td width="439" id = "field-name2"><input type = "text" name = "businessaddress" /></td>                	
+                	<td width="439" id = "field-name2"><input type = "text" name = "businessaddress" value="<?php echo $business_address; ?>"/></td>                	
                 </tr> 
                 <tr>
                 
                 	<td id = "field-name1">Business Contact No.:</td>
-                	<td id = "field-name2"><input type = "text" name = "businesscontact" /></td>                	
+                	<td id = "field-name2"><input type = "text" name = "businesscontact" value="<?php echo $business_contact_no; ?>" /></td>                	
                 </tr> 
                 <tr>
                 	<td id = "field-name1">Referred By:</td>
-                	<td id = "field-name2"><input type = "text" name = "referencedby" /></td>                	
+                	<td id = "field-name2"><input type = "text" name = "referencedby" value="<?php echo $referred_by; ?>" /></td>                	
                 </tr> 
              </table>
              <input type = "submit" value = "UPDATE" name = "update" id = "updatecustomerbutton">

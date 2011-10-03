@@ -8,23 +8,23 @@ if (!$con)
 
 mysql_select_db("husai", $con);
 
-$product_name="";
+$service_name="";
 $description="";
 $price="";
-$status="";
-$discounted="";
-$discount="";
+$status = "";
+$discounted = "";
+$discount = "";
 
-$product_id = $_GET['id'];
-$results = mysql_query("SELECT Product_Name, Description, Price, Status, Discounted, Discount FROM product WHERE id = $product_id");
+$service_id = $_GET['id'];
+$results = mysql_query("select Service_Name, Description, Status, Charge, Discounted, Discount from service where id = $service_id");
 
 while($row = mysql_fetch_array($results)){
-	$product_name = $row['Product_Name'];
+	$service_name = $row['Service_Name'];
 	$description = $row['Description'];
-	$price = $row['Price'];
+	$price = $row['Charge'];
 	$status = $row['Status'];
 	$discounted = $row['Discounted'];
-	$discount=$row['Discount'];
+	$discount = $row['Discount'];
 }
 
 mysql_close($con);
@@ -36,24 +36,26 @@ mysql_close($con);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
+<link type="text/css" rel="stylesheet" href="../dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen"></LINK>
 
-<link type="text/css" rel="stylesheet" href="../../css/dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen"></LINK>
-<SCRIPT type="text/javascript" src="../../js/dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118"></script>
+<SCRIPT type="text/javascript" src="../dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118"></script>
 
-<script language="JavaScript"
-type="text/javascript"> 
+
+
+<script language="JavaScript" type="text/javascript"> 
+
 
 function findselected() { 
-	   if (document.myform.promo.value == 'Not Discounted') {
-	      document.myform.calendar1.disabled=true;
-	      document.myform.calendar2.disabled=true;
-	      document.myform.percentdiscount.disabled=true;
-	   } else {
-		   document.myform.calendar1.disabled=false;
-		      document.myform.calendar2.disabled=false;
-		      document.myform.percentdiscount.disabled=false;
-	   }
-	} 
+   if (document.myform.mymenu.value == 'Not Discounted') {
+      document.myform.calendar1.disabled=true;
+      document.myform.calendar2.disabled=true;
+      document.myform.percentdiscount.disabled=true;
+   } else {
+	   document.myform.calendar1.disabled=false;
+	      document.myform.calendar2.disabled=false;
+	      document.myform.percentdiscount.disabled=false;
+   }
+} 
 
 function enableFields(form){
 	
@@ -72,8 +74,9 @@ else{
 
 }
 if(form.service2.checked){
-		form.desc2.disabled = false;
+		form.percentagewhole.disabled = false;
 		form.period2.disabled = false;
+		form.elements["percentagedecimal"].value = '19';
 	}  
 else{
 		form.desc2.disabled = true;
@@ -82,8 +85,10 @@ else{
 		form.elements["period2"].value = '';
 } 
 }
-//-->
+
+
 </SCRIPT>
+
 <link rel="stylesheet" type="text/css" href="../../css/adminstyle.css" media="screen" />
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen" />
@@ -109,11 +114,10 @@ else{
 				<li><a href="../../services">Services</a></li>
 				<li><a href="../../products">Products</a></li>
 				<li><a href="../../about">About</a></li>
-				  <?php //require '../../../application/views/includeaccountlinkforaddeditview.php';?>
-  	      <li><a href="../../accounts">Accounts</a></li>
-				<li><a href="../../membership">Membership</a></li>
+				  <?php require '../../../application/views/includeaccountlinkforaddeditview.php';?>
   	      </ul>
   	    </div>
+
     	<!-- InstanceEndEditable -->
     	<div id = "upper-nav-border"> <img src = "../../images/purplebottom.png"> </div>
     <!-- InstanceBeginEditable name="content-left" -->
@@ -121,10 +125,11 @@ else{
            <table id = "page-title">
             	<tr>
                 	<td> <img src = "../../images/purpletitle.png" /></td>
-                    <td>Product Description</td>
+                    <td>Service Description</td>
                 </tr>
             </table>
             <p>&nbsp;</p>
+            
             <div id = "service-product-pic">
             
             	<div id = "picture">
@@ -134,21 +139,21 @@ else{
 	        </div>
 	        
              <div id = "service-desc">
-            	<form method = "post" action = "../update-product-module.php" name = "myform" id = "profile-form">          
+            	<form method = "post" action = "../../update" name = "myform" id = "profile-form">          
 	           
 	                <table cellspacing="15">
 	                    <tr>
-	                        <td align="right">Product Name:</td>
-	                        <td><input type="hidden" name="id" value="<?php echo $product_id;?>" /> <input type = "text" value="<?php echo $product_name ?>" name = "product-name"  id = "s1" /></td>
+	                        <td align="right">Service Name:</td>
+	                        <td><input type="hidden" name="id" value="<?php echo $service_id;?>" /> <input type = "text" name = "service-name" value="<?php echo $service_name;?>"  id = "s1" /></td>
 	                    </tr>
 	                    <tr>
 	                        <td align="right" >Description:</td>
-	                        <td><input type = "text"  value="<?php echo $description; ?>" name = "product-description" id = "s1"></td>
+	                        <td><input type = "text" name = "service-description" value="<?php echo $description;?>" id = "s1"></td>
 	                    </tr>
 	                    <tr>
 	                        <td align="right" id =>Status:</td>
 	                        <td >
-	                        	<select name="product-status" id="s3">								
+	                        	<select name="service-status" id="s3">								
 									<option <?php if($status == "Available"){echo 'selected="selected";'?><?php }?>>Available</option>
 	                                <option <?php if($status == "Not Available"){echo 'selected="selected";'?><?php }?>>Not Available</option>								
 								</select> 
@@ -157,21 +162,13 @@ else{
 	                    </tr>
 	                    <tr>
 	                        <td align="right" >Price (Php):</td>
-	                        <td ><input type="text" name = "product-price" value="<?php echo $price ?>" id = "s3"></td>
+	                        <td ><input type="text" name = "service-price" value="<?php echo $price;?>" id = "s3"></td>
 	                    </tr>
-<!--                         <tr>
-	            			<td align="right">Type:</td>
-	            			<td>
-	            				<select id = "s3">
-	            					<option name = "">Old Product</option>
-	            					<option name = "">New Product</option>
-	            				</select>
-	            			</td>
-	            		</tr> -->
+                       
 	            		<tr>
 	            			<td align="right">Promo:</td>
 	            			<td>
-	            				<select id = "s3" name="promo"  onchange="findselected()">
+	            				<select id = "s3" name = "mymenu" onchange="findselected()">
 	            					<option <?php if($discounted == 1){echo 'selected="selected";'?><?php }?> value="Discounted">Discounted</option>
 	            					<option <?php if($discounted == 0 || $discounted == NULL){echo 'selected="selected";'?><?php }?> value="Not Discounted">Not Discounted</option>
 	            				</select>
@@ -187,26 +184,28 @@ else{
 	                    <tr>
 	                    	
 	                    	<td align="right">From:</td>
-	                    	<td><input id = "input-from"type="text" value="2011/09/09" readonly name="fromDate" style = "width:80px"><span style = "margin-left:15px; "><input type="button" name="calendar1" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
+	                    	<td><input id = "input-from"type="text" value="2011/09/09" readonly="readonly" name="fromDate" style = "width:80px"><span style = "margin-left:15px; "><input type="button" name="calendar1" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
 	                        
 	                    </tr>
 	                    <tr>
 	                    	<td align="right">To:</td>
-	                    	<td><input id = "input-from"type="text" value="2011/09/09" readonly name="toDate" style = "width:80px"><span style = "margin-left:15px; "><input type="button" name="calendar2" onclick="displayCalendar(document.forms[0].toDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
+	                    	<td><input id = "input-from"type="text" value="2011/09/09" readonly="readonly" name="toDate" style = "width:80px"><span style = "margin-left:15px; "><input type="button" name="calendar2" onclick="displayCalendar(document.forms[0].toDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
 	                        
 	                    </tr>
 	                    <tr>
 	                    	<td align="right">Percent Discount:</td>
-	                    	<td id = "percentboxfont"><input name = "percentdiscount" <?php if($discounted == FALSE || $discounted == NULL){ echo 'disabled="disabled"' ?><?php } ?> type="text" value="<?php echo $discount; ?>" id = "s2" maxlength="6" />
-	                    	  %</td>
+	                    	<td id = "percentboxfont"><input name = "percentdiscount" <?php if($discounted == FALSE || $discounted == NULL){ echo 'disabled="disabled"' ?><?php }?> type="text" value="<?php echo $discount; ?>" id = "s2" maxlength="6" />
+	                    	  %
+	                    	</td>
 	                    </tr>
 	                </table>
 	                <br>	            
 	            	<input type="submit" value = "Update" id = "update-btn" />
             	</form>
-			</div>  
+		</div>  
 
-        </div>
+ 		           
+  </div>
     <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="content-right" -->
         
         <!-- InstanceEndEditable -->

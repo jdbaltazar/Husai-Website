@@ -36,7 +36,7 @@ if(isset($_POST['xsubmit'])) {
 	imagecopyresampled($tmp,$src,0,0,0,0,$newwidth,$newheight,
 	$width,$height);
 	
-	$filename = "../upload/". $_FILES['image']['name'];
+	$filename = "../../upload/". $_FILES['image']['name'];
 	
 	
 	
@@ -67,19 +67,21 @@ else if(isset($_POST['save-service'])) {
 	$service_name  = trim($_POST['service-name']);
 	$description = trim($_POST['service-desc']);
 	$status = trim($_POST['service-status']);
-	$price = trim($_POST['service-price']);
+	$price = trim($_POST['service_price']);
 	$category = trim($_POST['service-category']);
 	$filepath = trim($_POST['filepath']);
 
 	$add_service = "insert into service(Service_Name, Description, Status, Charge, Category, File_Path) VALUES('".$service_name."', '".$description."', '".$status."', ".$price.", '".$category."','".$filepath."');";
 
+	
+	
 	if (!mysql_query($add_service,$con))
 	{
- 		die('Error: ' . mysql_error());
-		//header('Location: add-service.php');
+ 		//die('Error: ' . mysql_error());
+		header('Location: ../../services/add');
 	}
 	else{
-		header('Location: manage-services-new.php');
+		header('Location: ../../services');
 	}
 
 	mysql_close($con);
@@ -107,10 +109,10 @@ else if(isset($_POST['save-product'])) {
 	if (!mysql_query($add_product,$con))
 	{
 		// 		die('Error: ' . mysql_error());
-		header('Location: add-product.php');
+		header('Location: ../../products/add');
 	}
 	else{
-		header('Location: manage-products-new.php');
+		header('Location: ../../products');
 	}
 
 	mysql_close($con);

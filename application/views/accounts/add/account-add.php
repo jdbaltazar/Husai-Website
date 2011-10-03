@@ -4,9 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
-<link rel="stylesheet" type="text/css" href="../../../css/adminstyle.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/adminstyle.css" media="screen" />
 <!-- InstanceEndEditable -->
-<link rel="stylesheet" type="text/css" href="../../../css/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen" />
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -25,12 +25,12 @@
     	<!-- InstanceBeginEditable name="navigation" -->
     	<div id="nav">
     	  <ul>
-    	    <li><a href="../../">Home</a></li>
+    	   <li><a href="../../">Home</a></li>
 				<li><a href="../../services">Services</a></li>
 				<li><a href="../../products">Products</a></li>
 				<li><a href="../../about">About</a></li>
 				  <?php require '../../../application/views/includeaccountlinkforaddeditview.php';?>
-			</ul>
+  	      </ul>
   	    </div>
     	<!-- InstanceEndEditable -->
     	<div id = "upper-nav-border"> <img src = "../../images/purplebottom.png"> </div>

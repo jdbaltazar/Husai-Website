@@ -108,7 +108,7 @@ include '../../../application/views/upload.php';
 							  </tr>
 									<tr>
 										<td align="right">Price:</td>
-										<td><input type="text" name="service-price" id="text-field" />
+										<td><input type="text" name="service_price" id="text-field" />
 										</td>
 									</tr>
 

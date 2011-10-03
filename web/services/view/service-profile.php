@@ -36,9 +36,9 @@ mysql_close($con);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
-<link type="text/css" rel="stylesheet" href="../dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen"></LINK>
+<link type="text/css" rel="stylesheet" href="../../css/dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen"></LINK>
 
-<SCRIPT type="text/javascript" src="../dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118"></script>
+<SCRIPT type="text/javascript" src="../../js/dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118"></script>
 
 
 
@@ -114,7 +114,9 @@ else{
 				<li><a href="../../services">Services</a></li>
 				<li><a href="../../products">Products</a></li>
 				<li><a href="../../about">About</a></li>
-				  <?php require '../../../application/views/includeaccountlinkforaddeditview.php';?>
+				<li><a href="../../accounts">Accounts</a></li>
+				<li><a href="../../membership">Membership</a></li>
+				  <?php /**require '../../../application/views/includeaccountlinkforaddeditview.php';**/?>
   	      </ul>
   	    </div>
 

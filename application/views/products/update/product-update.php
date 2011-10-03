@@ -37,8 +37,8 @@ mysql_close($con);
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
 
-<link type="text/css" rel="stylesheet" href="../../css/dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen"></LINK>
-<SCRIPT type="text/javascript" src="../../js/dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118"></script>
+<link type="text/css" rel="stylesheet" href="../dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen"></LINK>
+<SCRIPT type="text/javascript" src="../dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118"></script>
 
 <script language="JavaScript"
 type="text/javascript"> 
@@ -84,9 +84,9 @@ else{
 }
 //-->
 </SCRIPT>
-<link rel="stylesheet" type="text/css" href="../../css/adminstyle.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../adminstyle.css" media="screen" />
 <!-- InstanceEndEditable -->
-<link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -95,32 +95,30 @@ else{
 
 	<div id = "wrapper">
     
-    	<div id = "header-left">  <img src = "../../images/purplelogo.jpg">  
+    	<div id = "header-left">  <img src = "../images/purplelogo.jpg">  
         	
         </div>
         
         <div id = "header-right">Husai Health & Beauty Haven</div>
     
-    	<div id = "upper-nav-border"> <img src = "../../images/purplebottom.png"> </div>
+    	<div id = "upper-nav-border"> <img src = "../images/purplebottom.png"> </div>
     	<!-- InstanceBeginEditable name="navigation" -->
     	<div id="nav">
     	  <ul>
-    	    <li><a href="../../">Home</a></li>
-				<li><a href="../../services">Services</a></li>
-				<li><a href="../../products">Products</a></li>
-				<li><a href="../../about">About</a></li>
-				  <?php //require '../../../application/views/includeaccountlinkforaddeditview.php';?>
-  	      <li><a href="../../accounts">Accounts</a></li>
-				<li><a href="../../membership">Membership</a></li>
+    	    <li><a href = "manage-home.php">Home</a></li>
+    	    <li><a href = "manage-services-new.php">Services</a></li>
+    	    <li><a href = "manage-products-new.php">Products</a></li>
+    	    <li><a href = "manage-about.php">About</a></li>
+            <li><a href = "manage-accounts.php">Accounts</a></li>
   	      </ul>
   	    </div>
     	<!-- InstanceEndEditable -->
-    	<div id = "upper-nav-border"> <img src = "../../images/purplebottom.png"> </div>
+    	<div id = "upper-nav-border"> <img src = "../images/purplebottom.png"> </div>
     <!-- InstanceBeginEditable name="content-left" -->
         <div id = "content-left-admin">
            <table id = "page-title">
             	<tr>
-                	<td> <img src = "../../images/purpletitle.png" /></td>
+                	<td> <img src = "../images/purpletitle.png" /></td>
                     <td>Product Description</td>
                 </tr>
             </table>
@@ -128,7 +126,7 @@ else{
             <div id = "service-product-pic">
             
             	<div id = "picture">
-	            	<img src = "../../images/sample.jpg">
+	            	<img src = "../images/sample.jpg">
 	            </div>
 	            <p><a href = "#">Change Image</a></p>	
 	        </div>

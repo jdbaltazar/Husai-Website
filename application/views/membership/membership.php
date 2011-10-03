@@ -131,12 +131,12 @@ mysql_close($con);
 
 
 			<?php while($row = mysql_fetch_array($husai_main_result)){?>
-				<p id="branchname"><?php echo $row["Name"]?></p>
-				<p class="italize"><?php echo $row["Address"]?></p>
-				<p class="italize"><?php echo $row["Contact_Nos"]?></p>
-				<p class="italize"><?php echo $row["Operating_Schedule"]?></p>
-				<p class="italize"><?php echo $row["Email"]?></p>
-				<p class="italize"><?php echo $row["Website"]?></p>
+				<p id="branchname"><?php echo $row["Name"];?></p>
+				<p class="italize"><?php echo $row["Address"];?></p>
+				<p class="italize"><?php echo $row["Contact_Nos"];?></p>
+				<p class="italize"><?php echo $row["Operating_Schedule"];?></p>
+				<p class="italize"><?php echo $row["Email"];?></p>
+				<p class="italize"><?php echo $row["Website"];?></p>
 				
 				
 				
@@ -145,11 +145,11 @@ mysql_close($con);
 				
 				
 				<?php while($row = mysql_fetch_array($husai_branch_result)){?>
-				p>&nbsp;</p>
-				<p id="branchname"><?php echo $row["Name"]?></p>
-				<p class="italize"><?php echo $row["Address"]?></p>
-				<p class="italize"><?php echo $row["Contact_Nos"]?></p>
-				<p class="italize"><?php echo $row["Operating_Schedule"]?></p>
+				<p>&nbsp;</p>
+				<p id="branchname"><?php echo $row["Name"];?></p>
+				<p class="italize"><?php echo $row["Address"];?></p>
+				<p class="italize"><?php echo $row["Contact_Nos"];?></p>
+				<p class="italize"><?php echo $row["Operating_Schedule"];?></p>
 				<?php }?>
 			</div>
 		</div>
