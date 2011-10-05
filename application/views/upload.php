@@ -1,17 +1,46 @@
+<?php require("../../../config/config.php"); ?>
 <?php
+
 $ok = 0;
 $image = "";
 $src="";
+
 if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 	$image = $_FILES['image']['name'];
-	$uploadedfile = $_FILES['image']['tmp_name'];
 	
+	$con = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD);
+	if (!$con)
+	{
+		die('Could not connect: ' . mysql_error());
+	}
+	
+	mysql_select_db(DB_NAME, $con);
+	
+	$query = "SELECT COUNT(File_Path) as num FROM product WHERE File_Path='$image'";
+	
+	$file_paths = mysql_fetch_array(mysql_query($query));
+	
+	$file_paths = $file_paths['num'];
+	
+	$uploadedfile = $_FILES['image']['tmp_name'];
+
 	$file_name = stripslashes($_FILES['image']['name']);
 	$extension = end(explode('.', $image));
+	$name = basename($_FILES['image']['name'], '.'.$extension);
+	$temp_name = basename($_FILES['image']['tmp_name'], '.'.$extension);
 	$extension = strtolower($extension);
-	
+
+/* 	if($extension=="jpg" || $extension=="jpeg" || $extension=="png" || $extension=="gif"){
+		if($file_paths >= 1)
+			$uploadedfile = $temp_name."_".$file_paths.".".$extension;
+		else
+			$uploadedfile = $_FILES['image']['tmp_name'];
+		
+	} */
+
 	if($extension=="jpg" || $extension=="jpeg" )
 	{
+
 		$uploadedfile = $_FILES['image']['tmp_name'];
 		$src = imagecreatefromjpeg($uploadedfile);
 	}
@@ -24,39 +53,56 @@ if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 	{
 		$src = imagecreatefromgif($uploadedfile);
 	}
-	
+
 
 	list($width,$height) = getimagesize($uploadedfile);
-	
+
 	$thumbnailwidth=150;
 	$thumbnailheight=100;
 	$tmp=imagecreatetruecolor($thumbnailwidth,$thumbnailheight);
-	
+
 	$zoomwidth=400;
 	$zoomheight=400;
 	$tmp1=imagecreatetruecolor($zoomwidth,$zoomheight);
-	
+
 	imagecopyresampled($tmp,$src,0,0,0,0,$thumbnailwidth,$thumbnailheight,
 	$width,$height);
-		
+
 	imagecopyresampled($tmp1,$src,0,0,0,0,$zoomwidth,$zoomheight,
 	$width,$height);
-	
+
+
 	if(isset($_POST['xsubmit_service'])){
-		$filename = "../upload/services/thumbnail/". $_FILES['image']['name'];
-		$filename1 = "../upload/services/full_view/". $_FILES['image']['name'];
+		if ($file_paths >= 1 ){
+			$filename = "../../upload/services/thumbnail/". $name."_".$file_paths.'.'.$extension;
+			$filename1 = "../../upload/services/full_view/". $name."_".$file_paths.'.'.$extension;
+			$image= $name."_".$file_paths.'.'.$extension;
+		}
+		else{
+			$filename = "../../upload/services/thumbnail/". $_FILES['image']['name'];
+			$filename1 = "../../upload/services/full_view/". $_FILES['image']['name'];
+		}
 	}
 	else{
-		$filename = "../upload/products/thumbnail/". $_FILES['image']['name'];
-		$filename1 = "../upload/products/full_view/". $_FILES['image']['name'];
+		if ($file_paths >= 1 ){
+			$image= $_FILES['image']['name']."_".$file_paths;
+			$filename = "../../upload/products/thumbnail/". $name."_".$file_paths.'.'.$extension;
+			$filename1 = "../../upload/products/full_view/". $name."_".$file_paths.'.'.$extension;
+			$image= $name."_".$file_paths.'.'.$extension;
+		}
+		else{
+			$filename = "../../upload/products/thumbnail/". $_FILES['image']['name'];
+			$filename1 = "../../upload/products/full_view/". $_FILES['image']['name'];
+		}
 	}
-	
-	
-	
+
+
+
+
 	if($image) {
 
-	$copied = imagejpeg($tmp,$filename,100);
-	$copied2 = imagejpeg($tmp1,$filename1,100);
+		$copied = imagejpeg($tmp,$filename,100);
+		$copied2 = imagejpeg($tmp1,$filename1,100);
 		if (!$copied && !copied2) {
 
 			$ok = 0;
@@ -64,20 +110,28 @@ if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 			$ok = 1;
 		}
 	}
-	
+
+	mysql_close($con);
 	imagedestroy($src);
 	imagedestroy($tmp);
 	imagedestroy($tmp1);
 }
 
 else if(isset($_POST['save-service'])) {
-	$con = mysql_connect("localhost","root","");
+	/* 	$con = mysql_connect("localhost","root","");
+	 if (!$con)
+	{
+	die('Could not connect: ' . mysql_error());
+	}
+
+	mysql_select_db("husai", $con); */
+	$con = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD);
 	if (!$con)
 	{
 		die('Could not connect: ' . mysql_error());
 	}
 
-	mysql_select_db("husai", $con);
+	mysql_select_db(DB_NAME, $con);
 
 	$service_name  = trim($_POST['service-name']);
 	$description = trim($_POST['service-desc']);
@@ -90,7 +144,7 @@ else if(isset($_POST['save-service'])) {
 
 	if (!mysql_query($add_service,$con))
 	{
- 		die('Error: ' . mysql_error());
+		die('Error: ' . mysql_error());
 		//header('Location: add-service.php');
 	}
 	else{
@@ -102,13 +156,20 @@ else if(isset($_POST['save-service'])) {
 }
 
 else if(isset($_POST['save-product'])) {
-	$con = mysql_connect("localhost","root","");
+	/* 	$con = mysql_connect("localhost","root","");
+	 if (!$con)
+	{
+	die('Could not connect: ' . mysql_error());
+	}
+
+	mysql_select_db("husai", $con); */
+	$con = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD);
 	if (!$con)
 	{
 		die('Could not connect: ' . mysql_error());
 	}
 
-	mysql_select_db("husai", $con);
+	mysql_select_db(DB_NAME, $con);
 
 	$product_name  = trim($_POST['product-name']);
 	$description = trim($_POST['product-desc']);
