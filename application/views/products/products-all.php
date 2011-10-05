@@ -19,6 +19,7 @@ mysql_close($con);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
+<?php include '../photo-viewer.php'?>
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../css/style.css"
 	media="screen" />
@@ -79,7 +80,7 @@ mysql_close($con);
 					}
 					if($row["File_Path"]!=null)
 					$image = $row["File_Path"];
-					echo '<td > <div> <img src = '.$image.'></div> <p><span style="font-weight:bold;">'.$row["Product_Name"].'</span> <br/> <span style="font-style:italic;">P'.$row["Price"].'<span></p> </td>';
+					echo '<td > <div> <a href="../../upload/products/full_view/'.$image.'" rel="prettyPhoto[gallery1]" title="'.$row["Description"].'"><img src = "../../upload/products/thumbnail/'.$image.'" alt="'.$row["Product_Name"].'"></a></div> <p><span style="font-weight:bold;">'.$row["Product_Name"].'</span> <br/> <span style="font-style:italic;">P'.$row["Price"].'<span></p> </td>';
 
 					if ($i%3==3) {
 						$i =0;

@@ -189,7 +189,59 @@ CREATE  TABLE IF NOT EXISTS `husai`.`Husai_Branch` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `husai`.`Member_Get`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `husai`.`Member_Get` ;
+
+CREATE  TABLE IF NOT EXISTS `husai`.`Member_Get` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `Description` VARCHAR(200) NOT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `husai`.`Member_Avail`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `husai`.`Member_Avail` ;
+
+CREATE  TABLE IF NOT EXISTS `husai`.`Member_Avail` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `Description` VARCHAR(200) NOT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+INSERT INTO ACCOUNT VALUES('admin', 'admin', 'Husai Administrator', 'Activated', ' ', ' ', '2001-01-01', 'Male', '', '', '', 'Single', '', '' );
+
+INSERT INTO MEMBER_GET(DESCRIPTION) VALUES
+('10% Discount on food at Paru-Parogn Bukid'),
+('20% Discount on their Tree House and Rest House'),
+('10% Discount on Kayaking');
+
+INSERT INTO MEMBER_AVAIL(DESCRIPTION) VALUES
+('30% Discount on Salon Services'),
+('15% Discount on Salon Products'),
+('40% Discount on other Facial and Massage Services'),
+('40% Discount on Foot Spa');
+
+INSERT INTO HUSAI(NAME, ADDRESS, CONTACT_NOS, OPERATING_SCHEDULE, EMAIL) VALUES
+('Husai Health and Beauty Haven, Inc.',
+'4th Flr. UYTINGKOC Bldg. Avenida Veteranos, 6500, Tacloban City, Philippines',
+'(053)5238415 or 09088887230',
+'Mon-Sun: (9:00am-9:00pm)',
+' ');
+
+INSERT INTO HUSAI_BRANCH(NAME, ADDRESS, CONTACT_NOS, OPERATING_SCHEDULE, VISIBILITY) VALUES
+('Carigara Branch',
+'Baybay, Real St., Carigara',
+'(053)331-1218',
+'Mon-Sun: (9:00am-8:00pm)',
+'Visible ');

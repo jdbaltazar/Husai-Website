@@ -1,7 +1,8 @@
 <?php
 $ok = 0;
 $image = "";
-if(isset($_POST['xsubmit'])) {
+$src="";
+if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 	$image = $_FILES['image']['name'];
 	$uploadedfile = $_FILES['image']['tmp_name'];
 	
@@ -27,23 +28,36 @@ if(isset($_POST['xsubmit'])) {
 
 	list($width,$height) = getimagesize($uploadedfile);
 	
-	$newwidth=150;
-	//$newheight=($height/$width)*$newwidth;
-	$newheight=100;
-	$tmp=imagecreatetruecolor($newwidth,$newheight);
+	$thumbnailwidth=150;
+	$thumbnailheight=100;
+	$tmp=imagecreatetruecolor($thumbnailwidth,$thumbnailheight);
 	
+	$zoomwidth=400;
+	$zoomheight=400;
+	$tmp1=imagecreatetruecolor($zoomwidth,$zoomheight);
 	
-	imagecopyresampled($tmp,$src,0,0,0,0,$newwidth,$newheight,
+	imagecopyresampled($tmp,$src,0,0,0,0,$thumbnailwidth,$thumbnailheight,
+	$width,$height);
+		
+	imagecopyresampled($tmp1,$src,0,0,0,0,$zoomwidth,$zoomheight,
 	$width,$height);
 	
-	$filename = "../../upload/". $_FILES['image']['name'];
+	if(isset($_POST['xsubmit_service'])){
+		$filename = "../upload/services/thumbnail/". $_FILES['image']['name'];
+		$filename1 = "../upload/services/full_view/". $_FILES['image']['name'];
+	}
+	else{
+		$filename = "../upload/products/thumbnail/". $_FILES['image']['name'];
+		$filename1 = "../upload/products/full_view/". $_FILES['image']['name'];
+	}
 	
 	
 	
 	if($image) {
 
 	$copied = imagejpeg($tmp,$filename,100);
-		if (!$copied) {
+	$copied2 = imagejpeg($tmp1,$filename1,100);
+		if (!$copied && !copied2) {
 
 			$ok = 0;
 		} else {
@@ -52,7 +66,8 @@ if(isset($_POST['xsubmit'])) {
 	}
 	
 	imagedestroy($src);
-	imagedestroy($tmp);	
+	imagedestroy($tmp);
+	imagedestroy($tmp1);
 }
 
 else if(isset($_POST['save-service'])) {
@@ -67,18 +82,16 @@ else if(isset($_POST['save-service'])) {
 	$service_name  = trim($_POST['service-name']);
 	$description = trim($_POST['service-desc']);
 	$status = trim($_POST['service-status']);
-	$price = trim($_POST['service_price']);
+	$price = trim($_POST['service-price']);
 	$category = trim($_POST['service-category']);
 	$filepath = trim($_POST['filepath']);
 
 	$add_service = "insert into service(Service_Name, Description, Status, Charge, Category, File_Path) VALUES('".$service_name."', '".$description."', '".$status."', ".$price.", '".$category."','".$filepath."');";
 
-	
-	
 	if (!mysql_query($add_service,$con))
 	{
- 		//die('Error: ' . mysql_error());
-		header('Location: ../../services/add');
+ 		die('Error: ' . mysql_error());
+		//header('Location: add-service.php');
 	}
 	else{
 		header('Location: ../../services');
@@ -109,7 +122,7 @@ else if(isset($_POST['save-product'])) {
 	if (!mysql_query($add_product,$con))
 	{
 		// 		die('Error: ' . mysql_error());
-		header('Location: ../../products/add');
+		header('Location: add-product.php');
 	}
 	else{
 		header('Location: ../../products');

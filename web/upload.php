@@ -43,20 +43,20 @@ if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 	$width,$height);
 	
 	if(isset($_POST['xsubmit_service'])){
-		$filename = "../upload/services/thumbnail/". $_FILES['image']['name'];
-		$filename1 = "../upload/services/full_view/". $_FILES['image']['name'];
+//		$filename = "upload/services/thumbnail/". $_FILES['image']['name'];
+//		$filename1 = "upload/services/full_view/". $_FILES['image']['name'];
 	}
 	else{
-		$filename = "../upload/products/thumbnail/". $_FILES['image']['name'];
-		$filename1 = "../upload/products/full_view/". $_FILES['image']['name'];
+		$filename = "upload/products/thumbnail/". $_FILES['image']['name'];
+		$filename1 = "upload/products/full_view/". $_FILES['image']['name'];
 	}
 	
 	
 	
 	if($image) {
 
-	$copied = imagejpeg($tmp,$filename,100);
-	$copied2 = imagejpeg($tmp1,$filename1,100);
+	//$copied = imagejpeg($tmp,$filename,100);
+	//$copied2 = imagejpeg($tmp1,$filename1,100);
 		if (!$copied && !copied2) {
 
 			$ok = 0;
@@ -65,8 +65,9 @@ if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 		}
 	}
 	
-	imagedestroy($src);
-	imagedestroy($tmp);	
+	//imagedestroy($src);
+	//imagedestroy($tmp);
+	//imagedestroy($tmp1);
 }
 
 else if(isset($_POST['save-service'])) {
@@ -93,6 +94,16 @@ else if(isset($_POST['save-service'])) {
 		//header('Location: add-service.php');
 	}
 	else{
+		$filename = "upload/services/thumbnail/". $_FILES['image']['name'];
+		$filename1 = "upload/services/full_view/". $_FILES['image']['name'];
+		
+		$copied = imagejpeg($tmp,$filename,100);
+		$copied2 = imagejpeg($tmp1,$filename1,100);
+		
+		imagedestroy($src);
+		imagedestroy($tmp);
+		imagedestroy($tmp1);
+		
 		header('Location: manage-services-new.php');
 	}
 

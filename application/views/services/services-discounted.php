@@ -17,6 +17,7 @@ mysql_close($con);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
+<?php include '../photo-viewer.php'?>
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
 <!-- InstanceBeginEditable name="head" -->
@@ -71,7 +72,8 @@ mysql_close($con);
 					}
 					if($row["File_Path"]!=null)
 					 $image = $row["File_Path"];
-					echo '<td > <div> <img src = '.$image.'></div> <p><span style="font-weight:bold;">'.$row["Service_Name"].'</span> <br/> <span style="font-style:italic;">P'.$row["Charge"].'('.$row["Discount"].'% off)<span></p> </td>';
+					
+					echo '<td > <div> <a href="../../upload/services/full_view/'.$image.'" rel="prettyPhoto[gallery1]" title="'.$row["Description"].'"><img src = "../../upload/services/thumbnail/'.$image.'" alt="'.$row["Service_Name"].'"></a></div> <p><span style="font-weight:bold;">'.$row["Service_Name"].'</span> <br/> <span style="font-style:italic;">P'.$row["Charge"].'('.$row["Discount"].'% off)<span></p> </td>';
 
 					if ($i%3==3) {
 						$i =0;

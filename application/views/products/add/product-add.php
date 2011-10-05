@@ -120,7 +120,7 @@ include '../../../application/views/upload.php';
 									<td align="right">&nbsp;</td>
 									<td>
 									  <input type="file" name="image" id="image" />
-									  <input type="submit" name="xsubmit" value="Upload"
+									  <input type="submit" name="xsubmit_product" value="Upload"
 										id="upload" /></td>
 									<td align="left">&nbsp;</td>
 								</tr>
