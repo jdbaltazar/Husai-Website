@@ -10,7 +10,7 @@ if (!$con)
 mysql_select_db(DB_NAME, $con);
 
 if(!isset($query))
-$query = "select Name, Username, Status from account WHERE Username!='".$_SESSION['session_user']."'";
+$query = "select Name, Username, Status from account WHERE Type='Husai Customer'";
 if(!isset($account_searchfield))
 $account_searchfield = "";
 
@@ -121,7 +121,7 @@ mysql_close($con);
 			<p id="header-customer">Customers Accounts</p>
 
 
-			<table id="customer-table" cellspacing="0">
+			<table id="account_header" cellspacing="0">
 				<th width="187">Customer Name</th>
 				<th width="135">User ID</th>
 				<th width="75">Status</th>
@@ -130,7 +130,7 @@ mysql_close($con);
             <?php
         	$i = 0;
 			while($row = mysql_fetch_array($result)){
-				echo '<a href="../accounts/index.php?id='.$row[0].'">';
+				echo '<a href="../accounts/index.php?id='.$row['Username'].'">';
                 echo '<div>';
                 echo '<table id = "customer-table" cellspacing="0">';				
 				echo '<tr ';

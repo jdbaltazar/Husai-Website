@@ -63,11 +63,11 @@ mysql_close($con);
     	<div id = "upper-nav-border"> <img src = "../images/purplebottom.png"> </div>
     <!-- InstanceBeginEditable name="content-left" -->
         <div id = "content-left-admin">
-        	<table width="929" id = "page-title">
+        	<table width="929" cellspacing="7" id = "page-title">
             	<tr>
                 	<td width="38"> <img src = "../images/purpletitle.png" /></td>
                     <td width="822">Products Bought &raquo; <?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'.$_GET['name']?></td>
-                    <td width="119" id = "viewSP"><?php echo '<a href="../services-availed/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Services Availed</a></td>
+                    <td width="134" id = "viewSP"><?php echo '<a href="../services-availed/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Services Availed</a></td>
                     <td width="134" id = "viewSP"><?php echo '<a href="../products-bought/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Products Bought</a></td>
                 </tr>
             </table>
@@ -78,7 +78,7 @@ mysql_close($con);
              <table width="546" cellspacing="15">
                <tr>
                  <td width="158" align="right">Date Bought:</td>                    
-                 <td width="337"><input id = "input-from" type="text" value="2011/09/09" readonly name="date-availed" style = "width:80px"><span style = "margin-left:15px; "><input type="button" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
+                 <td width="337"><input id = "input-from" type="text" value="2011/09/09" readonly name="date-availed" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
                  </tr>
                <tr>
                  <td align="right">Product:</td>
@@ -93,7 +93,7 @@ mysql_close($con);
                  </tr>
                <tr>
                  <td align="right">Quantity:</td>
-                 <td><input type="hidden" name="username" value="<?php echo $_GET['id'];?>"/><input type="hidden" name="id" value="<?php echo $_GET['name'];?>"/><input name = "quantity" type="text" id = "add-avail-input" size="10" maxlength="11"/></td>
+                 <td><input type="hidden" name="username" value="<?php echo $_GET['id'];?>"/><input type="hidden" name="name" value="<?php echo $_GET['name'];?>"/><input name = "quantity" type="text" id = "add-avail-input" size="10" maxlength="11"/></td>
                  </tr>
                <tr>
                  <td align="right">Remarks</td>

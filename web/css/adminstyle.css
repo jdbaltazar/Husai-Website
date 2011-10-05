@@ -76,6 +76,10 @@
 	color:#FFF
 }
 
+#services-list:hover{
+	border: thin #999 dashed;	
+}
+
 #table_header	{
 	border:1px #CCC solid; 
 	margin:0px 40px;
@@ -335,6 +339,7 @@
 	border: thin #999 solid;
 	text-align:center;	
 }
+
 #customer-table tr td{
 	text-align:center;
 	border: thin #999 solid;	
@@ -345,9 +350,37 @@
 	background-color:#936;	
 }
 
+#customer-table:hover{
+	border: thin #999 dashed;	
+}
+
 #customer-table tr{
 	height:25px;	
 }
+
+#account_header{
+	margin-left:80px;
+	border:1px #CCC solid;
+	width:780px;
+	text-align:center;
+	font-size:15px;
+	font-family: Arial;
+	
+}
+
+#account_header th{
+	border: thin #999 solid;
+	text-align:center;	
+}
+#account_header tr td{
+	text-align:center;
+	border: thin #999 solid;	
+}
+
+#account_header tr{
+	height:25px;	
+}
+
 
 #add-customer a	{
 	margin-left:75px;

@@ -67,19 +67,17 @@ mysql_close($con);
     	<div id = "upper-nav-border"> <img src = "../images/purplebottom.png"> </div>
     <!-- InstanceBeginEditable name="content-left" -->
         <div id = "content-left-admin">
-       	  <table width="929" id = "page-title">
+       	  <table width="929" cellspacing="7" id = "page-title">
             	<tr>
                 	<td width="39"> <img src = "../images/purpletitle.png" /></td>
                     <td width="821">Services Availed &raquo; <?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'.$_GET['name']?></td>
                     
-                    <td width="119" id = "viewSP"><?php echo '<a href="../services-availed/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Services Availed</a></td>
+                    <td width="134" id = "viewSP"><?php echo '<a href="../services-availed/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Services Availed</a></td>
                     <td width="134" id = "viewSP"><?php echo '<a href="../products-bought/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Products Bought</a></td>
                 </tr>
             </table>
    		 <p>&nbsp;</p>
-         
-   		 <p>&nbsp;</p>
-         <p id ="add-availed-header">Add Availed Service</p>
+   		 <p id ="add-availed-header">Add Availed Service</p>
          <form action="../save-availed-service.php" method="post">
              <div id = "add-availed-div">
                <table width="546" cellspacing="15">

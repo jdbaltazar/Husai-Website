@@ -67,8 +67,8 @@
 						<p>Account Type</p>
 						<p class = "til">
 							<select name="type" class="required" id="adminstatus">
-								<option value="Husai Administrator">Husai Customer</option>
-								<option value="Husai Customer">Husai Administrator</option>
+								<option value="Husai Customer">Husai Customer</option>
+								<option value="Husai Administrator">Husai Administrator</option>
 							</select> <br />
 						</p>
 						<p>Account Status</p>
