@@ -8,7 +8,14 @@ if (!$con)
 
 mysql_select_db(DB_NAME, $con);
 
-$result = mysql_query("SELECT * FROM service ORDER BY Service_Name");
+if(!isset($query))
+	$query = "SELECT * FROM service ORDER BY Service_Name";
+$result = mysql_query("".$query);
+
+if(!isset($service_searchfield))
+	$service_searchfield = "";
+if(!isset($service_search_cat))
+	$service_search_cat = "";
 
 mysql_close($con);
 ?>
@@ -92,21 +99,52 @@ else
 			</table>
 			<p>&nbsp;</p>
 
-			<table width="450" id="service-search" cellspacing="10">
-				<tr>
-					<td width="251"><input type="text" name="searchfield"
-						id="service-product-searchfield" /></td>
-					<td width="97"><select name="service-cat" id="service-cat">
-							<option name="">All</option>
-							<option name="">Face</option>
-							<option name="">Body</option>
-							<option name="">Hair</option>
-					</select>
-					</td>
-					<td width="304"><input type="submit" value="Search" id="search-but" />
-					</td>
-				</tr>
-			</table>
+			<form action="search.php" method="post">
+				<table width="450" id="service-search" cellspacing="10">
+					<tr>
+						<td width="251"><input type="text" name="service_searchfield"
+							id="service-product-searchfield"
+							value="<?php echo $service_searchfield; ?>" /></td>
+						<td width="97"><select name="service_search_cat" id="service-cat">
+								<option name=""
+									
+									
+									
+								<?php if($service_search_cat=='All'){ echo 'selected="selected"'; }?>>All</option>
+								<option name=""
+									
+									
+									
+								<?php if($service_search_cat=='Category'){ echo 'selected="selected"'; }?>>Category</option>
+								<option name=""
+									
+									
+									
+								<?php if($service_search_cat=='Service'){ echo 'selected="selected"'; }?>>Service</option>
+								<option name=""
+									
+									
+									
+								<?php if($service_search_cat=='Status'){ echo 'selected="selected"'; }?>>Status</option>
+								<option name=""
+									
+									
+									
+								<?php if($service_search_cat=='Discounted'){ echo 'selected="selected"'; }?>>Discounted</option>
+								<option name=""
+									
+									
+									
+								<?php if($service_search_cat=='Regular Price'){ echo 'selected="selected"'; }?>>Regular
+									Price</option>
+						</select>
+						</td>
+						<td width="304"><input type="submit" value="Search"
+							id="search-but" />
+						</td>
+					</tr>
+				</table>
+			</form>
 
 			<div id="add-service">
 				<a href="../services/add">Add Service</a>
@@ -115,29 +153,34 @@ else
 
 			<br><br>
 					<p id="header-servicelist">List of Services</p>
-					<form method="" action="#">
-						<table width="850" id="services-list" cellspacing="0">
-							<!--  <th width="62"><input type="checkbox" name="allbox"
+					<table width="850" id="services-list" cellspacing="0">
+				<!--  <th width="62"><input type="checkbox" name="allbox"
 								onClick="checkAll(this.form)" /></th> -->
-							<th width="112">Category</th>
-							<th width="295">Name of Service</th>
-							<th width="121">Status</th>
+				<th width="112">Category</th>
+				<th width="295">Name of Service</th>
+				<th width="121">Status</th>
 
-							<?php
-
-					while($row = mysql_fetch_array($result)){
-						echo "<tr>";
-						//echo "<td><input type=\"checkbox\" /></td>";
-						echo "<td>".$row["Category"]."</td>";
-						echo "<td><a href = \"../services/view/service-profile.php?id=".$row[0]."\">".$row["Service_Name"]."</a></td>";
-						echo "<td>".$row["Status"]."</td>";
-						echo "</tr>";
-					}
-
-					?>
-
-						</table>
-					</form>
+			</table>
+			
+			
+			
+			
+				
+				
+			<?php
+			while($row = mysql_fetch_array($result)){
+				echo '<a href ="../services/view/service-profile.php?id='.$row[0].'">';
+				echo '<div>';
+				echo '<table width="850" id="services-list" cellspacing="0">';
+				echo "<tr>";
+				echo "<td  width=\"112\">".$row["Category"]."</td>";
+				echo "<td width=\"295\">".$row["Service_Name"]."</a></td>";
+				echo "<td width=\"121\">".$row["Status"]."</td>";
+				echo "</tr>";
+				echo '</table>';
+				echo '</div> </a>';
+			}
+			?>
 		
 		</div>
 		<!-- InstanceEndEditable -->

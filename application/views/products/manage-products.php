@@ -8,7 +8,9 @@ if (!$con)
 
 mysql_select_db(DB_NAME, $con);
 
-$result = mysql_query("SELECT * FROM product ORDER BY Product_Name");
+if(!isset($query))
+	$query = "SELECT * FROM product ORDER BY Product_Name";
+$result = mysql_query("".$query);
 
 mysql_close($con);
 ?>
@@ -85,22 +87,27 @@ mysql_close($con);
 				</tr>
 			</table>
 			<p>&nbsp;</p>
-			<table width="450" id="service-search" cellspacing="10">
-				<tr>
+			<form action="search.php" method="post">
+				<table width="450" id="service-search" cellspacing="10">
+					<tr>
 
-					<td width="251"><input type="text" name="searchfield"
-						id="service-product-searchfield" /></td>
-					<td width="97"><select name="service-cat" id="service-cat">
-							<option name="">All</option>
-							<option name="">Face</option>
-							<option name="">Body</option>
-							<option name="">Hair</option>
-					</select>
-					</td>
-					<td width="304"><input type="submit" value="Search" id="search-but" />
-					</td>
-				</tr>
-			</table>
+						<td width="251"><input type="text" name="product_searchfield"
+							id="service-product-searchfield" /></td>
+						<td width="97"><select name="product_search_cat" id="service-cat">
+								<option name="">All</option>
+								<option name="">Category</option>
+								<option name="">Product</option>
+								<option name="">Status</option>
+								<option name="">Discounted</option>
+								<option name="">Regular Price</option>
+						</select>
+						</td>
+						<td width="304"><input type="submit" value="Search"
+							id="search-but" />
+						</td>
+					</tr>
+				</table>
+			</form>
 
 			<div id="add-service">
 				<a href="../products/add">Add Product</a>
@@ -110,12 +117,13 @@ mysql_close($con);
 
 			<br> <br>
 					<p id="header-servicelist">List of Products</p>
-					<form>
-						<table width="850" id="services-list" cellspacing="0">
-							<!--  <th width="62"><input type="checkbox" /></th> -->
+					<table width="850" id="services-list" cellspacing="0">
 							<th width="112" id="services-list2">Category</th>
 							<th width="295" id="services-list2">Name of Product</th>
 							<th width="121" id="services-list2">Status</th>
+							</table>
+							
+							
 							
 							
 							
@@ -124,19 +132,19 @@ mysql_close($con);
 					<?php
 
 					while($row = mysql_fetch_array($result)){
+						echo "<a href = \"../products/view/product-profile.php?id=".$row[0]."\">";
+						echo '<div>';
+						echo '<table width="850" id="services-list" cellspacing="0">';
 						echo "<tr>";
-						//echo "<td><input type=\"checkbox\" /></td>";
-						echo "<td>".$row["Category"]."</td>";
-						echo "<td><a href = \"../products/view/product-profile.php?id=".$row[0]."\">".$row["Product_Name"]."</a></td>";
-						echo "<td>".$row["Status"]."</td>";
+						echo "<td width=\"112\" >".$row["Category"]."</td>";
+						echo "<td width=\"295\" >".$row["Product_Name"]."</a></td>";
+						echo "<td width=\"121\" >".$row["Status"]."</td>";
 						echo "</tr>";
+						echo '</table>';
+						echo '</div> </a>';
 					}
 
 					?>
-							
-					
-
-				</table>
 		
 		</div>
 		<!-- InstanceEndEditable -->

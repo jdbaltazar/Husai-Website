@@ -66,8 +66,9 @@ mysql_close($con);
         	<table width="929" id = "page-title">
             	<tr>
                 	<td width="38"> <img src = "../images/purpletitle.png" /></td>
-                    <td width="822">Products Bought &raquo; <?php echo $_GET['name']?></td>
-                    <td width="53" id = "viewSP"><?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'?>Back</a></td>
+                    <td width="822">Products Bought &raquo; <?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'.$_GET['name']?></td>
+                    <td width="119" id = "viewSP"><?php echo '<a href="../services-availed/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Services Availed</a></td>
+                    <td width="134" id = "viewSP"><?php echo '<a href="../products-bought/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Products Bought</a></td>
                 </tr>
             </table>
             <p>&nbsp;</p>
