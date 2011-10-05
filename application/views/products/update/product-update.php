@@ -14,15 +14,17 @@ $price="";
 $status="";
 $discounted="";
 $discount="";
+$file_path = "";
 
 $product_id = $_GET['id'];
-$results = mysql_query("SELECT Product_Name, Description, Price, Status, Discounted, Discount FROM product WHERE id = $product_id");
+$results = mysql_query("SELECT Product_Name, Description, Price, Status, File_Path, Discounted, Discount FROM product WHERE id = $product_id");
 
 while($row = mysql_fetch_array($results)){
 	$product_name = $row['Product_Name'];
 	$description = $row['Description'];
 	$price = $row['Price'];
 	$status = $row['Status'];
+	$file_path = $row['File_Path'];
 	$discounted = $row['Discounted'];
 	$discount=$row['Discount'];
 }
@@ -126,7 +128,7 @@ else{
             <div id = "service-product-pic">
             
             	<div id = "picture">
-	            	<img src = "../images/sample.jpg">
+	            	<img src = "../../upload/products/thumbnail/<?php echo $file_path;?>">
 	            </div>
 	            <p><a href = "#">Change Image</a></p>	
 	        </div>

@@ -59,26 +59,7 @@ mysql_close($con);
 				<li><a href="../services">Services</a></li>
 				<li><a href="../products">Products</a></li>
 				<li><a href="../about">About</a></li>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+								
 				  <?php require '../../application/views/includelinks.php';?>
   	      </ul>
 		</div>
@@ -127,18 +108,11 @@ mysql_close($con);
 
 			<br> <br>
 					<p id="header-servicelist">List of Products</p>
-						<table width="850" id="services-list" cellspacing="0">
+						<table width="850" id="table_header" cellspacing="0">
 							<th width="112" id="services-list2">Category</th>
 							<th width="295" id="services-list2">Name of Product</th>
 							<th width="121" id="services-list2">Status</th>
-							</table>
-							
-							
-							
-							
-							
-							
-							
+							</table>			
 					<?php
 
 					while($row = mysql_fetch_array($result)){
@@ -155,11 +129,6 @@ mysql_close($con);
 					}
 
 					?>
-							
-					
-
-				
-		
 		</div>
 		<!-- InstanceEndEditable -->
 		<!-- InstanceBeginEditable name="content-right" -->

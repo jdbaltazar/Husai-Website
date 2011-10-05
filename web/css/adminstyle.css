@@ -76,6 +76,27 @@
 	color:#FFF
 }
 
+#table_header	{
+	border:1px #CCC solid; 
+	margin:0px 40px;
+	font-size:15px;
+	font-family: Arial;
+}
+
+#table_header th{
+	border: thin #999 solid;
+	text-align:center;	
+}
+#table_header tr td{
+	text-align:center;
+	border: thin #999 solid;	
+}
+
+#table_header tr{
+	height:25px;	
+}
+
+
 #add-service{
 	margin-left:40px;
 	font-size:18px;

@@ -153,7 +153,7 @@ else
 
 			<br><br>
 					<p id="header-servicelist">List of Services</p>
-					<table width="850" id="services-list" cellspacing="0">
+					<table width="850" id="table_header" cellspacing="0">
 				<!--  <th width="62"><input type="checkbox" name="allbox"
 								onClick="checkAll(this.form)" /></th> -->
 				<th width="112">Category</th>

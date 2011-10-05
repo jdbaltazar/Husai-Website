@@ -13,6 +13,7 @@ $id = $_POST['id'];
 $product_name  = trim($_POST['product-name']);
 $description = trim($_POST['product-description']);
 $status = trim($_POST['product-status']);
+$file_path = trim($_POST['filepath']);
 $price = trim($_POST['product-price']);
 $promo = trim($_POST['promo']);
 $promo_from = trim($_POST['fromDate']);
@@ -26,11 +27,11 @@ $discounted = false;
 
 if($discounted == true){
 	$discount = trim($_POST['percentdiscount']);
-	$update_product = "update product set Product_Name='$product_name', Description='$description', Price='$price', Status='$status', Discounted=$discounted, Discount_From='$promo_from',
+	$update_product = "update product set Product_Name='$product_name', Description='$description', Price='$price', Status='$status', File_Path='$file_path', Discounted=$discounted, Discount_From='$promo_from',
 			Discount_To='$promo_to', Discount='$discount' WHERE id=$id";
 }
 else
-$update_product = "update product set Product_Name='$product_name', Description='$description', Price='$price', Status='$status' , Discounted=false, Discount_From=NULL,
+$update_product = "update product set Product_Name='$product_name', Description='$description', Price='$price', Status='$status', File_Path='$file_path' , Discounted=false, Discount_From=NULL,
 			Discount_To=NULL, Discount=NULL WHERE id=$id";
 
 if (!mysql_query($update_product,$con))

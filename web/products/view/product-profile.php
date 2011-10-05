@@ -1,4 +1,7 @@
 <?php
+include '../../../application/views/upload.php';
+?>
+<?php
 //include 'connect.php';
 $con = mysql_connect("localhost","root","");
 if (!$con)
@@ -8,23 +11,35 @@ if (!$con)
 
 mysql_select_db("husai", $con);
 
+$directory="../../upload/products/thumbnail/";
 $product_name="";
 $description="";
 $price="";
 $status="";
 $discounted="";
 $discount="";
+$file_path = "";
+$promo_from = "";
+$promo_to = "";
 
 $product_id = $_GET['id'];
-$results = mysql_query("SELECT Product_Name, Description, Price, Status, Discounted, Discount FROM product WHERE id = $product_id");
+$results = mysql_query("SELECT * FROM product WHERE id = $product_id");
 
 while($row = mysql_fetch_array($results)){
 	$product_name = $row['Product_Name'];
 	$description = $row['Description'];
 	$price = $row['Price'];
 	$status = $row['Status'];
+	$file_path = $row['File_Path'];
 	$discounted = $row['Discounted'];
+	$promo_from = $row['Discount_From'];
+	$promo_to = $row['Discount_To'];
 	$discount=$row['Discount'];
+	
+}
+
+if($file_path == ""){
+	$file_path = "default_pic.jpg";
 }
 
 mysql_close($con);
@@ -37,8 +52,9 @@ mysql_close($con);
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
 
-<link type="text/css" rel="stylesheet" href="../../css/dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen"></LINK>
-<SCRIPT type="text/javascript" src="../../js/dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118"></script>
+<link type="text/css" rel="stylesheet" href="../../css/dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen" />
+<script type="text/javascript" src="../../js/dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118">
+</script>
 
 <script language="JavaScript"
 type="text/javascript"> 
@@ -49,41 +65,12 @@ function findselected() {
 	      document.myform.calendar2.disabled=true;
 	      document.myform.percentdiscount.disabled=true;
 	   } else {
-		   document.myform.calendar1.disabled=false;
+		   	  document.myform.calendar1.disabled=false;
 		      document.myform.calendar2.disabled=false;
 		      document.myform.percentdiscount.disabled=false;
 	   }
 	} 
-
-function enableFields(form){
-	
-
-if(form.service.checked)
-   {
-  		form.desc1.disabled = false;
-		form.period1.disabled = false;
-   }
-else{
-		form.desc1.disabled = true;
-		form.period1.disabled = true;
-		form.elements["desc1"].value = '';
-		form.elements["period1"].value = '';
-
-
-}
-if(form.service2.checked){
-		form.desc2.disabled = false;
-		form.period2.disabled = false;
-	}  
-else{
-		form.desc2.disabled = true;
-		form.period2.disabled = true;
-		form.elements["desc2"].value = '';
-		form.elements["period2"].value = '';
-} 
-}
-//-->
-</SCRIPT>
+</script>
 <link rel="stylesheet" type="text/css" href="../../css/adminstyle.css" media="screen" />
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen" />
@@ -95,7 +82,7 @@ else{
 
 	<div id = "wrapper">
     
-    	<div id = "header-left">  <img src = "../../images/purplelogo.jpg">  
+    	<div id = "header-left">  <img src = "../../images/purplelogo.jpg" />  
         	
         </div>
         
@@ -115,7 +102,7 @@ else{
   	      </ul>
   	    </div>
     	<!-- InstanceEndEditable -->
-    	<div id = "upper-nav-border"> <img src = "../../images/purplebottom.png"> </div>
+    	<div id = "upper-nav-border"> <img src = "../../images/purplebottom.png" /> </div>
     <!-- InstanceBeginEditable name="content-left" -->
         <div id = "content-left-admin">
            <table id = "page-title">
@@ -126,11 +113,13 @@ else{
             </table>
             <p>&nbsp;</p>
             <div id = "service-product-pic">
-            
+            <form name="imgUpload" action="" method="post" enctype="multipart/form-data">
             	<div id = "picture">
-	            	<img src = "../../images/sample.jpg">
+	            	<img src = "<?php if($filename==""){echo $directory.$file_path;} else{echo $filename;}?>" />
 	            </div>
-	            <p><a href = "#">Change Image</a></p>	
+	            <p><input type="file" name="image" id="image" /></p>
+				<p><br /><input type="submit" name="xsubmit_product" value="Upload" id="upload" /></p>
+			</form>		
 	        </div>
 	        
              <div id = "service-desc">
@@ -143,7 +132,7 @@ else{
 	                    </tr>
 	                    <tr>
 	                        <td align="right" >Description:</td>
-	                        <td><input type = "text"  value="<?php echo $description; ?>" name = "product-description" id = "s1"></td>
+	                        <td><input name="filepath" type="hidden" id="text-field" readonly="readonly" <?php if($ok==1){ ?>value="<?php echo $image; ?>"<?php }?>  /><input type = "text"  value="<?php echo $description; ?>" name = "product-description" id = "s1" /></td>
 	                    </tr>
 	                    <tr>
 	                        <td align="right" id =>Status:</td>
@@ -187,12 +176,12 @@ else{
 	                    <tr>
 	                    	
 	                    	<td align="right">From:</td>
-	                    	<td><input id = "input-from"type="text" value="2011/09/09" readonly name="fromDate" style = "width:80px"><span style = "margin-left:15px; "><input type="button" name="calendar1" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
+	                    	<td><input id = "input-from"type="text" value="<?php echo $promo_from?>" readonly="readonly" name="fromDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar1" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
 	                        
 	                    </tr>
 	                    <tr>
 	                    	<td align="right">To:</td>
-	                    	<td><input id = "input-from"type="text" value="2011/09/09" readonly name="toDate" style = "width:80px"><span style = "margin-left:15px; "><input type="button" name="calendar2" onclick="displayCalendar(document.forms[0].toDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
+	                    	<td><input id = "input-from"type="text" value="<?php echo $promo_to?>" readonly="readonly" name="toDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar2" onclick="displayCalendar(document.forms[0].toDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
 	                        
 	                    </tr>
 	                    <tr>

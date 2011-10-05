@@ -16,15 +16,16 @@ mysql_select_db(DB_NAME, $con);
 $ok = 0;
 $image = "";
 $src="";
+$filename="";
 
 if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 	$image = $_FILES['image']['name'];
 	
-/* 	$query = "SELECT COUNT(File_Path) as num FROM product WHERE File_Path='$image'";
+ 	$query = "SELECT COUNT(File_Path) as num FROM product WHERE File_Path='$image'";
 	
 	$file_paths = mysql_fetch_array(mysql_query($query));
 	
-	$file_paths = $file_paths['num']; */
+	$file_paths = $file_paths['num'];
 	
 	$uploadedfile = $_FILES['image']['tmp_name'];
 
@@ -69,31 +70,28 @@ if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 
 
 	if(isset($_POST['xsubmit_service'])){
-//		if ($file_paths >= 1 ){
-//			$filename = "../../upload/services/thumbnail/". $name."_".$file_paths.'.'.$extension;
-//			$filename1 = "../../upload/services/full_view/". $name."_".$file_paths.'.'.$extension;
-//			$image= $name."_".$file_paths.'.'.$extension;
-//		}
-//		else{
+		if ($file_paths >= 1 ){
+			$filename = "../../upload/services/thumbnail/". $name."_".$file_paths.'.'.$extension;
+			$filename1 = "../../upload/services/full_view/". $name."_".$file_paths.'.'.$extension;
+			$image= $name."_".$file_paths.'.'.$extension;
+		}
+		else{
 			$filename = "../../upload/services/thumbnail/". $_FILES['image']['name'];
 			$filename1 = "../../upload/services/full_view/". $_FILES['image']['name'];
-//		}
+		}
 	}
 	else{
-//		if ($file_paths >= 1 ){
-//			$image= $_FILES['image']['name']."_".$file_paths;
-//			$filename = "../../upload/products/thumbnail/". $name."_".$file_paths.'.'.$extension;
-//			$filename1 = "../../upload/products/full_view/". $name."_".$file_paths.'.'.$extension;
-//			$image= $name."_".$file_paths.'.'.$extension;
-//		}
-//		else{
+		if ($file_paths >= 1 ){
+			$image= $_FILES['image']['name']."_".$file_paths;
+			$filename = "../../upload/products/thumbnail/". $name."_".$file_paths.'.'.$extension;
+			$filename1 = "../../upload/products/full_view/". $name."_".$file_paths.'.'.$extension;
+			$image= $name."_".$file_paths.'.'.$extension;
+		}
+		else{
 			$filename = "../../upload/products/thumbnail/". $_FILES['image']['name'];
 			$filename1 = "../../upload/products/full_view/". $_FILES['image']['name'];
-//		}
+		}
 	}
-
-
-
 
 	if($image) {
 
@@ -130,6 +128,33 @@ else if(isset($_POST['save-service'])) {
 	}
 	else{
 		header('Location: ../../services');
+	}
+
+	mysql_close($con);
+
+}
+
+else if(isset($_POST['save-product'])) {
+	$product_name  = trim($_POST['product-name']);
+	$description = trim($_POST['product-desc']);
+	$status = trim($_POST['product-status']);
+	$price = trim($_POST['product-price']);
+	$category = trim($_POST['product-category']);
+	$filepath = trim($_POST['filepath']);
+
+	if($filepath == ''){
+		
+	}
+	$add_product = "insert into product(Product_Name, Description, Price, Status, Category, File_Path) VALUES('".$product_name."', '".$description."', ".$price.",'".$status."', '".$category."','".$filepath."');";
+
+	
+	if (!mysql_query($add_product,$con))
+	{
+		// 		die('Error: ' . mysql_error());
+		header('Location: add-product.php');
+	}
+	else{
+		header('Location: ../../products');
 	}
 
 	mysql_close($con);
