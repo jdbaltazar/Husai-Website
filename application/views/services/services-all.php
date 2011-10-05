@@ -80,7 +80,9 @@ mysql_close($con);
 					}
 					if($row["File_Path"]!=null)
 					$image = $row["File_Path"];
-					echo '<td > <div> <a href="../../upload/services/full_view/'.$image.'" rel="prettyPhoto[gallery1]" title="'.$row["Description"].'"><img src = "../../upload/services/thumbnail/'.$image.'" alt="'.$row["Service_Name"].'"></a></div> <p><span style="font-weight:bold;">'.$row["Service_Name"].'</span> <br/> <span style="font-style:italic;">P'.$row["Charge"].'<span></p> </td>';
+					else
+					$image = "default_pic.jpg";
+					echo '<td > <div> <a href="../../upload/services/full_view/'.$image.'" rel="prettyPhoto" title="'.$row["Description"].'"><img src = "../../upload/services/thumbnail/'.$image.'" alt="'.$row["Service_Name"].'"></a></div> <p><span style="font-weight:bold;">'.$row["Service_Name"].'</span> <br/> <span style="font-style:italic;">P'.$row["Charge"].'<span></p> </td>';
 
 					if ($i%3==3) {
 						$i =0;

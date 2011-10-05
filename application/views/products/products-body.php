@@ -88,8 +88,10 @@ mysql_close($con);
 					}
 					if($row["File_Path"]!=null)
 					$image = $row["File_Path"];
+					else
+					$image = "default_pic.jpg";
 					
-					echo '<td > <div> <a href="../../upload/products/full_view/'.$image.'" rel="prettyPhoto[gallery1]" title="'.$row["Description"].'"><img src = "../../upload/products/thumbnail/'.$image.'" alt="'.$row["Product_Name"].'"></a></div> <p><span style="font-weight:bold;">'.$row["Product_Name"].'</span> <br/> <span style="font-style:italic;">P'.$row["Price"].'<span></p> </td>';
+					echo '<td > <div> <a href="../../upload/products/full_view/'.$image.'" rel="prettyPhoto" title="'.$row["Description"].'"><img src = "../../upload/products/thumbnail/'.$image.'" alt="'.$row["Product_Name"].'"></a></div> <p><span style="font-weight:bold;">'.$row["Product_Name"].'</span> <br/> <span style="font-style:italic;">P'.$row["Price"].'<span></p> </td>';
 
 					if ($i%3==3) {
 						$i =0;
