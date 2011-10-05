@@ -178,7 +178,7 @@ mysql_close($con);
                             </tr>
                             <tr>
                             	<td align="right">*Visibility :</td>
-                            	<td><select name="visibility">
+                            	<td align="left"><select name="visibility">
 								<option <?php if($row["Visibility"]=='Visible'){ echo 'selected="selected"';}?> value = "Visible">Visible</option>
 								<option <?php if($row["Visibility"]=='Hidden'){ echo 'selected="selected"';}?>value = "Hidden">Hidden</option>
 							</select> </td>
@@ -221,7 +221,7 @@ mysql_close($con);
                             </tr>
                             <tr>
                             	<td align="right">*Visibility :</td>
-                            	<td><select name="visibility">
+                            	<td align="left"><select name="visibility">
 								<option value = "Visible">Visible</option>
 								<option value = "Hidden">Hidden</option>
 							</select> </td>
