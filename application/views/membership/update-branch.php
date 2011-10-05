@@ -20,17 +20,16 @@ if(isset($_POST['id'])&&isset($_POST['branchname'])&&isset($_POST['branchaddress
 	mysql_select_db(DB_NAME, $con);
 	
 	if($branchname!="")
-		mysql_query("UPDATE husai set Name='".$branchname."' where id=".$id);
+		mysql_query("UPDATE husai_branch set Name='".$branchname."' where id=".$id);
 	if($branchaddress!="")
-		mysql_query("UPDATE husai set Address='".$branchaddress."' where id=".$id);
+		mysql_query("UPDATE husai_branch set Address='".$branchaddress."' where id=".$id);
 	if($contact!="")
-		mysql_query("UPDATE husai set Contact_Nos='".$contact."' where id=".$id);
+		mysql_query("UPDATE husai_branch set Contact_Nos='".$contact."' where id=".$id);
 	if($schedule!="")
-		mysql_query("UPDATE husai set Operating_Schedule='".$schedule."' where id=".$id);
+		mysql_query("UPDATE husai_branch set Operating_Schedule='".$schedule."' where id=".$id);
 	if($visibility!="")
-		mysql_query("UPDATE husai set Email='".$visibility."' where id=".$id);
+		mysql_query("UPDATE husai_branch set Visibility='".$visibility."' where id=".$id);
 	
-
 	mysql_close($con);
 
 

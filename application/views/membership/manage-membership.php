@@ -115,33 +115,33 @@ mysql_close($con);
             <div id = "addnewbranch">
                	   
                     <p id = "newBranchHeader">MAIN</p>
-                    <form method="" action="">
+                    <form method="post" action="update-main.php">
                     	<table id = "addnewbrachtable" cellspacing="10">
                         	<tr>
-                            	<td align="right">Name :</td>
-                            	<td><input type = "text" name = "branchname" value="<?php echo $row["Name"]?>"/></td>                                
+                            	<td align="right">*Name :</td>
+                            	<td><input type = "text" name = "name" value="<?php echo $row["Name"]?>"/></td>                                
                             </tr>
                             <tr>
-                            	<td align="right">Address :</td>
-                            	<td><input type = "text" name = "branchaddress" value="<?php echo $row["Address"]?>"/></td>
+                            	<td align="right">*Address :</td>
+                            	<td><input type = "text" name = "address" value="<?php echo $row["Address"]?>"/></td>
                             </tr>
                             <tr>
-                            	<td align="right">Contact No/s. :</td>
+                            	<td align="right">*Contact No/s. :</td>
                             	<td><input type = "text" name = "contact" value="<?php echo $row["Contact_Nos"]?>"/></td>
                             </tr>
                             <tr>
-                            	<td align="right">Operating Schedule :</td>
+                            	<td align="right">*Operating Sched. :</td>
                             	<td><input type = "text" name = "schedule" value="<?php echo $row["Operating_Schedule"]?>"/></td>
                             </tr>
                             
                             <tr>
-                            	<td align="right">Email :</td>
-                            	<td><input type = "text" name = "schedule" value="<?php echo $row["Email"]?>"/></td>
+                            	<td align="right">*Email :</td>
+                            	<td><input type = "text" name = "email" value="<?php echo $row["Email"]?>"/></td>
                             </tr>
                             
                             <tr>
                             	<td align="right">Website :</td>
-                            	<td><input type = "text" name = "schedule" value="<?php echo $row["Website"]?>"/></td>
+                            	<td><input type = "text" name = "website" value="<?php echo $row["Website"]?>"/></td>
                             </tr>
                         </table>
                         <input type = "submit" value = "Update" id = "addbranchbutton" />
@@ -157,34 +157,34 @@ mysql_close($con);
               
               <div id = "addnewbranch">
                	   
-                    <p id = "newBranchHeader">Update Branch</p>
-                    <form method="" action="">
+                    <p id = "newBranchHeader">Update <?php echo $row["Name"]?></p>
+                    <form method="post" action="update-branch.php">
                     	<table id = "addnewbrachtable" cellspacing="10">
                         	<tr>
-                            	<td align="right">Branch Name :</td>
+                            	<td align="right">*Branch Name :</td>
                             	<td><input type = "text" name = "branchname" value="<?php echo $row["Name"]?>"/></td>                                
                             </tr>
                             <tr>
-                            	<td align="right">Branch Address :</td>
+                            	<td align="right">*Branch Address :</td>
                             	<td><input type = "text" name = "branchaddress" value="<?php echo $row["Address"]?>"/></td>
                             </tr>
                             <tr>
-                            	<td align="right">Contact No/s. :</td>
+                            	<td align="right">*Contact No/s. :</td>
                             	<td><input type = "text" name = "contact" value="<?php echo $row["Contact_Nos"]?>"/></td>
                             </tr>
                             <tr>
-                            	<td align="right">Operating Schedule :</td>
+                            	<td align="right">*Operating Sched. :</td>
                             	<td><input type = "text" name = "schedule" value="<?php echo $row["Operating_Schedule"]?>"/></td>
                             </tr>
                             <tr>
-                            	<td align="right">Visibility :</td>
+                            	<td align="right">*Visibility :</td>
                             	<td><select name="visibility">
 								<option <?php if($row["Visibility"]=='Visible'){ echo 'selected="selected"';}?> value = "Visible">Visible</option>
 								<option <?php if($row["Visibility"]=='Hidden'){ echo 'selected="selected"';}?>value = "Hidden">Hidden</option>
 							</select> </td>
                             </tr>
                         </table>
-                        
+                        <input type = "hidden" name = "id" value="<?php echo $row["id"]?>"/>
                         <input type = "submit" value = "Update" id = "addbranchbutton" />
                         
                     </form>
@@ -197,29 +197,30 @@ mysql_close($con);
               
              <p>&nbsp;</p>
              
+             
             <div id = "addnewbranch">
                	   
                     <p id = "newBranchHeader">Add New Branch</p>
-                    <form method="" action="">
+                    <form method="post" action="add-branch.php">
                     	<table id = "addnewbrachtable" cellspacing="10">
                         	<tr>
-                            	<td align="right">Branch Name :</td>
+                            	<td align="right">*Branch Name :</td>
                             	<td><input type = "text" name = "branchname"/></td>                                
                             </tr>
                             <tr>
-                            	<td align="right">Branch Address :</td>
+                            	<td align="right">*Branch Address :</td>
                             	<td><input type = "text" name = "branchaddress"/></td>
                             </tr>
                             <tr>
-                            	<td align="right">Contact No/s. :</td>
+                            	<td align="right">*Contact No/s. :</td>
                             	<td><input type = "text" name = "contact"/></td>
                             </tr>
                             <tr>
-                            	<td align="right">Operating Schedule :</td>
+                            	<td align="right">*Operating Sched. :</td>
                             	<td><input type = "text" name = "schedule"/></td>
                             </tr>
                             <tr>
-                            	<td align="right">Visibility :</td>
+                            	<td align="right">*Visibility :</td>
                             	<td><select name="visibility">
 								<option value = "Visible">Visible</option>
 								<option value = "Hidden">Hidden</option>
@@ -240,7 +241,7 @@ mysql_close($con);
       
         <!-- InstanceEndEditable -->
         <div id = "footer">
-        	<p id="fw-foottext" class="fw-footertext">Copyright ©2011</p> 
+        	<p id="fw-foottext" class="fw-footertext">Copyright Â©2011</p> 
         </div>
     
     </div>

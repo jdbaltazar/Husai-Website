@@ -8,8 +8,13 @@ if (!$con)
 
 mysql_select_db(DB_NAME, $con);
 
+
 if(!isset($query))
 	$query = "SELECT * FROM product ORDER BY Product_Name";
+if(!isset($product_searchfield))
+	$product_searchfield = "";
+if(!isset($product_search_cat))
+	$product_search_cat = "";
 $result = mysql_query("".$query);
 
 mysql_close($con);
@@ -70,6 +75,10 @@ mysql_close($con);
 				
 				
 				
+				
+				
+				
+				
 				  <?php require '../../application/views/includelinks.php';?>
   	      </ul>
 		</div>
@@ -87,19 +96,20 @@ mysql_close($con);
 				</tr>
 			</table>
 			<p>&nbsp;</p>
+
 			<form action="search.php" method="post">
 				<table width="450" id="service-search" cellspacing="10">
 					<tr>
 
 						<td width="251"><input type="text" name="product_searchfield"
-							id="service-product-searchfield" /></td>
+							id="service-product-searchfield" value="<?php echo $product_searchfield; ?>"/></td>
 						<td width="97"><select name="product_search_cat" id="service-cat">
-								<option name="">All</option>
-								<option name="">Category</option>
-								<option name="">Product</option>
-								<option name="">Status</option>
-								<option name="">Discounted</option>
-								<option name="">Regular Price</option>
+								<option name="" <?php if($product_search_cat=='All'){ echo 'selected="selected"'; }?>>All</option>
+								<option name="" <?php if($product_search_cat=='Category'){ echo 'selected="selected"'; }?> >Category</option>
+								<option name="" <?php if($product_search_cat=='Product'){ echo 'selected="selected"'; }?> >Product</option>
+								<option name="" <?php if($product_search_cat=='Status'){ echo 'selected="selected"'; }?> >Status</option>
+								<option name="" <?php if($product_search_cat=='Discounted'){ echo 'selected="selected"'; }?> >Discounted</option>
+								<option name="" <?php if($product_search_cat=='Regular Price'){ echo 'selected="selected"'; }?>>Regular Price</option>
 						</select>
 						</td>
 						<td width="304"><input type="submit" value="Search"
@@ -117,7 +127,7 @@ mysql_close($con);
 
 			<br> <br>
 					<p id="header-servicelist">List of Products</p>
-					<table width="850" id="services-list" cellspacing="0">
+						<table width="850" id="services-list" cellspacing="0">
 							<th width="112" id="services-list2">Category</th>
 							<th width="295" id="services-list2">Name of Product</th>
 							<th width="121" id="services-list2">Status</th>
@@ -145,6 +155,10 @@ mysql_close($con);
 					}
 
 					?>
+							
+					
+
+				
 		
 		</div>
 		<!-- InstanceEndEditable -->

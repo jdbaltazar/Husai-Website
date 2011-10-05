@@ -70,15 +70,17 @@ mysql_close($con);
        	  <table width="929" id = "page-title">
             	<tr>
                 	<td width="39"> <img src = "../images/purpletitle.png" /></td>
-                    <td width="821">Services Availed &raquo; <?php echo $_GET['name']?></td>
-                    <td width="53" id = "viewSP"><?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'?>Back</a></td>
+                    <td width="821">Services Availed &raquo; <?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'.$_GET['name']?></td>
+                    
+                    <td width="119" id = "viewSP"><?php echo '<a href="../services-availed/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Services Availed</a></td>
+                    <td width="134" id = "viewSP"><?php echo '<a href="../products-bought/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Products Bought</a></td>
                 </tr>
             </table>
    		 <p>&nbsp;</p>
          
    		 <p>&nbsp;</p>
          <p id ="add-availed-header">Add Availed Service</p>
-         <<form action="../save-availed-service.php" method="post">
+         <form action="../save-availed-service.php" method="post">
              <div id = "add-availed-div">
                <table width="546" cellspacing="15">
                  <tr>
@@ -117,9 +119,9 @@ mysql_close($con);
           <form name="search" action="../services-availed/search.php?id=<?php echo $_GET['id']?>&name=<?php echo $_GET['name']?>" method="post">
 	<table width="450" id = "service-search" cellspacing="10">
             	<tr>
-                	<td width="251"><input type = "text" name = "service_searchfield" id = "service-product-searchfield"/></td>
+                	<td width="251"><input type = "text" name = "service_availed_searchfield" id = "service-product-searchfield"/></td>
                 	<td width="97">
-                    	<select name = "service_search_cat" id = "service-cat">                    		
+                    	<select name = "service_availed_search_cat" id = "service-cat">                    		
                     		<option name = "">All</option>
                     		<option name = "">Date</option>
                     		<option name = "">Therapist</option>
@@ -157,7 +159,7 @@ mysql_close($con);
        
         <!-- InstanceEndEditable -->
         <div id = "footer">
-        	<p id="fw-foottext" class="fw-footertext">Copyright ©2011</p> 
+        	<p id="fw-foottext" class="fw-footertext">Copyright Â©2011</p> 
         </div>
     
     </div>

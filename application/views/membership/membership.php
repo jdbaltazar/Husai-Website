@@ -9,7 +9,7 @@ if (!$con)
 mysql_select_db(DB_NAME, $con);
 
 $husai_main_result = mysql_query("SELECT * FROM Husai");
-$husai_branch_result = mysql_query("SELECT * FROM Husai_Branch");
+$husai_branch_result = mysql_query("SELECT * FROM Husai_Branch where Visibility='Visible'");
 $member_get_result = mysql_query("SELECT * FROM Member_Get");
 $member_avail_result = mysql_query("SELECT * FROM Member_Avail");
 
@@ -156,7 +156,7 @@ mysql_close($con);
 
 		<!-- InstanceEndEditable -->
 		<div id="footer">
-			<p id="fw-foottext" class="fw-footertext">Copyright ©2011</p>
+			<p id="fw-foottext" class="fw-footertext">Copyright Â©©2011</p>
 		</div>
 
 	</div>
