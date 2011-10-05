@@ -51,20 +51,20 @@
 	border-top-right-radius:6px;
 	font-family:Georgia, "Times New Roman", Times, serif;	
 }
-#services-list	{
-	
-	border:1px #CCC solid; 
+#services-list	{	
+	border:thin #CCC solid;
+	border-left: none;
+	border-right: none; 
 	margin:0px 40px;
 	font-size:15px;
 }
 
 #services-list th{
-	border: thin #999 solid;
 	text-align:center;	
 }
 #services-list tr td{
 	text-align:center;
-	border: thin #999 solid;	
+	border: thin #CCC solid;	
 }
 
 #services-list tr{
@@ -73,14 +73,14 @@
 
 #services-list tr:hover{
 	background-color:#936;
-	color:#FFF
+	color:#FFF;
 }
 
 #services-list:hover{
 	border: thin #999 dashed;	
 }
 
-#table_header	{
+#table_header{
 	border:1px #CCC solid; 
 	margin:0px 40px;
 	font-size:15px;
@@ -327,8 +327,11 @@
 }
 
 #customer-table{
+	border:thin #CCC solid;
+	border-left: none;
+	border-right: none;
 	margin-left:80px;
-	border:1px #CCC solid;
+	
 	width:780px;
 	text-align:center;
 	font-size:15px;
@@ -342,7 +345,7 @@
 
 #customer-table tr td{
 	text-align:center;
-	border: thin #999 solid;	
+	border: thin #CCC solid;	
 }
 
 #customer-table tr:hover{
