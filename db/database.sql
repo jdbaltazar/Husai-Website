@@ -222,7 +222,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 INSERT INTO ACCOUNT VALUES('admin', 'admin', 'Husai Administrator', 'Activated', ' ', ' ', '2001-01-01', 'Male', '', '', '', 'Single', '', '' );
 
 INSERT INTO MEMBER_GET(DESCRIPTION) VALUES
-('10% Discount on food at Paru-Parogn Bukid'),
+('10% Discount on food at Paru-Parong Bukid'),
 ('20% Discount on their Tree House and Rest House'),
 ('10% Discount on Kayaking');
 

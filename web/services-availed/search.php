@@ -2,10 +2,10 @@
 session_start();
 if(isset($_SESSION['session_user'])&&isset($_SESSION['session_user_type'])&&isset($_SESSION['authenticated'])){
 
-	if(isset($_POST['service_availed_searchfield'])&&isset($_POST['service_search_cat'])){
+	if(isset($_POST['service_availed_searchfield'])&&isset($_POST['service_availed_search_cat'])){
 
 		$service_availed_searchfield = trim($_POST['service_availed_searchfield']);
-		$service_availed_search_cat = $_POST['service_search_cat'];
+		$service_availed_search_cat = $_POST['service_availed_search_cat'];
 
 		if($_SESSION['session_user_type'] == 'Husai Customer'){
 			$user = $_SESSION['session_user'];
