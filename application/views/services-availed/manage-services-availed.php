@@ -13,7 +13,7 @@ if (!$con)
 mysql_select_db(DB_NAME, $con);
 
 if(!isset($query))
-$query = "SELECT availed_service.date, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$_GET['id']."' order by availed_service.date desc";
+$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$_GET['id']."' order by availed_service.date_availed desc";
 $result = mysql_query("".$query);
 $services = mysql_query("SELECT id, Service_Name FROM service where Status='Available'");
 

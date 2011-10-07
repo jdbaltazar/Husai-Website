@@ -32,12 +32,12 @@ mysql_select_db(DB_NAME, $con);
 	$add_acct = "insert into account VALUES('".$username."', '".$password."','".$type."','".$status."','".$name."','".$address."', '".$bdate."', '".$sex."', '".$telephone."','".$businessAd."','".$businessPhone."','".$civilStatus."','".$occupation."','".$referredby."');";
 	if (!mysql_query($add_acct,$con))
 	{
-		echo $add_acct;
+		//echo $add_acct;
 		//die('Error: ' . mysql_error());
-		//header('Location: ../../accounts/add');
+		header('Location: ../../accounts/add');
 	}
 	else{
-		//header('Location: ../../accounts');
+		header('Location: ../../accounts');
 	}
 
 mysql_close($con);
