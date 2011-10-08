@@ -132,7 +132,7 @@ function findselected() {
 	                    </tr>
 	                    <tr>
 	                        <td align="right" >Description:</td>
-	                        <td><input name="filepath" type="hidden" id="text-field" readonly="readonly" <?php if($ok==1){ ?>value="<?php echo $image; ?>"<?php }?>  /><input type = "text"  value="<?php echo $description; ?>" name = "product-description" id = "s1" /></td>
+	                        <td><input name="filepath" type="hidden" id="text-field" readonly="readonly" <?php if($ok==1){ ?>value="<?php echo $image; ?>"<?php }else?> value="<?php echo $file_path;?>"  /><input type = "text"  value="<?php echo $description; ?>" name = "product-description" id = "s1" /></td>
 	                    </tr>
 	                    <tr>
 	                        <td align="right" id =>Status:</td>

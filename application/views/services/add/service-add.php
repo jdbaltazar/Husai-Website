@@ -31,6 +31,23 @@ include '../../../application/views/upload.php';
       return true;
     }
 }
+
+  function reload()
+  {
+
+  var val1=document.imgUpload.service-name.value ;
+  //var val2=document.form1.mname.value ;
+  //var val3=document.form1.lname.value ;
+  //// For radio button value to collect ///
+  //for(var i=0; i < document.form1.type.length; i++){
+ // if(document.form1.type[i].checked)
+ // var val4=document.form1.type[i].value 
+ // }
+
+  self.location='service-add.php?service-name=' + val1;
+
+  }
+    
 </script>
 </head>
 
@@ -81,7 +98,7 @@ include '../../../application/views/upload.php';
 							<table cellspacing="10">
 								<tr>
 									<td align="right">Service Name:</td>
-									<td><input type="text" name="service-name" / id="text-field">
+									<td><input type="text" name="service-name" id="text-field" <?php if($ok ==1)?>value="<?php echo $_POST['service-name'];?>"/>
 									
 									</td>
 								</tr>
