@@ -99,7 +99,7 @@ image3.src="../images/4.jpg"
                 </a></div>
         <!-- InstanceEndEditable -->
         <div id = "footer">
-        	<p id="fw-foottext" class="fw-footertext">Copyright ©2011</p> 
+        	<p id="fw-foottext" class="fw-footertext">Copyright Â©2011</p> 
         </div>
     
     </div>

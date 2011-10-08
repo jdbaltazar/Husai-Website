@@ -39,10 +39,7 @@
 				<li><a href="../products">Products</a></li>
 				<li><a href="../about">About</a></li>
 				
-				
-				
-				
-				  <?php require '../../application/views/includelinks.php';?>
+				<?php require '../../application/views/includelinks.php';?>
   	    </ul>
 		</div>
 
@@ -59,7 +56,7 @@
 			<table id="page-title">
 				<tr>
 					<td><img src="../images/purpletitle.png" /></td>
-					<td>About Husai</td>
+					<td>Manage About</td>
 				</tr>
 			</table>
 			
@@ -76,9 +73,16 @@
                 <p id = "mission-body"> 4. To provide regular training and updates to our therapists as regards to therapeutic massage, non-invasive skin care and wellness program </p>	
             </div>
             
-            
+       
             <div id = "history-div">
-            	History of Husai here if they wish to share..
+                 <p id = "historylabel">History</p>
+            
+                <form method="" action="">
+              <textarea style="resize: none;" name = "history">
+                        Husai history here..
+                    </textarea>
+                    <input type="submit" value = "Update"/>
+               </form>
             </div>
             
 		
