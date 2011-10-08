@@ -13,9 +13,14 @@ if (!$con)
 mysql_select_db(DB_NAME, $con);
 
 if(!isset($query))
-	$query = "SELECT bought_product.date, product.product_name, bought_product.quantity, product.category from bought_product join product on product.id=bought_product.product_id where bought_product.username='".$_GET['id']."' order by bought_product.date desc";
+	$query = "SELECT bought_product.date_bought, product.product_name, bought_product.quantity, product.category from bought_product join product on product.id=bought_product.product_id where bought_product.username='".$_GET['id']."' order by bought_product.date_bought desc";
 $result = mysql_query("".$query);
 $products = mysql_query("SELECT id, Product_Name FROM product where Status='Available'");
+
+if(!isset($product_bought_searchfield))
+	$product_bought_searchfield = "";
+if(!isset($product_bought_search_cat))
+	$product_bought_search_cat = "";
 
 mysql_close($con);
 ?>
@@ -111,13 +116,13 @@ mysql_close($con);
             <form name="search" action="../products-bought/search.php?id=<?php echo $_GET['id']?>&name=<?php echo $_GET['name']?>" method="post">
          <table width="450" id = "service-search" cellspacing="10">
             	<tr>
-                	<td width="251"><input type = "text" name = "service_searchfield" id = "service-product-searchfield"/></td>
+                	<td width="251"><input type = "text" name = "product_bought_searchfield" id = "service-product-searchfield" value="<?php echo $product_bought_searchfield; ?>"/></td>
                 	<td width="97">
-                    	<select name = "product_search_cat" id = "service-cat">                    		
-                    		<option name="">All</option>
-								<option name="">Product</option>
-								<option name="">Date</option>
-								<option name="">Type</option>
+                    	<select name = "product_bought_search_cat" id = "service-cat">                    		
+                    		<option name="" <?php if($product_bought_search_cat=='All'){ echo 'selected="selected"'; }?> >All</option>
+								<option name="" <?php if($product_bought_search_cat=='Product'){ echo 'selected="selected"'; }?> >Product</option>
+								<option name="" <?php if($product_bought_search_cat=='Date'){ echo 'selected="selected"'; }?>>Date</option>
+								<option name="" <?php if($product_bought_search_cat=='Type'){ echo 'selected="selected"'; }?>>Type</option>
                     	</select>
                     </td>
                     <td width="304"><input type = "submit" value = "Search" id = "search-but"/></td>

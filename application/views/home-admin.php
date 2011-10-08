@@ -5,6 +5,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
+
+<link rel="stylesheet" type="text/css" href="../css/newsCss.css" media="screen" />
+
 <script type="text/javascript">
 <!--
 var image1=new Image()
@@ -62,33 +65,69 @@ image3.src="../images/4.jpg"
 				</tr>
 			</table>
 
-			<div id="about-div">Latest News...</div>
-			<div id="slideshow">
-				<p>
-					<img src="1.jpg" name="slide" />
-				</p>
-				<p>
-					<script>
-                        <!--
-                        //variable that will increment through the images
-                        var step=1
-                        function slideit(){
-                        //if browser does not support the image object, exit.
-                        if (!document.images)
-                        return
-                        document.images.slide.src=eval("image"+step+".src")
-                        if (step<3)
-                        step++
-                        else
-                        step=1
-                        //call function "slideit()" every 2.5 seconds
-                        setTimeout("slideit()",5000)
-                        }
-                        slideit()
-                        //-->
-                        </script>
-				</p>
-			</div>
+			<div id = "about-div-admin">  
+            	<p id = "newsheader">
+                <table width="601">
+                	<tr>
+                    	<td width="149" align="left" style="font-weight:bold">News & Events</td>
+                    	<td width="432" align="right" style = "font-size:16px">
+                        	<script type="text/javascript"> 
+                            var d=new Date(); 
+                            var weekday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday", "Saturday"); 
+                            var monthname=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"); 
+                            document.write(weekday[d.getDay()] + " ");
+                            document.write(monthname[d.getMonth()] + " "); 
+                            document.write(d.getDate() + ", "); 
+                            document.write(d.getFullYear());
+                            </script>
+                        </td>
+                    </tr>
+                </table>						
+                 
+                </p>
+            <hr />
+                
+                <div id = "addnewsdiv">
+               	<p id = "addnewsheader">ADD NEWS/EVENT</p>                
+                	<form>
+                    	<table width="599" cellspacing="15">
+                        	<tr>
+                            	<td width="142" align="right"> Title : </td>
+                            	<td width="406"> <input type="text" name="newstitle" id = "newsinput" /> </td>
+                            </tr>
+                            <tr>
+                            	<td align="right"> Description : </td>
+                            	<td> <input type="text" name = "newsdescription" id = "newsinput" /> </td>
+                            </tr>
+                        </table>
+                        <table width="599" cellspacing="15" id = "secondtable">
+                        	<tr>
+                            	<td align="right" width="142">Image :</td>
+                            	<td width="250" ><input type = "text" name= "newsimage" id="newsimage" / ></td>                                
+                            	<td width="147" align="left"><input type="submit" name = "" value = "browse" id= "browsenewsimage" /></td>                                
+                            </tr>
+                        </table>
+                        <p id = "addbutton"><input type="submit" name = "addnews" value = "ADD NEWS" id = "addnewsbutton"></p>
+            	  </form>
+                </div>
+       		    <p>&nbsp;</p>
+                <hr />
+              
+            	<p id = "news-title"> &bull; Husai Website.. soon to open <span> <a href = "#">remove</a> </span> </p>
+                <p id = "news-description">This is a news description. This is a news description.</p>  
+             
+                <p id = "news-title">&bull; Husai Carigara Branch Opening <span> <a href = "#">remove</a> </span> </p>
+                <p id = "news-description">This is another news description. This is another description...</p>
+                  
+                <p id = "news-title">&bull; Kobe Bryant Manila Tour <span> <a href = "#">remove</a> </span> </p>
+                <p id = "news-description">This is another news description. This is another description...</p>
+                    
+                <p id = "news-title">&bull; This is Another News <span> <a href = "#">remove</a> </span> </p>
+                <p id = "news-description">This is another news description. This is another description...</p>
+                    
+            </div>
+            
+			
 		</div>
 		<!-- InstanceEndEditable -->
 		<!-- InstanceBeginEditable name="content-right" -->

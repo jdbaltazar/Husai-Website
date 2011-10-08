@@ -14,6 +14,7 @@ var image3=new Image()
 image3.src="../images/4.jpg"
 //-->
 </script>
+<link rel="stylesheet" type="text/css" href="../css/newsCss.css" media="screen" />
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
 <!-- InstanceBeginEditable name="head" -->
@@ -51,8 +52,41 @@ image3.src="../images/4.jpg"
                 </tr>
             </table>
             
-            <div id = "about-div">Latest News...
+            <div id = "about-div1">  
+            	<p id = "newsheader">
+                <table width="379">
+                	<tr>
+                    	<td width="150" align="left" style="font-weight:bold">News & Events</td>
+                    	<td width="217" align="right" style = "font-size:16px">
+                        	<script type="text/javascript"> 
+                            var d=new Date(); 
+                            var weekday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday", "Saturday"); 
+                            var monthname=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"); 
+                            document.write(weekday[d.getDay()] + " ");
+                            document.write(monthname[d.getMonth()] + " "); 
+                            document.write(d.getDate() + ", "); 
+                            document.write(d.getFullYear());
+                            </script>
+                        </td>
+                    </tr>
+                </table>						
+                 
+                </p>
+            <hr>
+            	<p id = "news-title"> &bull; Husai Website.. soon to open</p>
+                <p id = "news-description">This is a news description. This is a news description.</p>  
+             
+                <p id = "news-title">&bull; Husai Carigara Branch Opening</p>
+                <p id = "news-description">This is another news description. This is another description...</p>
+                  
+                <p id = "news-title">&bull; Kobe Bryant Manila Tour</p>
+                <p id = "news-description">This is another news description. This is another description...</p>
+                    
+                <p id = "news-title">&bull; This is Another News</p>
+                <p id = "news-description">This is another news description. This is another description...</p>
+                    
             </div>
+            
          	<div id = "slideshow">
             	 <p><img src="1.jpg" name="slide" />       </p>
                   <p>

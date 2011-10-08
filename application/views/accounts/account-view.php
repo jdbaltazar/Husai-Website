@@ -27,7 +27,7 @@ $results = mysql_query("select * from account where Username = '$user_id'");
 while($row = mysql_fetch_array($results)){
 	$username = $row['Username'];
 	$password = $row['Password'];
-	$account_type = $row['Type'];
+	$account_type = $row['Account_Type'];
 	$account_status = $row['Status'];
 	$name = $row['Name'];
 	$address = $row['Address'];
@@ -123,7 +123,7 @@ mysql_close($con);
                 	<td id = "field-name1">Account Status:</td>
                 	<td id = "field-name2" align="left"><select name="account_status"	>
 								<option value = "Activated" <?php if($account_status=='Activated'){echo 'selected="selected"'; }?> >Activated</option>
-								<option value = "Deactivated" <?php if($account_type=='Deactivated'){echo 'selected="selected"'; }?>>Deactivated</option>
+								<option value = "Deactivated" <?php if($account_status=='Deactivated'){echo 'selected="selected"'; }?>>Deactivated</option>
 							</select> <br /></td>                	
                 </tr>    
              </table>
@@ -223,7 +223,7 @@ mysql_close($con);
        
         <!-- InstanceEndEditable -->
         <div id = "footer">
-        	<p id="fw-foottext" class="fw-footertext">Copyright ©2011</p> 
+        	<p id="fw-foottext" class="fw-footertext">Copyright Â©2011</p> 
         </div>
     
     </div>

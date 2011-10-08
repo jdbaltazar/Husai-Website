@@ -9,7 +9,7 @@ if (!$con)
 mysql_select_db(DB_NAME, $con);
 
 if(!isset($query))
-	$query = "SELECT bought_product.date, product.product_name, bought_product.quantity, product.category from bought_product join product on product.id=bought_product.product_id where bought_product.username='".$_SESSION['session_user']."' order by bought_product.date desc";
+	$query = "SELECT bought_product.date_bought, product.product_name, bought_product.quantity, product.category from bought_product join product on product.id=bought_product.product_id where bought_product.username='".$_SESSION['session_user']."' order by bought_product.date_bought desc";
 $result = mysql_query("".$query);
 
 mysql_close($con);

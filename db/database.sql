@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS `husai`.`Account` ;
 CREATE  TABLE IF NOT EXISTS `husai`.`Account` (
   `Username` VARCHAR(50) NOT NULL ,
   `Password` VARCHAR(50) NOT NULL ,
-  `Type` ENUM('Husai Administrator','Husai Customer') NOT NULL ,
+  `Account_Type` ENUM('Husai Administrator','Husai Customer') NOT NULL ,
   `Status` ENUM('Activated','Deactivated') NOT NULL ,
   `Name` VARCHAR(100) NOT NULL ,
   `Address` VARCHAR(500) NOT NULL ,
@@ -79,7 +79,7 @@ DROP TABLE IF EXISTS `husai`.`Availed_Service` ;
 
 CREATE  TABLE IF NOT EXISTS `husai`.`Availed_Service` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `Date` DATE NOT NULL ,
+  `Date_Availed` DATE NOT NULL ,
   `Therapist` VARCHAR(100) NULL ,
   `Remarks` VARCHAR(500) NULL ,
   `Username` VARCHAR(50) NOT NULL ,
@@ -107,7 +107,7 @@ DROP TABLE IF EXISTS `husai`.`Bought_Product` ;
 
 CREATE  TABLE IF NOT EXISTS `husai`.`Bought_Product` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `Date` DATE NOT NULL ,
+  `Date_Bought` DATE NOT NULL ,
   `Quantity` INT NOT NULL ,
   `Remarks` VARCHAR(500) NULL ,
   `Username` VARCHAR(50) NOT NULL ,
@@ -167,8 +167,9 @@ DROP TABLE IF EXISTS `husai`.`News` ;
 
 CREATE  TABLE IF NOT EXISTS `husai`.`News` (
   `id` INT NOT NULL AUTO_INCREMENT ,
+  `Title` VARCHAR(200) NOT NULL ,
   `Description` VARCHAR(500) NOT NULL ,
-  `Date` TIMESTAMP NULL ,
+  `File_Path` VARCHAR(500) NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
@@ -218,11 +219,10 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-
 INSERT INTO ACCOUNT VALUES('admin', 'admin', 'Husai Administrator', 'Activated', ' ', ' ', '2001-01-01', 'Male', '', '', '', 'Single', '', '' );
 
 INSERT INTO MEMBER_GET(DESCRIPTION) VALUES
-('10% Discount on food at Paru-Parogn Bukid'),
+('10% Discount on food at Paru-Parong Bukid'),
 ('20% Discount on their Tree House and Rest House'),
 ('10% Discount on Kayaking');
 

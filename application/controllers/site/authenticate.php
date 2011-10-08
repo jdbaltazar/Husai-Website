@@ -30,7 +30,7 @@ while($row = mysql_fetch_array($result))
 		if($row['Password']== $password){
 			if($row['Status']== "Activated"){
 				$_SESSION['session_user'] = $username;
-				$_SESSION['session_user_type'] = $row['Type'];
+				$_SESSION['session_user_type'] = $row['Account_Type'];
 				$_SESSION['authenticated'] = "true";
 				break;
 			}
