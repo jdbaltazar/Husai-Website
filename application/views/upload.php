@@ -18,6 +18,7 @@ $image = "";
 $src="";
 $filename="";
 
+
 if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 	$image = $_FILES['image']['name'];
 	
@@ -127,6 +128,7 @@ else if(isset($_POST['save-service'])) {
 		//header('Location: add-service.php');
 	}
 	else{
+		sleep(2);
 		header('Location: ../../services');
 	}
 
@@ -154,6 +156,7 @@ else if(isset($_POST['save-product'])) {
 		header('Location: add-product.php');
 	}
 	else{
+		sleep(2);
 		header('Location: ../../products');
 	}
 
@@ -161,30 +164,4 @@ else if(isset($_POST['save-product'])) {
 
 }
 
-else if(isset($_POST['save-product'])) {
-	$product_name  = trim($_POST['product-name']);
-	$description = trim($_POST['product-desc']);
-	$status = trim($_POST['product-status']);
-	$price = trim($_POST['product-price']);
-	$category = trim($_POST['product-category']);
-	$filepath = trim($_POST['filepath']);
-
-	if($filepath == ''){
-		
-	}
-	$add_product = "insert into product(Product_Name, Description, Price, Status, Category, File_Path) VALUES('".$product_name."', '".$description."', ".$price.",'".$status."', '".$category."','".$filepath."');";
-
-	
-	if (!mysql_query($add_product,$con))
-	{
-		// 		die('Error: ' . mysql_error());
-		header('Location: add-product.php');
-	}
-	else{
-		header('Location: ../../products');
-	}
-
-	mysql_close($con);
-
-}
 ?>

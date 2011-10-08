@@ -27,10 +27,11 @@ mysql_select_db("husai", $con);
 	$add_acct = "insert into account VALUES('".$username."', '".$password."','".$type."','".$status."','".$name."','".$address."', '".$bdate."', '".$sex."', '".$telephone."','".$businessAd."','".$businessPhone."','".$civilStatus."','".$occupation."','".$referredby."');";
 	if (!mysql_query($add_acct,$con))
 	{
-		//die('Error: ' . mysql_error());
-		header('Location: ../accounts/php');
+		die('Error: ' . mysql_error());
+		//header('Location: ../accounts/php');
 	}
 	else{
+		sleep(2);
 		header('Location: ../accounts');
 	}
 

@@ -7,8 +7,12 @@
 <link rel="stylesheet" type="text/css" href="../../css/adminstyle.css" media="screen" />
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css" media="screen" />
+<script type="text/javascript" src="../../js/dialog_box.js"></script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
+
+
 </head>
 
 <body>
@@ -45,13 +49,13 @@
             
             
             <div id="createacct">
-				<form method="post" action="../save-account-module.php">
+				<form name="form1" action="../save-account-module.php" onsubmit="return validate_account_form()" method="post">
 
 					<p id="header-account">ACCOUNT INFORMATION</p>
 					<div id="l2">
 						<p>Username</p>
 						<p class = "til">
-							<input name="username" type="username" class="required"
+							<input name="username" type="text" class="required"
 								id="user2" />
 						</p>
 						<p>Password</p>
@@ -172,7 +176,7 @@
 								id="submit-account" />
 						</p>
 				</form>
-                <br>
+                <br />
 			</div>
         </div>
     <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="content-right" -->

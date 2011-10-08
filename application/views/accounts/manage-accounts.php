@@ -10,7 +10,7 @@ if (!$con)
 mysql_select_db(DB_NAME, $con);
 
 if(!isset($query))
-$query = "select Name, Username, Status from account WHERE Account_Type='Husai Customer'";
+$query = "select * from account WHERE Account_Type='Husai Customer'";
 if(!isset($account_searchfield))
 $account_searchfield = "";
 
