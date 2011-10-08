@@ -1,3 +1,21 @@
+<?php require("../config/config.php"); ?>
+<?php
+$con = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD);
+if (!$con)
+{
+	die('Could not connect: ' . mysql_error());
+}
+
+
+mysql_select_db(DB_NAME, $con);
+
+if(!isset($query))
+$result = mysql_query("select * from news");
+
+mysql_close($con);
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="../../../../Users/juanita/Desktop/HUSAI/Templates/template-husai.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -14,6 +32,7 @@ var image3=new Image()
 image3.src="../images/4.jpg"
 //-->
 </script>
+<link rel="stylesheet" type="text/css" href="../css/newsCss.css" media="screen" />
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
 <!-- InstanceBeginEditable name="head" -->
@@ -55,7 +74,37 @@ image3.src="../images/4.jpg"
                 </tr>
             </table>
             
-            <div id = "about-div">Latest News...
+             <div id = "about-div1">  
+            	<p id = "newsheader">
+                <table width="379">
+                	<tr>
+                    	<td width="150" align="left" style="font-weight:bold">News & Events</td>
+                    	<td width="217" align="right" style = "font-size:16px">
+                        	<script type="text/javascript"> 
+                            var d=new Date(); 
+                            var weekday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday", "Saturday"); 
+                            var monthname=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"); 
+                            document.write(weekday[d.getDay()] + " ");
+                            document.write(monthname[d.getMonth()] + " "); 
+                            document.write(d.getDate() + ", "); 
+                            document.write(d.getFullYear());
+                            </script>
+                        </td>
+                    </tr>
+                </table>						
+                 
+                </p>
+            <hr>
+            	<?php
+				$i = 0;
+				while($row = mysql_fetch_array($result)){
+					echo '<p id = "news-title"> &bull; '.$row['Title'].'</p>';
+					echo '<p id = "news-description">'.$row['Description'].'</p>';
+					//make news a link to picture
+				}
+				$i++;
+				?>
+                    
             </div>
          	<div id = "slideshow">
             	 <p><img src="1.jpg" name="slide" />       </p>
