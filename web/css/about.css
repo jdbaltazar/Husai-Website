@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+
+#mission-div{
+	text-align:center;
+	width:550px;
+	margin:40px 200px;
+	padding:10px 10px;
+	border:1px #936 solid;
+	border-radius:10px;
+	background-color:#FFF9FC;
+}
+#vision-div{
+	width:550px;
+	text-align:center;
+	margin:40px 200px;
+	padding:10px 10px;
+	border:1px #936 solid;
+	border-radius:10px;	
+	background-color:#FFF9FC;
+}
+
+#vision-header{
+	font-size:20px;
+	margin-bottom:15px;
+}
+#mission-header{
+	font-size:20px;
+	margin-bottom:15px;
+}
+#mission-body, #vision-body{
+	font-size:16px;
+	font-style:italic;
+	margin:15px 0px;
+}
+
+#history-div{
+	width:650px;
+	margin:50px 160px;
+	font-size:15px;
+}
+
+#history-div textarea{
+	border:1px #903 solid;
+	width:650px;
+	height:100px;
+	text-align:left;
+	margin:10px 0;
+}
+
+#history-div input {
+	border:1px #903 solid;
+	width:75px;
+	height:28px;
+	color:#FFF;
+	background-color:#906;
+	margin:0px 290px;
+}
+#history-div input:hover {
+	background-color:#903;
+}
+
+#historylabel{
+	margin:0px 0px;
+	margin:0px 290px;
+}

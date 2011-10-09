@@ -1,0 +1,613 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+	services
+*/
+#content-left-admin	{
+	
+	width:940px;
+	height:100%;
+	padding:10px 10px;
+	margin:20px 20px;
+	margin-top:0px;
+	border-right:1px #CCC solid;
+	border-bottom:1px #CCC solid;
+	border-left:1px #CCC solid;
+	padding-bottom:30px;
+	
+} 
+
+#service-search	{
+	margin: 10px 30px;
+	width:700px;
+}
+
+#account-search input, select{
+	border:1px #999 solid;
+	height:25px;	
+}
+#service-search input, select{
+	border:1px #999 solid;
+	height:25px;	
+}
+#service-product-searchfield{
+	width:250px;	
+}
+
+#service-cat{
+	width:100px;
+}
+
+#header-servicelist{
+	margin:0px 40px;
+	font-size:18px;
+	color:#FFF;
+	background-color:#936;
+	text-align:center;
+	width:850px;
+	padding:3px 0px;
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;
+	font-family:Georgia, "Times New Roman", Times, serif;	
+}
+#services-list	{	
+	border:thin #CCC solid;
+	border-left: none;
+	border-right: none; 
+	margin:0px 40px;
+	font-size:15px;
+}
+
+#services-list th{
+	text-align:center;	
+}
+#services-list tr td{
+	text-align:center;
+	border: thin #CCC solid;	
+}
+
+#services-list tr{
+	height:25px;	
+}
+
+#services-list tr:hover{
+	background-color:#936;
+	color:#FFF;
+}
+
+#services-list:hover{
+	border: thin #999 dashed;	
+}
+
+#table_header{
+	border:1px #CCC solid; 
+	margin:0px 40px;
+	font-size:15px;
+	font-family: Arial;
+}
+
+#table_header th{
+	border: thin #999 solid;
+	text-align:center;	
+}
+#table_header tr td{
+	text-align:center;
+	border: thin #999 solid;	
+}
+
+#table_header tr{
+	height:25px;	
+}
+
+
+#add-service{
+	margin-left:40px;
+	font-size:18px;
+	
+	margin-top:10px;
+}
+#add-service a{
+	color:#903;
+}
+#add-service a:hover{
+	color:#fff;
+	background-color:#906;
+}
+#search-but{
+	background-color:#936;
+	color:#FFF;
+	width:60px;	
+}
+
+#search-but:hover{
+	background-color:#903;
+}
+
+/* add-service*/
+
+#subtitle	{
+	margin-left:180px;
+	font-size:18px;
+	color:#FFF;
+	background-color:#936;
+	text-align:center;
+	width:550px;
+	padding:3px 0px;
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+#add-table	{
+	margin-left:180px;	
+	border:1px #CCC solid;	
+	padding:10px;
+	background-color:#F1DAEA;
+	width: 530px;
+	margin-bottom: 20px;
+}
+#text-field	{
+	width:350px;
+	height:25px;
+	border:1px #F6F solid;
+}
+
+#upload	{
+	border:1px #999 solid;	
+	width:70px;
+	height:25px;
+	border-radius: 4px;
+	background-color:#936;
+	color:#FFF;
+}
+
+
+/*
+	service profile
+*/
+
+#service-product-pic{
+	
+	
+	text-align:center;
+	
+	margin-left:100px;
+	float: left;
+	
+}
+
+#picture{
+	padding-top:20px;
+	width:190px;
+	height:120px;
+	border:5px #CCC double;
+	margin-bottom: 5px;
+
+}
+
+#service-product-pic img{
+	width:150px;
+	height:100px;
+}
+
+#service-desc	{
+	margin-right:60px;
+	padding-left:60px;	
+	
+}
+
+
+
+#s1	{
+	border:1px #999 solid;
+	height:25px;
+	width:350px;
+}
+
+#s2	{
+	border:1px #999 solid;
+	height:25px;
+	width:70px;
+}
+
+#s3	{
+	border:1px #999 solid;
+	width:120px;
+	height:25px;
+}
+#check-new-service	{
+	margin:0px 40px;
+	padding-left:60px;
+}
+
+#new-other	{
+	margin-left:25px;
+}
+
+#update-btn	{
+	width:90px;
+	height:35px;
+	border:1px #999 solid;
+	background-color:#666;
+	color:#FFF;
+	font-weight:bold;
+	margin-left:300px;
+}
+
+#update-btn:hover	{
+	background-color:#333
+}
+
+
+#input-from{
+	border:1px #999 solid; 
+	height:25px;
+	width:100px;
+	text-align:center;
+	
+}
+#calendar{
+	width:25px;
+	height:25px; 
+	background-image:url(../images/cal.png);
+}
+#input-from{
+	border:1px #999 solid; 
+	height:25px;
+	width:100px;
+	text-align:center;
+	
+}
+
+#percentbox{
+	border: 1px #ccc solid;	
+	width:45px;
+	height: 25px;
+	font-size:18px;
+}
+
+#percentboxfont{	
+	font-size:18px;
+}
+
+#service-type{
+	margin-left:140px;	
+
+}
+
+#service-desc select{
+	border:1px #999 solid;	
+	height: 25px;
+	
+
+}
+
+#promo-table{
+	float: right;	
+	
+}
+
+/*
+	manage-accounts
+*/
+
+
+#admin-prof{	
+	margin-left:180px;
+	text-align:center;
+	padding:0px 0px;
+	width:550px;
+	
+}
+
+#admin-prof table {		
+	border:1px #CCC solid;	
+	background-color:#F1DAEA;
+	width:550px;
+}
+
+#admin-prof a {		
+	color:#936
+}
+#admin-prof a:hover {		
+	color:#939
+}
+#header-customer{
+	margin:0 80px;
+	font-size:18px;
+	color:#FFF;
+	background-color:#936;
+	text-align:center;
+	width:780px;
+	padding:3px 0px;
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;
+	font-family:Georgia, "Times New Roman", Times, serif;	
+}
+
+#customer-table{
+	border:thin #CCC solid;
+	border-left: none;
+	border-right: none;
+	margin-left:80px;
+	
+	width:780px;
+	text-align:center;
+	font-size:15px;
+	
+}
+
+#customer-table th{
+	border: thin #999 solid;
+	text-align:center;	
+}
+
+#customer-table tr td{
+	text-align:center;
+	border: thin #CCC solid;	
+}
+
+#customer-table tr:hover{
+	color:#FFF;
+	background-color:#936;	
+}
+
+#customer-table:hover{
+	border: thin #999 dashed;	
+}
+
+#customer-table tr{
+	height:25px;	
+}
+
+#account_header{
+	margin-left:80px;
+	border:1px #CCC solid;
+	width:780px;
+	text-align:center;
+	font-size:15px;
+	font-family: Arial;
+	
+}
+
+#account_header th{
+	border: thin #999 solid;
+	text-align:center;	
+}
+#account_header tr td{
+	text-align:center;
+	border: thin #999 solid;	
+}
+
+#account_header tr{
+	height:25px;	
+}
+
+
+#add-customer a	{
+	margin-left:75px;
+	color:#936;
+	font-size:16px;
+}
+
+#add-customer a:hover	{
+	background-color:#906;
+	color:#FFF;
+}
+/*
+	add customer account
+*/
+
+#l2		{ 
+	margin-top:15px; 
+	margin-left:120px;
+	margin-right:7px;
+	margin-bottom:15px; 
+	font-family:Arial, Helvetica, sans-serif; font-weight:bold; 
+	font-size:13px; 
+	width:400px;
+}
+
+
+#header-account		{
+	 background-color:#7E7574; 
+	 background-color:#936;
+	
+	 border-top-left-radius:10px;    
+	 border-top-right-radius:10px;
+	 padding:5px 5px; 
+	 color:#fff; 
+	 font-family:Arial,Helvetica, sans-serif; 
+	 font-weight:bold;
+	 width:590px; 
+}
+
+
+
+#submit-account	{ 
+	color:#FFF;
+	background-color:#936;
+	padding:4px 8px; 
+	font-weight:bold; 
+}
+#submit-account:hover	{ background-color:#903}
+
+
+#createacct {	
+	margin:20px 150px;
+	width:600px;	
+	background-color:#E9E9E9;
+	background-color:#F1DAEA;
+
+}
+
+#createacct form	{
+	margin:0px;
+	}
+
+.til{
+	margin-bottom:7px;
+}
+
+#user2	{
+	border:1px #CCC solid;
+	width:350px;
+	height:25px;
+}
+
+
+#user{
+	border:1px #CCC solid;
+	height:25px;
+	
+	
+}
+
+#adminstatus{
+	border:1px #CCC solid;
+	height:25px;
+	width:150px;
+}
+
+#month{
+	border:1px #CCC solid;
+	height:25px;
+	width:90px;
+}
+#day{
+	border:1px #CCC solid;
+	height:25px;
+	width:40px;
+}
+#year{
+	border:1px #CCC solid;
+	height:25px;
+	width:56px;
+}
+#gender{
+	border:1px #CCC solid;
+	height:25px;
+	width:72px;
+}
+
+#status{
+	border:1px #CCC solid;
+	height:25px;
+	width:80px;
+}
+
+/*
+	manage customer profile
+*/
+
+#profile-name{
+	margin-left:140px;	
+	text-align:center;
+	width:650px;
+
+}
+
+#field-name1{
+	font-size:16px;
+	text-align:right;
+	}
+#field-name2{
+	font-size:16px;
+	text-align:left;
+}
+
+#addrecord{
+	margin:20px 40px;
+	
+	font-size:18px;
+	
+}
+
+#addrecord a{	
+	color:#903;
+}
+
+#addrecord a:hover{	
+	background-color:#903;
+	color:#FFF;
+}
+
+#profiletable-header{
+	width:650px;
+	height:20px;
+	margin:20px 140px;
+	background-color:#FFAAD5;
+	border-top:1px #999 solid;
+	padding:4px 6px;
+}
+hr{
+	color:#666;
+	background-color:#999;
+	width:650px;
+	margin:10px 140px;
+	height:2px;
+}
+#viewSP{
+	color:#000;
+	font-size:15px;
+	font-weight:normal;
+	
+}
+#viewSP a:hover{
+	color:#FFF;
+	background-color:#903;
+
+}
+
+/*
+	managae availed cheness
+*/
+
+#add-availed-header{
+	margin:0px 200px;
+	width:550px;
+	background-color:#936;
+	color:#FFF;
+	text-align:center;
+	height:20px;
+	font-size:16px;
+	padding:6px 0px;
+	font-weight:bold;
+	border-top-left-radius:6px;	
+	border-top-right-radius:6px;
+}
+
+#add-availed-div{
+	margin:0px 200px;
+	width:548px;
+	border:1px #CCC solid;
+	padding:10px 0;
+	padding-bottom:0px;
+}
+
+#add-avail-input{
+	border:1px #CCC solid;
+	height:25px;
+	width:300px;
+}
+
+#add-btn{
+	width:85px;
+	height:32px;
+	background-color:#936;
+	color:#FFF;
+	border:1px #CCC solid;
+	border-top-left-radius:6px;	
+	border-top-right-radius:6px;
+	border-bottom-left-radius:6px;	
+	border-bottom-right-radius:6px;
+}
+#add-btn:hover{
+	background-color:#903;
+
+}
+
+#add-td{
+	padding:0px 50px;
+}

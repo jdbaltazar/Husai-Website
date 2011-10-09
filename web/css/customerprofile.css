@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+#field-name1{
+	font-size:16px;
+	text-align:right;
+	}
+#field-name2 input{
+	font-size:16px;
+	text-align:left;
+	border: 1px #CCC solid;
+	height:30px;
+	width:444px;
+}
+#profile-name{
+	margin-left:140px;	
+	text-align:center;
+	width:650px;
+
+}
+
+
+#updatecustomerbutton{
+	border: 1px #CCC solid;
+	height:35px;
+	width:80px;
+	background-color:#999;
+	color:#FFF;
+	margin:30px 400px;	
+	font-weight:bold;
+}
+
+#updatecustomerbutton:hover{
+	background-color:#666;	
+}
