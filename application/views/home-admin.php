@@ -1,3 +1,21 @@
+<?php require("../config/config.php"); ?>
+<?php
+$con = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD);
+if (!$con)
+{
+	die('Could not connect: ' . mysql_error());
+}
+
+
+mysql_select_db(DB_NAME, $con);
+
+if(!isset($query))
+$result = mysql_query("select * from news");
+
+mysql_close($con);
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!-- InstanceBegin template="../../../../Users/juanita/Desktop/HUSAI/Templates/template-husai.dwt" codeOutsideHTMLIsLocked="false" -->
@@ -88,8 +106,8 @@ image3.src="../images/4.jpg"
             <hr />
                 
                 <div id = "addnewsdiv">
-               	<p id = "addnewsheader">ADD NEWS/EVENT</p>                
-                	<form>
+               	<p id = "addnewsheader">Add News/Event</p>                
+                	<form action="news/add-news.php" method="post">
                     	<table width="599" cellspacing="15">
                         	<tr>
                             	<td width="142" align="right"> Title : </td>
@@ -113,17 +131,16 @@ image3.src="../images/4.jpg"
        		    <p>&nbsp;</p>
                 <hr />
               
-            	<p id = "news-title"> &bull; Husai Website.. soon to open <span> <a href = "#">remove</a> </span> </p>
-                <p id = "news-description">This is a news description. This is a news description.</p>  
-             
-                <p id = "news-title">&bull; Husai Carigara Branch Opening <span> <a href = "#">remove</a> </span> </p>
-                <p id = "news-description">This is another news description. This is another description...</p>
-                  
-                <p id = "news-title">&bull; Kobe Bryant Manila Tour <span> <a href = "#">remove</a> </span> </p>
-                <p id = "news-description">This is another news description. This is another description...</p>
-                    
-                <p id = "news-title">&bull; This is Another News <span> <a href = "#">remove</a> </span> </p>
-                <p id = "news-description">This is another news description. This is another description...</p>
+            
+            <?php
+				$i = 0;
+				while($row = mysql_fetch_array($result)){
+					echo '<p id = "news-title"> &bull; '.$row['Title'].' <span> <a href = "news/delete-news.php?id='.$row['id'].'">remove</a> </span> </p>';
+					echo '<p id = "news-description">'.$row['Description'].'</p>';
+					
+				}
+				$i++;
+				?>
                     
             </div>
             

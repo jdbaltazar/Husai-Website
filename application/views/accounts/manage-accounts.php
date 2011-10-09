@@ -10,7 +10,7 @@ if (!$con)
 mysql_select_db(DB_NAME, $con);
 
 if(!isset($query))
-$query = "select * from account WHERE Account_Type='Husai Customer'";
+$query = "select Name, Username, Status from account WHERE Account_Type='Husai Customer'";
 if(!isset($account_searchfield))
 $account_searchfield = "";
 
@@ -18,7 +18,6 @@ $result = mysql_query("".$query);
 
 mysql_close($con);
 
-//include '../php/page_accessor.php'
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
