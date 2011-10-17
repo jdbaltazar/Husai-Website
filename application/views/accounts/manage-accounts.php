@@ -80,25 +80,9 @@ mysql_close($con);
 			<table id="page-title">
 				<tr>
 					<td><img src="../images/purpletitle.png" /></td>
-					<td>Accounts</td>
+					<td>Accounts &raquo; <a href="../profile/"><?php echo $_SESSION['session_user']; ?> </a></td>
 				</tr>
 			</table>
-			<p>&nbsp;</p>
-			<p id="subtitle">Admin Account</p>
-			<div id="admin-prof">
-				<table width="345" cellspacing="20">
-					<tr>
-						<td width="99" align="right">Admin ID:</td>
-						<td width="212"><?php echo "".$_SESSION['session_user'].""; ?></td>
-					</tr>
-					<tr>
-						<td align="right">Password:</td>
-						<td><a href="../profile/">[Change Password]</a></td>
-					</tr>
-
-				</table>
-			</div>
-			<p>&nbsp;</p>
 			<p>&nbsp;</p>
 			<form name="search" action="../accounts/search.php" method="post">
 				<table width="871" id="account-search" cellspacing="10">
@@ -139,9 +123,10 @@ mysql_close($con);
 					echo 'class="trow2"';
 				echo '<tr><td width="187">'.$row['Name']."</td><td width=\"135\">".$row['Username']."</td><td width=\"75\">".$row['Status']."</td></tr>";
 				$i++;
+				echo  '</table>';
+				echo '</div> </a>';
 			} 
-         	echo  '</table>';
-			echo '</div> </a>';	
+         	
            ?>
             
         </div>

@@ -13,22 +13,23 @@ if (!$con)
 mysql_select_db(DB_NAME, $con);
 
 if(!isset($query))
-$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$_GET['id']."' order by availed_service.date_availed desc";
+$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$_GET['id']."' order by availed_service.date_availed desc";
 $result = mysql_query("".$query);
 $services = mysql_query("SELECT id, Service_Name FROM service where Status='Available'");
 
 
 if(!isset($service_availed_searchfield))
-	$service_availed_searchfield = "";
+$service_availed_searchfield = "";
 if(!isset($service_availed_search_cat))
-	$service_availed_search_cat = "";
+$service_availed_search_cat = "";
 
 mysql_close($con);
 ?>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html
+	xmlns="http://www.w3.org/1999/xhtml">
 <!-- InstanceBegin template="../../../../Users/juanita/Desktop/HUSAI/Templates/template-husai.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -80,6 +81,10 @@ mysql_close($con);
 				
 				
 				
+				
+				
+				
+				
 				  <?php require '../../application/views/includelinks.php';?>
   	      </ul>
 		</div>
@@ -90,16 +95,11 @@ mysql_close($con);
 		</div>
 		<!-- InstanceBeginEditable name="content-left" -->
 		<div id="content-left-admin">
-			<table width="929" cellspacing="7" id="page-title">
+			<table width="929" id="page-title">
 				<tr>
-					<td width="39"><img src="../images/purpletitle.png" /></td>
-					<td width="821">Services Availed &raquo; <?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'.$_GET['name']?>
-					</td>
-
-					<td width="134" id="viewSP"><?php echo '<a href="../services-availed/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Services
-						Availed</a></td>
-					<td width="134" id="viewSP"><?php echo '<a href="../products-bought/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Products
-						Bought</a></td>
+					<td width="37"><img src="../images/purpletitle.png" /></td>
+					<td width="619"><?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'; ?>Customer Profile</a> &raquo; Services Availed &raquo; <?php echo '<a href="../products-bought/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>
+						Products Bought </a></td>
 				</tr>
 			</table>
 			<p>&nbsp;</p>
@@ -161,14 +161,29 @@ mysql_close($con);
 					<tr>
 						<td width="251"><input type="text"
 							name="service_availed_searchfield"
-							id="service-product-searchfield" value="<?php echo $service_availed_searchfield; ?>"/></td>
+							id="service-product-searchfield"
+							value="<?php echo $service_availed_searchfield; ?>" /></td>
 						<td width="97"><select name="service_availed_search_cat"
 							id="service-cat">
-								<option name="" <?php if($service_availed_search_cat=='All'){ echo 'selected="selected"'; }?> >All</option>
-								<option name="" <?php if($service_availed_search_cat=='Date'){ echo 'selected="selected"'; }?> >Date</option>
-								<option name="" <?php if($service_availed_search_cat=='Therapist'){ echo 'selected="selected"'; }?> >Therapist</option>
-								<option name="" <?php if($service_availed_search_cat=='Service'){ echo 'selected="selected"'; }?> >Service</option>
-								<option name="" <?php if($service_availed_search_cat=='Type'){ echo 'selected="selected"'; }?> >Type</option>
+								<option name=""
+									
+								<?php if($service_availed_search_cat=='All'){ echo 'selected="selected"'; }?>>All</option>
+								<option name=""
+									
+								<?php if($service_availed_search_cat=='Date'){ echo 'selected="selected"'; }?>>Date</option>
+								<option name=""
+									
+								<?php if($service_availed_search_cat=='Therapist'){ echo 'selected="selected"'; }?>>Therapist</option>
+								<option name=""
+									
+								<?php if($service_availed_search_cat=='Service'){ echo 'selected="selected"'; }?>>Service</option>
+								<option name=""
+									
+								<?php if($service_availed_search_cat=='Type'){ echo 'selected="selected"'; }?>>Type</option>
+								
+								<option name=""
+									
+								<?php if($service_availed_search_cat=='Remarks'){ echo 'selected="selected"'; }?>>Remarks</option>
 						</select>
 						</td>
 						<td width="304"><input type="submit" value="Search"
@@ -182,7 +197,10 @@ mysql_close($con);
 				<th width="98">Date</th>
 				<th width="239">Therapist</th>
 				<th width="341">Name of Service</th>
-				<th width="162">Type Of Service</th>
+				<th width="110">Type</th>
+				<th width="300">Remarks</th>
+				
+				
 				
 				
 				
@@ -195,6 +213,7 @@ mysql_close($con);
                     echo "<td>".$row[1]."</td>";
                     echo "<td>".$row[2]."</td>";
                     echo "<td>".$row[3]."</td>";
+                    echo "<td>".$row[4]."</td>";
                     echo "</tr>";
 				}
 				?>

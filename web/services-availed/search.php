@@ -17,33 +17,39 @@ if(isset($_SESSION['session_user'])&&isset($_SESSION['session_user_type'])&&isse
 
 		if($service_availed_search_cat=="Service"){
 			if($service_availed_searchfield!=""){
-				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' and service.service_name like '%".$service_availed_searchfield."%' order by service.service_name";
+				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' and service.service_name like '%".$service_availed_searchfield."%' order by service.service_name";
 			}else{
-				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' order by service.service_name";
+				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' order by service.service_name";
 			}
 		}else if($service_availed_search_cat=="Therapist"){
 			if($service_availed_searchfield!=""){
-				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' and availed_service.therapist like '%".$service_availed_searchfield."%' order by availed_service.therapist";
+				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' and availed_service.therapist like '%".$service_availed_searchfield."%' order by availed_service.therapist";
 			}else{
-				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' order by availed_service.therapist";
+				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' order by availed_service.therapist";
 			}
 		}else if($service_availed_search_cat=="Date"){
 			if($service_availed_searchfield!=""){
-				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' and availed_service.date_availed like '%".$service_availed_searchfield."%' order by availed_service.date_availed desc";
+				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' and availed_service.date_availed like '%".$service_availed_searchfield."%' order by availed_service.date_availed desc";
 			}else{
-				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' order by availed_service.date_availed desc";
+				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' order by availed_service.date_availed desc";
 			}
 		}else if($service_availed_search_cat=="Type"){
 			if($service_availed_searchfield!=""){
-				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' and service.category like '%".$service_availed_searchfield."%' order by service.category";
+				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' and service.category like '%".$service_availed_searchfield."%' order by service.category";
 			}else{
-				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' order by service.category";
+				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' order by service.category";
+			}
+		}else if($service_availed_search_cat=="Remarks"){
+			if($service_availed_searchfield!=""){
+				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' and availed_service.remarks like '%".$service_availed_searchfield."%' order by availed_service.remarks";
+			}else{
+				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' order by availed_service.remarks";
 			}
 		}else{
 			if($service_availed_searchfield!=""){
-				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' and (service.service_name like '%".$service_availed_searchfield."%' or availed_service.therapist like '%".$service_availed_searchfield."%' or availed_service.date_availed like '%".$service_availed_searchfield."%' or service.category like '%".$service_availed_searchfield."%') order by availed_service.date_availed desc";
+				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' and (service.service_name like '%".$service_availed_searchfield."%' or availed_service.therapist like '%".$service_availed_searchfield."%' or availed_service.date_availed like '%".$service_availed_searchfield."%' or service.category like '%".$service_availed_searchfield."%') order by availed_service.date_availed desc";
 			}else{
-				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' order by availed_service.date_availed desc";
+				$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$user."' order by availed_service.date_availed desc";
 			}
 		}
 	}

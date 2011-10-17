@@ -14,7 +14,7 @@ $remarks = trim($_POST['remarks']);
 $username = trim($_POST['id']);
 $name = trim($_POST['name']);
 
-$add_availed_service = "insert into availed_service(Date, Therapist, Remarks, Username, Service_id) values('".$date."','".$therapist."','".$remarks."','".$username."', $service);";
+$add_availed_service = "insert into availed_service(Date_Availed, Therapist, Remarks, Username, Service_id) values('".$date."','".$therapist."','".$remarks."','".$username."', $service);";
 
 if (!mysql_query($add_availed_service,$con))
 {

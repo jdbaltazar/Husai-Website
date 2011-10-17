@@ -14,7 +14,7 @@ $remarks = trim($_POST['remarks']);
 $username = trim($_POST['username']);
 $name = trim($_POST['name']);
 
-$add_availed_service = "insert into bought_product(Date, Quantity, Remarks, Username, Product_id) values('".$date."','".$quantity."','".$remarks."','".$username."', $product);";
+$add_availed_service = "insert into bought_product(Date_Bought, Quantity, Remarks, Username, Product_id) values('".$date."','".$quantity."','".$remarks."','".$username."', $product);";
 
 if (!mysql_query($add_availed_service,$con))
 {
