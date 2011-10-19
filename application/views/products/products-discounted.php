@@ -7,7 +7,7 @@ if (!$con)
 }
 
 mysql_select_db(DB_NAME, $con);
-$result = mysql_query("SELECT * FROM product WHERE Discounted=True ORDER BY Product_Name;");
+$result = mysql_query("SELECT * FROM product WHERE Discounted=True AND Status='Available' ORDER BY Product_Name;");
 mysql_close($con);
 ?>
 

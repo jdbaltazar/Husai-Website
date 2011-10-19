@@ -1,3 +1,21 @@
+<?php 
+require("../../config/config.php"); 
+$con = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD);
+if (!$con)
+{
+	die('Could not connect: ' . mysql_error());
+}
+
+mysql_select_db(DB_NAME, $con);
+
+$husai = mysql_query("SELECT * FROM Husai");
+$husai_vision = mysql_query("SELECT * FROM Husai_Vision");
+$husai_mission = mysql_query("SELECT * FROM Husai_Mission");
+
+
+mysql_close($con);
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html
 	xmlns="http://www.w3.org/1999/xhtml">
@@ -10,6 +28,7 @@
 	media="screen" />
 <link rel="stylesheet" type="text/css" href="../css/adminstyle.css"
 	media="screen" />
+<link rel="stylesheet" type="text/css" href="css/updatecss.css" media="screen" />
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../css/style.css"
 	media="screen" />
@@ -39,7 +58,7 @@
 				<li><a href="../products">Products</a></li>
 				<li><a href="../about">About</a></li>
 				
-				<?php require '../../application/views/includelinks.php';?>
+				 <?php require '../../application/views/includelinks.php';?>
   	    </ul>
 		</div>
 
@@ -61,26 +80,53 @@
 			</table>
 			
             <div id = "vision-div">
-            	<p id = "vision-header"> Vision </p>		
-            	<p id = "vision-body"> To be the premier Health and Beauty Center in the region. </p>
-            </div>
+            	<p id = "vision-header"> Vision </p>	
+                <?php
+				while($row = mysql_fetch_array($husai_vision)){
+					echo '<p id = "vision-p">'.$row["Vision"].'<span><a href = "../about/delete-vision.php?id='.$row["id"].'"> remove</a></span></p>';
+				}
+				?>
+                
+                <form method="post" action="add-vision.php">
+                    <table cellspacing="15">
+                        	<tr>
+                            	<td width="414"><input type = "text" name = "vision_entry" id = "newVisionText" /> </td>
+                                <td width="77"><input type = "submit" value = "Add Vision" id = "addVisionButton" /> </td>
+                            </tr>
+                     </table>
+                </form>
+           </div>
 			<div id = "mission-div">
             	<p id = "mission-header">Mission</p>
+                <?php
+				while($row = mysql_fetch_array($husai_mission)){
+					echo '<p id = "mission-p">'.$row["Mission"].'<span><a href = "../about/delete-mission.php?id='.$row["id"].'"> remove</a></span></p>';
+				}
+				?>
                 
-                <p id = "mission-body"> 1. To provide quality care in SPA and Salon Services to our clients at all time </p>	
-                <p id = "mission-body"> 2. To provide organically prepared and safe skin care products </p>	
-                <p id = "mission-body"> 3. To maintain an ambiance in our center where wellness and beauty related information would be discussed to our clients </p>	
-                <p id = "mission-body"> 4. To provide regular training and updates to our therapists as regards to therapeutic massage, non-invasive skin care and wellness program </p>	
+                <form method="post" action="add-mission.php">
+                	<table cellspacing="15">
+                        	<tr>
+                            	<td width="414"><input type = "text" name = "mission_entry" id = "newVisionText" /> </td>
+                                <td width="77"><input type = "submit" value = "Add Mission" id = "addVisionButton" /> </td>
+                            </tr>
+                     </table>
+                </form>               
+                
+                
             </div>
             
        
             <div id = "history-div">
                  <p id = "historylabel">History</p>
             
-                <form method="" action="">
-              <textarea style="resize: none;" name = "history">
-                        Husai history here..
-                    </textarea>
+                <form method="post" action="update-history.php">
+                    <textarea style="resize: none;" wrap="default"  name = "history_entry"><?php
+				while($row = mysql_fetch_array($husai)){
+					echo $row["History"];
+				}
+				?></textarea>
+              
                     <input type="submit" value = "Update"/>
                </form>
             </div>

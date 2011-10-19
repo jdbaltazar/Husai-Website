@@ -156,7 +156,7 @@ mysql_close($con);
 
 		<!-- InstanceEndEditable -->
 		<div id="footer">
-			<p id="fw-foottext" class="fw-footertext">Copyright ©�2011</p>
+			<p id="fw-foottext" class="fw-footertext">Copyright ©2011</p>
 		</div>
 
 	</div>

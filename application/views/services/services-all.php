@@ -8,7 +8,7 @@ if (!$con)
 
 mysql_select_db(DB_NAME, $con);
 
-$result = mysql_query("SELECT * FROM service ORDER BY Service_Name");
+$result = mysql_query("SELECT * FROM service WHERE Status='Available' ORDER BY Service_Name");
 
 mysql_close($con);
 ?>

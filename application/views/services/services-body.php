@@ -7,7 +7,7 @@ if (!$con)
 }
 
 mysql_select_db(DB_NAME, $con);
-$result = mysql_query("SELECT * FROM service WHERE Category='Body Service' ORDER BY Service_Name;");
+$result = mysql_query("SELECT * FROM service WHERE Category='Body Service' AND Status='Available' ORDER BY Service_Name;");
 mysql_close($con);
 ?>
 

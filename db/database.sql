@@ -140,8 +140,7 @@ CREATE  TABLE IF NOT EXISTS `husai`.`Husai` (
   `Operating_Schedule` VARCHAR(200) NOT NULL ,
   `Email` VARCHAR(200) NOT NULL ,
   `Website` VARCHAR(200) NULL ,
-  `Mission` VARCHAR(800) NULL ,
-  `Vision` VARCHAR(800) NULL ,
+  `History` TEXT NULL ,
   PRIMARY KEY (`Name`) )
 ENGINE = InnoDB;
 
@@ -214,6 +213,30 @@ CREATE  TABLE IF NOT EXISTS `husai`.`Member_Avail` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `husai`.`Husai_Mission`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `husai`.`Husai_Mission` ;
+
+CREATE  TABLE IF NOT EXISTS `husai`.`Husai_Mission` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `Mission` TEXT NOT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `husai`.`Husai_Vision`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `husai`.`Husai_Vision` ;
+
+CREATE  TABLE IF NOT EXISTS `husai`.`Husai_Vision` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `Vision` TEXT NOT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
@@ -245,3 +268,13 @@ INSERT INTO HUSAI_BRANCH(NAME, ADDRESS, CONTACT_NOS, OPERATING_SCHEDULE, VISIBIL
 '(053)331-1218',
 'Mon-Sun: (9:00am-8:00pm)',
 'Visible ');
+
+
+INSERT INTO HUSAI_MISSION(MISSION) VALUES
+('1. To provide quality care in SPA and Salon Services to our clients at all time.'),
+('2. To provide organically prepared and safe skin care products.'),
+('3. To maintain an ambiance in our center where wellness and beauty related information would be discussed to our clients.'),
+('4. To provide regular training and updates to our therapists as regards to therapeutic massage, non-invasive skin care and wellness program.');
+
+INSERT INTO HUSAI_VISION(VISION) VALUES
+('To be the premier Health and Beauty Center in the region.');

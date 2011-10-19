@@ -176,12 +176,12 @@ function findselected() {
 	                    <tr>
 	                    	
 	                    	<td align="right">From:</td>
-	                    	<td><input id = "input-from"type="text" value="<?php echo $promo_from?>" readonly="readonly" name="fromDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar1" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
+	                    	<td><input id = "input-from"type="text" value="<?php echo $promo_from?>" readonly name="fromDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar1" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
 	                        
 	                    </tr>
 	                    <tr>
 	                    	<td align="right">To:</td>
-	                    	<td><input id = "input-from"type="text" value="<?php echo $promo_to?>" readonly="readonly" name="toDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar2" onclick="displayCalendar(document.forms[0].toDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
+	                    	<td><input id = "input-from"type="text" value="<?php echo $promo_to?>" readonly name="toDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar2" onclick="displayCalendar(document.forms[0].toDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
 	                        
 	                    </tr>
 	                    <tr>
@@ -200,7 +200,7 @@ function findselected() {
         
         <!-- InstanceEndEditable -->
         <div id = "footer">
-        	<p id="fw-foottext" class="fw-footertext">Copyright ©2011</p> 
+        	<p id="fw-foottext" class="fw-footertext">Copyright Â©2011</p> 
         </div>
     
     </div>

@@ -10,8 +10,8 @@ mysql_select_db("husai", $con);
 
 $discounted = "";
 $id = $_POST['id'];
-$service_name  = trim($_POST['service-name']);
-$description = trim($_POST['service-description']);
+$service_name  = addslashes(trim($_POST['service-name']));
+$description = addslashes(trim($_POST['service-description']));
 $status = trim($_POST['service-status']);
 $price = trim($_POST['service-price']);
 $promo = trim($_POST['mymenu']);

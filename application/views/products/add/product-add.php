@@ -12,12 +12,8 @@ include '../../../application/views/upload.php';
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../../css/style.css"
 	media="screen" />
-
 <link rel="stylesheet" type="text/css" href="../../css/adminstyle.css"
 	media="screen" />
-<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css"
-	media="screen" />
-<script type="text/javascript" src="../../js/dialog_box.js"></script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 <script type="text/javascript"> 
@@ -95,7 +91,6 @@ include '../../../application/views/upload.php';
 					<p id="subtitle">ADD HUSAI PRODUCT</p>
 
 					<form name="imgUpload" action="" method="post"
-						onsubmit="return validate_product_form()"
 						enctype="multipart/form-data">
 
 						<div id="add-table">

@@ -119,11 +119,12 @@ image3.src="../images/4.jpg"
                             </tr>
                         </table>
                         <table width="599" cellspacing="15" id = "secondtable">
-                        	<tr>
+                        <!--  	<tr>
                             	<td align="right" width="142">Image :</td>
                             	<td width="250" ><input type = "text" name= "newsimage" id="newsimage" / ></td>                                
                             	<td width="147" align="left"><input type="submit" name = "" value = "browse" id= "browsenewsimage" /></td>                                
                             </tr>
+                            -->
                         </table>
                         <p id = "addbutton"><input type="submit" name = "addnews" value = "ADD NEWS" id = "addnewsbutton"></p>
             	  </form>

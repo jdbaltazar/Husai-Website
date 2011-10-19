@@ -113,8 +113,8 @@ if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 }
 
 else if(isset($_POST['save-service'])) {
-	$service_name  = trim($_POST['service-name']);
-	$description = trim($_POST['service-desc']);
+	$service_name  = addslashes(trim($_POST['service-name']));
+	$description = addslashes(trim($_POST['service-desc']));
 	$status = trim($_POST['service-status']);
 	$price = trim($_POST['service-price']);
 	$category = trim($_POST['service-category']);
@@ -137,12 +137,13 @@ else if(isset($_POST['save-service'])) {
 }
 
 else if(isset($_POST['save-product'])) {
-	$product_name  = trim($_POST['product-name']);
-	$description = trim($_POST['product-desc']);
+	
+	$product_name  = addslashes(trim($_POST['product-name']));
+	$description = addslashes(trim($_POST['product-desc']));
 	$status = trim($_POST['product-status']);
 	$price = trim($_POST['product-price']);
 	$category = trim($_POST['product-category']);
-	$filepath = trim($_POST['filepath']);
+	$filepath = addslashes(trim($_POST['filepath']));
 
 	if($filepath == ''){
 		
@@ -152,8 +153,8 @@ else if(isset($_POST['save-product'])) {
 	
 	if (!mysql_query($add_product,$con))
 	{
-		// 		die('Error: ' . mysql_error());
-		header('Location: add-product.php');
+		 		die('Error: ' . mysql_error());
+		//header('Location: ../../products/add-product.php');
 	}
 	else{
 		sleep(2);

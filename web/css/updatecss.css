@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+
+#update-prodservice-header a {
+	margin-left:100px;
+	text-decoration:none;
+	margin-right:10px;
+	color:#FFF;
+	font-size:12px;
+}
+
+#update-prodservice-header{
+	margin:0px 200px;
+	width:550px;
+	background-color:#936;
+	color:#FFF;
+	text-align:center;
+	height:20px;
+	font-size:16px;
+	padding:6px 0px;
+	font-weight:bold;
+	border-top-left-radius:6px;	
+	border-top-right-radius:6px;
+}
+
+#newVisionText{
+	border:1px #999 solid;	
+	height:25px;
+	width:400px;
+}
+
+#addVisionButton{
+	background-color:#903;
+	color:#FFF;
+	height:25px;
+}
+#addVisionButton:hover{
+	background-color:#933;
+}
+#vision-p{
+	font-style:italic;
+	font-size:14px;
+}
+#vision-p a{
+	margin-left:10px;
+	color:#900;
+	font-weight:bold;
+	font-size:14px;
+	text-decoration:none;
+}
+
+#mission-p{
+	margin:10px 5px;
+	font-style:italic;
+	font-size:14px;
+}
+#mission-p a{
+	margin-left:10px;
+	color:#900;
+	font-weight:bold;
+	font-size:14px;
+	text-decoration:none;
+}
+
+
+
+
