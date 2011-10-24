@@ -1,8 +1,5 @@
 <?php
-include '../../../application/views/upload.php';
-?>
-<?php
-//include 'connect.php';
+include '../../application/views/upload.php';
 $con = mysql_connect("localhost","root","");
 if (!$con)
 {
@@ -74,6 +71,9 @@ function findselected() {
 <link rel="stylesheet" type="text/css" href="../../css/adminstyle.css" media="screen" />
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css" media="screen" />
+<script type="text/javascript" src="../../js/dialog_box.js"></script>
+
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -113,7 +113,7 @@ function findselected() {
             </table>
             <p>&nbsp;</p>
             <div id = "service-product-pic">
-            <form name="imgUpload" action="" method="post" enctype="multipart/form-data">
+            <form name="imgUpload" action="" onsubmit="return hasFile()" method="post" enctype="multipart/form-data">
             	<div id = "picture">
 	            	<img src = "<?php if($filename==""){echo $directory.$file_path;} else{echo $filename;}?>" />
 	            </div>
@@ -123,12 +123,14 @@ function findselected() {
 	        </div>
 	        
              <div id = "service-desc">
-            	<form method = "post" action = "../update-product-module.php" name = "myform" id = "profile-form">          
+            	<form method = "post" onsubmit="return validate_product_profile_form()" action = "update-product.php" name = "myform" id = "profile-form">          
 	           
 	                <table cellspacing="15">
 	                    <tr>
 	                        <td align="right">Product Name:</td>
-	                        <td><input type="hidden" name="id" value="<?php echo $product_id;?>" /> <input type = "text" value="<?php echo $product_name ?>" name = "product-name"  id = "s1" /></td>
+	                        <td><input type = "text" value="<?php echo $product_name ?>" name = "product-name"  id = "s1" />
+	                        	<input type="hidden" name="id" value="<?php echo $_GET['id'];?>" />   
+	                        </td>
 	                    </tr>
 	                    <tr>
 	                        <td align="right" >Description:</td>
@@ -176,12 +178,12 @@ function findselected() {
 	                    <tr>
 	                    	
 	                    	<td align="right">From:</td>
-	                    	<td><input id = "input-from"type="text" value="<?php echo $promo_from?>" readonly name="fromDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar1" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
+	                    	<td><input id = "input-from"type="text" value="<?php echo $promo_from?>" readonly="readonly" name="fromDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar1" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
 	                        
 	                    </tr>
 	                    <tr>
 	                    	<td align="right">To:</td>
-	                    	<td><input id = "input-from"type="text" value="<?php echo $promo_to?>" readonly name="toDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar2" onclick="displayCalendar(document.forms[0].toDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
+	                    	<td><input id = "input-from"type="text" value="<?php echo $promo_to?>" readonly="readonly" name="toDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar2" onclick="displayCalendar(document.forms[0].toDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
 	                        
 	                    </tr>
 	                    <tr>
@@ -190,7 +192,9 @@ function findselected() {
 	                    	  %</td>
 	                    </tr>
 	                </table>
-	                <br>	            
+	                <br>
+	                
+	                       
 	            	<input type="submit" value = "Update" id = "update-btn" />
             	</form>
 			</div>  

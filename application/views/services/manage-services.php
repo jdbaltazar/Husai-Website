@@ -169,7 +169,7 @@ else
 				
 			<?php
 			while($row = mysql_fetch_array($result)){
-				echo '<a href ="../services/view/service-profile.php?id='.$row[0].'">';
+				echo '<a href ="../services/index.php?id='.$row[0].'">';
 				echo '<div>';
 				echo '<table width="850" id="services-list" cellspacing="0">';
 				echo "<tr>";

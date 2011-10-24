@@ -1,5 +1,5 @@
 <?php
-include '../../../application/views/upload.php';
+include '../../application/views/upload.php';
 ?>
 <?php
 //include 'connect.php';
@@ -73,6 +73,8 @@ function findselected() {
 <link rel="stylesheet" type="text/css" href="../../css/adminstyle.css" media="screen" />
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css" media="screen" />
+<script type="text/javascript" src="../../js/dialog_box.js"></script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -114,7 +116,7 @@ function findselected() {
             <p>&nbsp;</p>
             
             <div id = "service-product-pic">
-            <form name="imgUpload" action="" method="post" enctype="multipart/form-data">
+            <form name="imgUpload" onsubmit="return hasFile()" action="" method="post" enctype="multipart/form-data">
             	<div id = "picture">
 	            	<img src = "<?php if($filename==""){echo $directory.$file_path;} else{echo $filename;}?>" />
 	            </div>
@@ -124,7 +126,7 @@ function findselected() {
 	        </div>
 	        
              <div id = "service-desc">
-            	<form method = "post" action = "../update-service-module.php" name = "myform" id = "profile-form">          
+            	<form method = "post" onsubmit="return validate_service_profile_form()" action = "update-service.php" name = "myform" id = "profile-form">          
 	           
 	                <table cellspacing="15">
 	                    <tr>
@@ -195,7 +197,7 @@ function findselected() {
         
         <!-- InstanceEndEditable -->
         <div id = "footer">
-        	<p id="fw-foottext" class="fw-footertext">Copyright ©2011</p> 
+        	<p id="fw-foottext" class="fw-footertext">Copyright Â©2011</p> 
         </div>
     
     </div>

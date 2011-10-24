@@ -4,7 +4,11 @@ if(isset($_SESSION['session_user'])&&isset($_SESSION['session_user_type'])&&isse
 	if($_SESSION['session_user_type'] == 'Husai Customer'){		
 		include("../../application/views/services/services-all.php");
 	}else if($_SESSION['session_user_type'] == 'Husai Administrator'){
-		include("../../application/views/services/manage-services.php");
+		if(isset($_GET['id'])){
+			include("../../application/views/services/service-profile.php");
+		}else{
+			include("../../application/views/services/manage-services.php");
+		}
 	}
 	exit;
 }else{

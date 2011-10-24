@@ -91,12 +91,12 @@ CREATE  TABLE IF NOT EXISTS `husai`.`Availed_Service` (
     FOREIGN KEY (`Service_id` )
     REFERENCES `husai`.`Service` (`id` )
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_Availed_Services_Account1`
     FOREIGN KEY (`Username` )
     REFERENCES `husai`.`Account` (`Username` )
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -119,12 +119,12 @@ CREATE  TABLE IF NOT EXISTS `husai`.`Bought_Product` (
     FOREIGN KEY (`Username` )
     REFERENCES `husai`.`Account` (`Username` )
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_Bought_Product_Product1`
     FOREIGN KEY (`Product_id` )
     REFERENCES `husai`.`Product` (`id` )
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -242,6 +242,7 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
+
 INSERT INTO ACCOUNT VALUES('admin', 'admin', 'Husai Administrator', 'Activated', ' ', ' ', '2001-01-01', 'Male', '', '', '', 'Single', '', '' );
 
 INSERT INTO MEMBER_GET(DESCRIPTION) VALUES
@@ -278,3 +279,4 @@ INSERT INTO HUSAI_MISSION(MISSION) VALUES
 
 INSERT INTO HUSAI_VISION(VISION) VALUES
 ('To be the premier Health and Beauty Center in the region.');
+

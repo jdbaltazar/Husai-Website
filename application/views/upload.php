@@ -1,4 +1,4 @@
-<?php require("../../../config/config.php"); 
+<?php require("../../config/config.php"); 
 
 
 
@@ -72,25 +72,25 @@ if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 
 	if(isset($_POST['xsubmit_service'])){
 		if ($file_paths >= 1 ){
-			$filename = "../../upload/services/thumbnail/". $name."_".$file_paths.'.'.$extension;
-			$filename1 = "../../upload/services/full_view/". $name."_".$file_paths.'.'.$extension;
+			$filename = "../upload/services/thumbnail/". $name."_".$file_paths.'.'.$extension;
+			$filename1 = "../upload/services/full_view/". $name."_".$file_paths.'.'.$extension;
 			$image= $name."_".$file_paths.'.'.$extension;
 		}
 		else{
-			$filename = "../../upload/services/thumbnail/". $_FILES['image']['name'];
-			$filename1 = "../../upload/services/full_view/". $_FILES['image']['name'];
+			$filename = "../upload/services/thumbnail/". $_FILES['image']['name'];
+			$filename1 = "../upload/services/full_view/". $_FILES['image']['name'];
 		}
 	}
 	else{
 		if ($file_paths >= 1 ){
 			$image= $_FILES['image']['name']."_".$file_paths;
-			$filename = "../../upload/products/thumbnail/". $name."_".$file_paths.'.'.$extension;
-			$filename1 = "../../upload/products/full_view/". $name."_".$file_paths.'.'.$extension;
+			$filename = "../upload/products/thumbnail/". $name."_".$file_paths.'.'.$extension;
+			$filename1 = "../upload/products/full_view/". $name."_".$file_paths.'.'.$extension;
 			$image= $name."_".$file_paths.'.'.$extension;
 		}
 		else{
-			$filename = "../../upload/products/thumbnail/". $_FILES['image']['name'];
-			$filename1 = "../../upload/products/full_view/". $_FILES['image']['name'];
+			$filename = "../upload/products/thumbnail/". $_FILES['image']['name'];
+			$filename1 = "../upload/products/full_view/". $_FILES['image']['name'];
 		}
 	}
 

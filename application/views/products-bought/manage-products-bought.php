@@ -37,6 +37,9 @@ mysql_close($con);
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../css/style.css"
 	media="screen" />
+	<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css"
+	media="screen" />
+<script type="text/javascript" src="../../js/dialog_box.js"></script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -63,14 +66,6 @@ mysql_close($con);
 				<li><a href="../services">Services</a></li>
 				<li><a href="../products">Products</a></li>
 				<li><a href="../about">About</a></li>
-				
-				
-				
-				
-				
-				
-				
-				
 				  <?php require '../../application/views/includelinks.php';?>
            
   	    </ul>
@@ -85,13 +80,13 @@ mysql_close($con);
 			<table width="929" id="page-title">
 				<tr>
 					<td width="37"><img src="../images/purpletitle.png" /></td>
-					<td width="619"><?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'; ?>Customer Profile</a> &raquo; <?php echo '<a href="../services-availed/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Services
+					<td width="619"><?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'; ?><?php echo $_GET['name']; ?></a> &raquo; <?php echo '<a href="../services-availed/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>Services
 						Availed</a> &raquo; Products Bought</td>
 				</tr>
 			</table>
 			<p>&nbsp;</p>
 			<p id="add-availed-header">Add Bought Product</p>
-			<form method="post" action="../save-bought-product.php">
+			<form method="post" onsubmit="return validate_product_bought_form()" action="../save-bought-product.php">
 				<div id="add-availed-div">
 					<table width="546" cellspacing="15">
 						<tr>
@@ -116,11 +111,8 @@ mysql_close($con);
 						</tr>
 						<tr>
 							<td align="right">Quantity:</td>
-							<td><input type="hidden" name="username"
-								value="<?php echo $_GET['id'];?>" /><input type="hidden"
-								name="name" value="<?php echo $_GET['name'];?>" /><input
-								name="quantity" type="text" id="add-avail-input" size="10"
-								maxlength="11" /></td>
+							
+							<td><input name="quantity" type="text" id="add-avail-input" size="10" maxlength="11" /></td>
 						</tr>
 						<tr>
 							<td align="right">Remarks</td>
@@ -128,7 +120,10 @@ mysql_close($con);
 						</tr>
 						<tr>
 							<td></td>
-							<td id="add-td"><input type="submit" value="Add" id="add-btn" />
+							<td id="add-td">
+							<input type="hidden" name="username" value="<?php echo $_GET['id'];?>" />
+							<input type="hidden" name="name" value="<?php echo $_GET['name'];?>" />
+							<input type="submit" value="Add" id="add-btn" />
 							</td>
 						</tr>
 					</table>

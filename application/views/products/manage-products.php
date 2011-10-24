@@ -116,7 +116,7 @@ mysql_close($con);
 					<?php
 
 					while($row = mysql_fetch_array($result)){
-						echo "<a href = \"../products/view/product-profile.php?id=".$row[0]."\">";
+						echo "<a href = \"../products/index.php?id=".$row[0]."\">";
 						echo '<div>';
 						echo '<table width="850" id="services-list" cellspacing="0">';
 						echo "<tr>";

@@ -28,7 +28,7 @@ mysql_close($con);
 	media="screen" />
 <link rel="stylesheet" type="text/css" href="../css/adminstyle.css"
 	media="screen" />
-<link rel="stylesheet" type="text/css" href="css/updatecss.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../css/updatecss.css" media="screen" />
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../css/style.css"
 	media="screen" />
@@ -91,7 +91,7 @@ mysql_close($con);
                     <table cellspacing="15">
                         	<tr>
                             	<td width="414"><input type = "text" name = "vision_entry" id = "newVisionText" /> </td>
-                                <td width="77"><input type = "submit" value = "Add Vision" id = "addVisionButton" /> </td>
+                                <td width="77"><input type = "submit" value = "  Add Vision  " id = "addVisionButton" /> </td>
                             </tr>
                      </table>
                 </form>
@@ -108,7 +108,7 @@ mysql_close($con);
                 	<table cellspacing="15">
                         	<tr>
                             	<td width="414"><input type = "text" name = "mission_entry" id = "newVisionText" /> </td>
-                                <td width="77"><input type = "submit" value = "Add Mission" id = "addVisionButton" /> </td>
+                                <td width="77"><input type = "submit" value = "  Add Mission  " id = "addVisionButton" /> </td>
                             </tr>
                      </table>
                 </form>               

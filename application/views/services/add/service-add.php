@@ -14,7 +14,8 @@ include '../../../application/views/upload.php';
 	media="screen" />
 <link rel="stylesheet" type="text/css" href="../../../css/adminstyle.css"
 	media="screen" />
-
+<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css" media="screen" />
+<script type="text/javascript" src="../../js/dialog_box.js"></script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 <script type="text/javascript"> 
@@ -93,7 +94,7 @@ include '../../../application/views/upload.php';
 
 					<p id="subtitle">ADD HUSAI SERVICE</p>
 
-					<form name="imgUpload" action="" method="post" enctype="multipart/form-data">
+					<form name="imgUpload" action="" method="post" onsubmit="return validate_service_form()" enctype="multipart/form-data">
 						<div id="add-table">
 							<table cellspacing="10">
 								<tr>
@@ -138,7 +139,7 @@ include '../../../application/views/upload.php';
 									<td>
 									  <input type="file" name="image" id="image" />
 									  <input type="submit" name="xsubmit_service" value="Upload"
-										id="upload" /></td>
+										id="upload" onclick="btnClicked('Upload')" /></td>
 									<td align="left">&nbsp;</td>
 								</tr>
 								<tr>
@@ -161,7 +162,7 @@ include '../../../application/views/upload.php';
 								<tr>
 									<td>&nbsp;</td>
 									<td align="center"><input type="submit" name="save-service" value="Save"
-										id="upload" /></td>
+										id="upload" onclick="btnClicked('Save')"/></td>
 									<td>&nbsp;</td>
 								</tr>
 

@@ -12,8 +12,12 @@ include '../../../application/views/upload.php';
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../../css/style.css"
 	media="screen" />
+
 <link rel="stylesheet" type="text/css" href="../../css/adminstyle.css"
 	media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css"
+	media="screen" />
+<script type="text/javascript" src="../../js/dialog_box.js"></script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 <script type="text/javascript"> 
@@ -91,6 +95,7 @@ include '../../../application/views/upload.php';
 					<p id="subtitle">ADD HUSAI PRODUCT</p>
 
 					<form name="imgUpload" action="" method="post"
+						onsubmit="return validate_product_form()"
 						enctype="multipart/form-data">
 
 						<div id="add-table">
@@ -126,8 +131,7 @@ include '../../../application/views/upload.php';
 									<td><input type="text" name="product-price" id="text-field" />
 									</td>
 								</tr>
-
-
+								
 								<tr>
 									<tr>
 										<td align="right">Image:</td>
@@ -139,7 +143,7 @@ include '../../../application/views/upload.php';
 									<td align="right">&nbsp;</td>
 									<td><input type="file" name="image" id="image" /> <input
 										type="submit" name="xsubmit_product" value="Upload"
-										id="upload" /></td>
+										id="upload" onclick="btnClicked('Upload')" /></td>
 									<td align="left">&nbsp;</td>
 								</tr>
 								<tr>
@@ -166,10 +170,11 @@ include '../../../application/views/upload.php';
 
 									<td>&nbsp;</td>
 								</tr>
+
 								<tr>
 									<td>&nbsp;</td>
 									<td align="center"><input type="submit" name="save-product"
-										value="Save" id="upload" /></td>
+										value="Save" id="upload" onclick="btnClicked('Save')" /></td>
 									<td>&nbsp;</td>
 								</tr>
 

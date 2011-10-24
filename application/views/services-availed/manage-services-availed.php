@@ -98,7 +98,7 @@ mysql_close($con);
 			<table width="929" id="page-title">
 				<tr>
 					<td width="37"><img src="../images/purpletitle.png" /></td>
-					<td width="619"><?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'; ?>Customer Profile</a> &raquo; Services Availed &raquo; <?php echo '<a href="../products-bought/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>
+					<td width="619"><?php echo '<a href="../accounts/index.php?id='.$_GET['id'].'">'; ?><?php echo $_GET['name']; ?></a> &raquo; Services Availed &raquo; <?php echo '<a href="../products-bought/index.php?id='.$_GET['id'].'&name='.$_GET['name'].'">'?>
 						Products Bought </a></td>
 				</tr>
 			</table>
