@@ -1,7 +1,4 @@
 <?php
-include '../../application/views/upload.php';
-?>
-<?php
 //include 'connect.php';
 $con = mysql_connect("localhost","root","");
 if (!$con)
@@ -11,34 +8,23 @@ if (!$con)
 
 mysql_select_db("husai", $con);
 
-$directory="../../upload/services/thumbnail/";
 $service_name="";
 $description="";
 $price="";
 $status = "";
 $discounted = "";
 $discount = "";
-$file_path = "";
-$promo_from = "";
-$promo_to = "";
 
 $service_id = $_GET['id'];
-$results = mysql_query("select * from service where id = $service_id");
+$results = mysql_query("select Service_Name, Description, Status, Charge, Discounted, Discount from service where id = $service_id");
 
 while($row = mysql_fetch_array($results)){
 	$service_name = $row['Service_Name'];
 	$description = $row['Description'];
 	$price = $row['Charge'];
 	$status = $row['Status'];
-	$file_path = $row['File_Path'];
 	$discounted = $row['Discounted'];
-	$promo_from = $row['Discount_From'];
-	$promo_to = $row['Discount_To'];
 	$discount = $row['Discount'];
-}
-
-if($file_path == ""){
-	$file_path = "default_pic.jpg";
 }
 
 mysql_close($con);
@@ -50,31 +36,62 @@ mysql_close($con);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
-<link type="text/css" rel="stylesheet" href="../../css/dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen" />
-<script type="text/javascript" src="../../js/dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118">
-</script>
+<link type="text/css" rel="stylesheet" href="../dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen"></LINK>
 
-<script language="JavaScript"
-type="text/javascript"> 
+<SCRIPT type="text/javascript" src="../dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118"></script>
+
+
+
+<script language="JavaScript" type="text/javascript"> 
+
 
 function findselected() { 
-	   if (document.myform.promo.value == 'Not Discounted') {
-	      document.myform.calendar1.disabled=true;
-	      document.myform.calendar2.disabled=true;
-	      document.myform.percentdiscount.disabled=true;
-	   } else {
-		   	  document.myform.calendar1.disabled=false;
-		      document.myform.calendar2.disabled=false;
-		      document.myform.percentdiscount.disabled=false;
-	   }
-	} 
-</script>
+   if (document.myform.mymenu.value == 'Not Discounted') {
+      document.myform.calendar1.disabled=true;
+      document.myform.calendar2.disabled=true;
+      document.myform.percentdiscount.disabled=true;
+   } else {
+	   document.myform.calendar1.disabled=false;
+	      document.myform.calendar2.disabled=false;
+	      document.myform.percentdiscount.disabled=false;
+   }
+} 
+
+function enableFields(form){
+	
+
+if(form.service.checked)
+   {
+  		form.desc1.disabled = false;
+		form.period1.disabled = false;
+   }
+else{
+		form.desc1.disabled = true;
+		form.period1.disabled = true;
+		form.elements["desc1"].value = '';
+		form.elements["period1"].value = '';
+
+
+}
+if(form.service2.checked){
+		form.percentagewhole.disabled = false;
+		form.period2.disabled = false;
+		form.elements["percentagedecimal"].value = '19';
+	}  
+else{
+		form.desc2.disabled = true;
+		form.period2.disabled = true;
+		form.elements["desc2"].value = '';
+		form.elements["period2"].value = '';
+} 
+}
+
+
+</SCRIPT>
 
 <link rel="stylesheet" type="text/css" href="../../css/adminstyle.css" media="screen" />
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css" media="screen" />
-<script type="text/javascript" src="../../js/dialog_box.js"></script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -97,9 +114,7 @@ function findselected() {
 				<li><a href="../../services">Services</a></li>
 				<li><a href="../../products">Products</a></li>
 				<li><a href="../../about">About</a></li>
-				<li><a href="../../accounts">Accounts</a></li>
-				<li><a href="../../membership">Membership</a></li>
-				  <?php /**require '../../../application/views/includeaccountlinkforaddeditview.php';**/?>
+				  <?php require '../../../application/views/includeaccountlinkforaddeditview.php';?>
   	      </ul>
   	    </div>
 
@@ -116,17 +131,15 @@ function findselected() {
             <p>&nbsp;</p>
             
             <div id = "service-product-pic">
-            <form name="imgUpload" onsubmit="return hasFile()" action="" method="post" enctype="multipart/form-data">
+            
             	<div id = "picture">
-	            	<img src = "<?php if($filename==""){echo $directory.$file_path;} else{echo $filename;}?>" />
+	            	<img src = "../../images/sample.jpg">
 	            </div>
-	            <p><input type="file" name="image" id="image" /></p>
-				<p><br /><input type="submit" name="xsubmit_service" value="Upload" id="upload" /></p>
-			</form>	
+	            <p><a href = "#">Change Image</a></p>	
 	        </div>
 	        
              <div id = "service-desc">
-            	<form method = "post" onsubmit="return validate_service_profile_form()" action = "update-service.php" name = "myform" id = "profile-form">          
+            	<form method = "post" action = "../../update" name = "myform" id = "profile-form">          
 	           
 	                <table cellspacing="15">
 	                    <tr>
@@ -135,7 +148,7 @@ function findselected() {
 	                    </tr>
 	                    <tr>
 	                        <td align="right" >Description:</td>
-	                        <td><input name="filepath" type="hidden" id="text-field" readonly="readonly" <?php if($ok==1){ ?>value="<?php echo $image; ?>"<?php }else?> value="<?php echo $file_path;?>"  /><input type = "text" name = "service-description" value="<?php echo $description;?>" id = "s1" /></td>
+	                        <td><input type = "text" name = "service-description" value="<?php echo $description;?>" id = "s1"></td>
 	                    </tr>
 	                    <tr>
 	                        <td align="right" id =>Status:</td>
@@ -171,12 +184,12 @@ function findselected() {
 	                    <tr>
 	                    	
 	                    	<td align="right">From:</td>
-	                    	<td><input id = "input-from" type="text" value="<?php echo $promo_from?>" readonly="readonly" name="fromDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar1" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
+	                    	<td><input id = "input-from"type="text" value="2011/09/09" readonly="readonly" name="fromDate" style = "width:80px"><span style = "margin-left:15px; "><input type="button" name="calendar1" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
 	                        
 	                    </tr>
 	                    <tr>
 	                    	<td align="right">To:</td>
-	                    	<td><input id = "input-from" type="text" value="<?php echo $promo_to?>" readonly="readonly" name="toDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar2" onclick="displayCalendar(document.forms[0].toDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
+	                    	<td><input id = "input-from"type="text" value="2011/09/09" readonly="readonly" name="toDate" style = "width:80px"><span style = "margin-left:15px; "><input type="button" name="calendar2" onclick="displayCalendar(document.forms[0].toDate,'yyyy/mm/dd',this)" id = "calendar"></span></td>
 	                        
 	                    </tr>
 	                    <tr>
@@ -197,7 +210,7 @@ function findselected() {
         
         <!-- InstanceEndEditable -->
         <div id = "footer">
-        	<p id="fw-foottext" class="fw-footertext">Copyright Â©2011</p> 
+        	<p id="fw-foottext" class="fw-footertext">Copyright ©2011</p> 
         </div>
     
     </div>

@@ -1,4 +1,4 @@
-<?php require("../../config/config.php"); 
+<?php require("../../../config/config.php"); 
 
 
 
@@ -21,13 +21,13 @@ $filename="";
 
 if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 	$image = $_FILES['image']['name'];
-	
+
  	$query = "SELECT COUNT(File_Path) as num FROM product WHERE File_Path='$image'";
-	
+
 	$file_paths = mysql_fetch_array(mysql_query($query));
-	
+
 	$file_paths = $file_paths['num'];
-	
+
 	$uploadedfile = $_FILES['image']['tmp_name'];
 
 	$file_name = stripslashes($_FILES['image']['name']);
@@ -72,25 +72,25 @@ if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 
 	if(isset($_POST['xsubmit_service'])){
 		if ($file_paths >= 1 ){
-			$filename = "../upload/services/thumbnail/". $name."_".$file_paths.'.'.$extension;
-			$filename1 = "../upload/services/full_view/". $name."_".$file_paths.'.'.$extension;
+			$filename = "../../upload/services/thumbnail/". $name."_".$file_paths.'.'.$extension;
+			$filename1 = "../../upload/services/full_view/". $name."_".$file_paths.'.'.$extension;
 			$image= $name."_".$file_paths.'.'.$extension;
 		}
 		else{
-			$filename = "../upload/services/thumbnail/". $_FILES['image']['name'];
-			$filename1 = "../upload/services/full_view/". $_FILES['image']['name'];
+			$filename = "../../upload/services/thumbnail/". $_FILES['image']['name'];
+			$filename1 = "../../upload/services/full_view/". $_FILES['image']['name'];
 		}
 	}
 	else{
 		if ($file_paths >= 1 ){
 			$image= $_FILES['image']['name']."_".$file_paths;
-			$filename = "../upload/products/thumbnail/". $name."_".$file_paths.'.'.$extension;
-			$filename1 = "../upload/products/full_view/". $name."_".$file_paths.'.'.$extension;
+			$filename = "../../upload/products/thumbnail/". $name."_".$file_paths.'.'.$extension;
+			$filename1 = "../../upload/products/full_view/". $name."_".$file_paths.'.'.$extension;
 			$image= $name."_".$file_paths.'.'.$extension;
 		}
 		else{
-			$filename = "../upload/products/thumbnail/". $_FILES['image']['name'];
-			$filename1 = "../upload/products/full_view/". $_FILES['image']['name'];
+			$filename = "../../upload/products/thumbnail/". $_FILES['image']['name'];
+			$filename1 = "../../upload/products/full_view/". $_FILES['image']['name'];
 		}
 	}
 
@@ -113,8 +113,8 @@ if(isset($_POST['xsubmit_service']) || isset($_POST['xsubmit_product'])) {
 }
 
 else if(isset($_POST['save-service'])) {
-	$service_name  = addslashes(trim($_POST['service-name']));
-	$description = addslashes(trim($_POST['service-desc']));
+	$service_name  = trim($_POST['service-name']);
+	$description = trim($_POST['service-desc']);
 	$status = trim($_POST['service-status']);
 	$price = trim($_POST['service-price']);
 	$category = trim($_POST['service-category']);
@@ -137,24 +137,23 @@ else if(isset($_POST['save-service'])) {
 }
 
 else if(isset($_POST['save-product'])) {
-	
-	$product_name  = addslashes(trim($_POST['product-name']));
-	$description = addslashes(trim($_POST['product-desc']));
+	$product_name  = trim($_POST['product-name']);
+	$description = trim($_POST['product-desc']);
 	$status = trim($_POST['product-status']);
 	$price = trim($_POST['product-price']);
 	$category = trim($_POST['product-category']);
-	$filepath = addslashes(trim($_POST['filepath']));
+	$filepath = trim($_POST['filepath']);
 
 	if($filepath == ''){
-		
+
 	}
 	$add_product = "insert into product(Product_Name, Description, Price, Status, Category, File_Path) VALUES('".$product_name."', '".$description."', ".$price.",'".$status."', '".$category."','".$filepath."');";
 
-	
+
 	if (!mysql_query($add_product,$con))
 	{
-		 		die('Error: ' . mysql_error());
-		//header('Location: ../../products/add-product.php');
+		// 		die('Error: ' . mysql_error());
+		header('Location: add-product.php');
 	}
 	else{
 		sleep(2);

@@ -19,10 +19,10 @@ mysql_select_db("husai", $con);
 
 $discounted = "";
 $id = $_POST['id'];
-$service_name  = addslashes(trim($_POST['service-name']));
-$description = addslashes(trim($_POST['service-description']));
+$service_name  = trim($_POST['service-name']);
+$description = trim($_POST['service-description']);
 $status = trim($_POST['service-status']);
-$file_path = addslashes(trim($_POST['filepath']));
+$file_path = trim($_POST['filepath']);
 $price = trim($_POST['service-price']);
 $promo = trim($_POST['mymenu']);
 $promo_from = trim($_POST['fromDate']);
@@ -47,11 +47,10 @@ $update_service = "update service set Service_Name='$service_name', Description=
 if (!mysql_query($update_service,$con))
 {
 	//echo "id: ".$id;
-	die('Error: ' . mysql_error());
-	//header('Location: ../services/update');
+	//die('Error: ' . mysql_error());
+	header('Location: ../services/update');
 }
 else{
-	sleep(2);
 	header('Location: ../services');
 }
 

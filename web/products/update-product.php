@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 if(!isset($_SESSION['session_user'])||!isset($_SESSION['session_user_type'])||!isset($_SESSION['authenticated'])){
 	header("Location: ../products");
@@ -8,6 +7,7 @@ if(!isset($_SESSION['session_user'])||!isset($_SESSION['session_user_type'])||!i
 if($_SESSION['session_user_type'] != 'Husai Administrator'){
 	header("Location: ../products");
 }
+
 
 $con = mysql_connect("localhost","root","");
 if (!$con)
@@ -19,10 +19,10 @@ mysql_select_db("husai", $con);
 
 $discounted = "";
 $id = $_POST['id'];
-$product_name  = addslashes(trim($_POST['product-name']));
-$description = addslashes(trim($_POST['product-description']));
+$product_name  = trim($_POST['product-name']);
+$description = trim($_POST['product-description']);
 $status = trim($_POST['product-status']);
-$file_path = addslashes(trim($_POST['filepath']));
+$file_path = trim($_POST['filepath']);
 $price = trim($_POST['product-price']);
 $promo = trim($_POST['promo']);
 $promo_from = trim($_POST['fromDate']);
@@ -46,14 +46,13 @@ $update_product = "update product set Product_Name='$product_name', Description=
 if (!mysql_query($update_product,$con))
 {
 	//echo "id: ".$id;
-	die('Error: ' . mysql_error());
-	
-	//header('Location: ../products/update');
+	//die('Error: ' . mysql_error());
+
+	header('Location: ../products/update');
 	//header('Location: ../web/admin/product-profile.php');
 }
 else{
-	sleep(2);
-	header('Location: ../products');
+		header('Location: ../products');
 }
 
 mysql_close($con);

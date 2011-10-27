@@ -12,9 +12,10 @@ include '../../../application/views/upload.php';
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../../../css/style.css"
 	media="screen" />
-<link rel="stylesheet" type="text/css" href="../../../css/adminstyle.css"
+<link rel="stylesheet" type="text/css"
+	href="../../../css/adminstyle.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css"
 	media="screen" />
-<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css" media="screen" />
 <script type="text/javascript" src="../../js/dialog_box.js"></script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
@@ -74,6 +75,10 @@ include '../../../application/views/upload.php';
 				<li><a href="../../services">Services</a></li>
 				<li><a href="../../products">Products</a></li>
 				<li><a href="../../about">About</a></li>
+				
+				
+				
+				
 				  <?php require '../../../application/views/includeaccountlinkforaddeditview.php';?>
 			</ul>
 		</div>
@@ -94,13 +99,14 @@ include '../../../application/views/upload.php';
 
 					<p id="subtitle">ADD HUSAI SERVICE</p>
 
-					<form name="imgUpload" action="" method="post" onsubmit="return validate_service_form()" enctype="multipart/form-data">
+					<form name="imgUpload" action="" method="post"
+						onsubmit="return validate_service_form()"
+						enctype="multipart/form-data">
 						<div id="add-table">
 							<table cellspacing="10">
 								<tr>
 									<td align="right">Service Name:</td>
 									<td><input type="text" name="service-name" id="text-field" />
-									
 									</td>
 								</tr>
 								<tr>
@@ -118,12 +124,12 @@ include '../../../application/views/upload.php';
 								</tr>
 								<tr>
 									<tr>
-									  <td align="right">Status:</td>
-									  <td><select name="service-status" id="text-field">
-									    <option value="Available">Available</option>
-									    <option value="Not Available">Not Available</option>
-                                      </select></td>
-							  </tr>
+										<td align="right">Status:</td>
+										<td><select name="service-status" id="text-field">
+												<option value="Available">Available</option>
+												<option value="Not Available">Not Available</option>
+										</select></td>
+									</tr>
 									<tr>
 										<td align="right">Price:</td>
 										<td><input type="text" name="service-price" id="text-field" />
@@ -131,14 +137,15 @@ include '../../../application/views/upload.php';
 									</tr>
 
 									<tr>
-									  <td align="right">Image:</td>
-									  <td><input name="filepath" type="text" id="text-field" readonly="readonly" <?php if($ok==1){ ?>value="<?php echo $image; ?>"<?php }?>  /></td>
-									  <td align="left">&nbsp;</td>
-							  </tr>
+										<td align="right">Image:</td>
+										<td><input name="filepath" type="text" id="text-field"
+											readonly="readonly"   <?php if($ok==1){ ?>
+											value="<?php echo $image; ?>"  <?php }?> /></td>
+										<td align="left">&nbsp;</td>
+									</tr>
 									<td align="right">&nbsp;</td>
-									<td>
-									  <input type="file" name="image" id="image" />
-									  <input type="submit" name="xsubmit_service" value="Upload"
+									<td><input type="file" name="image" id="image" /> <input
+										type="submit" name="xsubmit_service" value="Upload"
 										id="upload" onclick="btnClicked('Upload')" /></td>
 									<td align="left">&nbsp;</td>
 								</tr>
@@ -146,12 +153,18 @@ include '../../../application/views/upload.php';
 									<td>&nbsp;</td>
 
 									<td><div>
+										
+
 
 									<?php
 									//check if upload succesful then display it
 									if($ok == 1) {
 										?>
-											<img src="<?php echo $filename; ?>" />											
+											<img src="<?php echo $filename; ?>" />
+											
+											
+											
+																						
 											<?php
 									}
 									$ok = 0;
@@ -161,8 +174,8 @@ include '../../../application/views/upload.php';
 								</tr>
 								<tr>
 									<td>&nbsp;</td>
-									<td align="center"><input type="submit" name="save-service" value="Save"
-										id="upload" onclick="btnClicked('Save')"/></td>
+									<td align="center"><input type="submit" name="save-service"
+										value="Save" id="upload" onclick="btnClicked('Save')" /></td>
 									<td>&nbsp;</td>
 								</tr>
 

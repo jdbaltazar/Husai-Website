@@ -1,5 +1,8 @@
 <?php
-include '../../application/views/upload.php';
+include '../../../application/views/upload.php';
+?>
+<?php
+//include 'connect.php';
 $con = mysql_connect("localhost","root","");
 if (!$con)
 {
@@ -8,31 +11,30 @@ if (!$con)
 
 mysql_select_db("husai", $con);
 
-$directory="../../upload/products/thumbnail/";
-$product_name="";
+$directory="../../upload/services/thumbnail/";
+$service_name="";
 $description="";
 $price="";
-$status="";
-$discounted="";
-$discount="";
+$status = "";
+$discounted = "";
+$discount = "";
 $file_path = "";
 $promo_from = "";
 $promo_to = "";
 
-$product_id = $_GET['id'];
-$results = mysql_query("SELECT * FROM product WHERE id = $product_id");
+$service_id = $_GET['id'];
+$results = mysql_query("select * from service where id = $service_id");
 
 while($row = mysql_fetch_array($results)){
-	$product_name = $row['Product_Name'];
+	$service_name = $row['Service_Name'];
 	$description = $row['Description'];
-	$price = $row['Price'];
+	$price = $row['Charge'];
 	$status = $row['Status'];
 	$file_path = $row['File_Path'];
 	$discounted = $row['Discounted'];
 	$promo_from = $row['Discount_From'];
 	$promo_to = $row['Discount_To'];
-	$discount=$row['Discount'];
-	
+	$discount = $row['Discount'];
 }
 
 if($file_path == ""){
@@ -48,7 +50,6 @@ mysql_close($con);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
-
 <link type="text/css" rel="stylesheet" href="../../css/dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen" />
 <script type="text/javascript" src="../../js/dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118">
 </script>
@@ -68,12 +69,10 @@ function findselected() {
 	   }
 	} 
 </script>
+
 <link rel="stylesheet" type="text/css" href="../../css/adminstyle.css" media="screen" />
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css" media="screen" />
-<script type="text/javascript" src="../../js/dialog_box.js"></script>
-
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -82,7 +81,7 @@ function findselected() {
 
 	<div id = "wrapper">
     
-    	<div id = "header-left">  <img src = "../../images/purplelogo.jpg" />  
+    	<div id = "header-left">  <img src = "../../images/purplelogo.jpg">  
         	
         </div>
         
@@ -96,50 +95,50 @@ function findselected() {
 				<li><a href="../../services">Services</a></li>
 				<li><a href="../../products">Products</a></li>
 				<li><a href="../../about">About</a></li>
-				  <?php //require '../../../application/views/includeaccountlinkforaddeditview.php';?>
-  	      <li><a href="../../accounts">Accounts</a></li>
+				<li><a href="../../accounts">Accounts</a></li>
 				<li><a href="../../membership">Membership</a></li>
+				  <?php /**require '../../../application/views/includeaccountlinkforaddeditview.php';**/?>
   	      </ul>
   	    </div>
+
     	<!-- InstanceEndEditable -->
-    	<div id = "upper-nav-border"> <img src = "../../images/purplebottom.png" /> </div>
+    	<div id = "upper-nav-border"> <img src = "../../images/purplebottom.png"> </div>
     <!-- InstanceBeginEditable name="content-left" -->
         <div id = "content-left-admin">
            <table id = "page-title">
             	<tr>
                 	<td> <img src = "../../images/purpletitle.png" /></td>
-                    <td>Product Description</td>
+                    <td>Service Description</td>
                 </tr>
             </table>
             <p>&nbsp;</p>
+            
             <div id = "service-product-pic">
-            <form name="imgUpload" action="" onsubmit="return hasFile()" method="post" enctype="multipart/form-data">
+            <form name="imgUpload" action="" method="post" enctype="multipart/form-data">
             	<div id = "picture">
 	            	<img src = "<?php if($filename==""){echo $directory.$file_path;} else{echo $filename;}?>" />
 	            </div>
 	            <p><input type="file" name="image" id="image" /></p>
-				<p><br /><input type="submit" name="xsubmit_product" value="Upload" id="upload" /></p>
-			</form>		
+				<p><br /><input type="submit" name="xsubmit_service" value="Upload" id="upload" /></p>
+			</form>	
 	        </div>
 	        
              <div id = "service-desc">
-            	<form method = "post" onsubmit="return validate_product_profile_form()" action = "update-product.php" name = "myform" id = "profile-form">          
+            	<form method = "post" action = "../update-service.php" name = "myform" id = "profile-form">          
 	           
 	                <table cellspacing="15">
 	                    <tr>
-	                        <td align="right">Product Name:</td>
-	                        <td><input type = "text" value="<?php echo $product_name ?>" name = "product-name"  id = "s1" />
-	                        	<input type="hidden" name="id" value="<?php echo $_GET['id'];?>" />   
-	                        </td>
+	                        <td align="right">Service Name:</td>
+	                        <td><input type="hidden" name="id" value="<?php echo $service_id;?>" /> <input type = "text" name = "service-name" value="<?php echo $service_name;?>"  id = "s1" /></td>
 	                    </tr>
 	                    <tr>
 	                        <td align="right" >Description:</td>
-	                        <td><input name="filepath" type="hidden" id="text-field" readonly="readonly" <?php if($ok==1){ ?>value="<?php echo $image; ?>"<?php }else?> value="<?php echo $file_path;?>"  /><input type = "text"  value="<?php echo $description; ?>" name = "product-description" id = "s1" /></td>
+	                        <td><input name="filepath" type="hidden" id="text-field" readonly="readonly" <?php if($ok==1){ ?>value="<?php echo $image; ?>"<?php }else?> value="<?php echo $file_path;?>"  /><input type = "text" name = "service-description" value="<?php echo $description;?>" id = "s1" /></td>
 	                    </tr>
 	                    <tr>
 	                        <td align="right" id =>Status:</td>
 	                        <td >
-	                        	<select name="product-status" id="s3">								
+	                        	<select name="service-status" id="s3">								
 									<option <?php if($status == "Available"){echo 'selected="selected";'?><?php }?>>Available</option>
 	                                <option <?php if($status == "Not Available"){echo 'selected="selected";'?><?php }?>>Not Available</option>								
 								</select> 
@@ -148,21 +147,13 @@ function findselected() {
 	                    </tr>
 	                    <tr>
 	                        <td align="right" >Price (Php):</td>
-	                        <td ><input type="text" name = "product-price" value="<?php echo $price ?>" id = "s3"></td>
+	                        <td ><input type="text" name = "service-price" value="<?php echo $price;?>" id = "s3"></td>
 	                    </tr>
-<!--                         <tr>
-	            			<td align="right">Type:</td>
-	            			<td>
-	            				<select id = "s3">
-	            					<option name = "">Old Product</option>
-	            					<option name = "">New Product</option>
-	            				</select>
-	            			</td>
-	            		</tr> -->
+                       
 	            		<tr>
 	            			<td align="right">Promo:</td>
 	            			<td>
-	            				<select id = "s3" name="promo"  onchange="findselected()">
+	            				<select id = "s3" name = "mymenu" onchange="findselected()">
 	            					<option <?php if($discounted == 1){echo 'selected="selected";'?><?php }?> value="Discounted">Discounted</option>
 	            					<option <?php if($discounted == 0 || $discounted == NULL){echo 'selected="selected";'?><?php }?> value="Not Discounted">Not Discounted</option>
 	            				</select>
@@ -178,33 +169,33 @@ function findselected() {
 	                    <tr>
 	                    	
 	                    	<td align="right">From:</td>
-	                    	<td><input id = "input-from"type="text" value="<?php echo $promo_from?>" readonly="readonly" name="fromDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar1" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
+	                    	<td><input id = "input-from" type="text" value="<?php echo $promo_from?>" readonly="readonly" name="fromDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar1" onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
 	                        
 	                    </tr>
 	                    <tr>
 	                    	<td align="right">To:</td>
-	                    	<td><input id = "input-from"type="text" value="<?php echo $promo_to?>" readonly="readonly" name="toDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar2" onclick="displayCalendar(document.forms[0].toDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
+	                    	<td><input id = "input-from" type="text" value="<?php echo $promo_to?>" readonly="readonly" name="toDate" style = "width:80px" /><span style = "margin-left:15px; "><input type="button" name="calendar2" onclick="displayCalendar(document.forms[0].toDate,'yyyy/mm/dd',this)" id = "calendar" /></span></td>
 	                        
 	                    </tr>
 	                    <tr>
 	                    	<td align="right">Percent Discount:</td>
-	                    	<td id = "percentboxfont"><input name = "percentdiscount" <?php if($discounted == FALSE || $discounted == NULL){ echo 'disabled="disabled"' ?><?php } ?> type="text" value="<?php echo $discount; ?>" id = "s2" maxlength="6" />
-	                    	  %</td>
+	                    	<td id = "percentboxfont"><input name = "percentdiscount" <?php if($discounted == FALSE || $discounted == NULL){ echo 'disabled="disabled"' ?><?php }?> type="text" value="<?php echo $discount; ?>" id = "s2" maxlength="6" />
+	                    	  %
+	                    	</td>
 	                    </tr>
 	                </table>
-	                <br>
-	                
-	                       
+	                <br>	            
 	            	<input type="submit" value = "Update" id = "update-btn" />
             	</form>
-			</div>  
+		</div>  
 
-        </div>
+ 		           
+  </div>
     <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="content-right" -->
         
         <!-- InstanceEndEditable -->
         <div id = "footer">
-        	<p id="fw-foottext" class="fw-footertext">Copyright Â©2011</p> 
+        	<p id="fw-foottext" class="fw-footertext">Copyright ©2011</p> 
         </div>
     
     </div>
