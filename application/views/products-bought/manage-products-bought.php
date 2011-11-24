@@ -44,7 +44,7 @@ mysql_close($con);
 <!-- InstanceEndEditable -->
 </head>
 
-<body onload="document.login_form.username.focus();">
+<body onload="document.search.product_bought_searchfield.focus();" >
 
 	<div id="wrapper">
 
@@ -84,53 +84,10 @@ mysql_close($con);
 						Availed</a> &raquo; Products Bought</td>
 				</tr>
 			</table>
+
 			<p>&nbsp;</p>
-			<p id="add-availed-header">Add Bought Product</p>
-			<form method="post" onsubmit="return validate_product_bought_form()" action="../save-bought-product.php">
-				<div id="add-availed-div">
-					<table width="546" cellspacing="15">
-						<tr>
-							<td width="158" align="right">Date Bought:</td>
-							<td width="337"><input id="input-from" type="text"
-								value="2011/09/09" readonly name="date-availed"
-								style="width: 80px" /><span style="margin-left: 15px;"><input
-									type="button"
-									onclick="displayCalendar(document.forms[0].fromDate,'yyyy/mm/dd',this)"
-									id="calendar" /> </span></td>
-						</tr>
-						<tr>
-							<td align="right">Product:</td>
-							<td><select name="product" id="service-cat">
-							<?php
-							while($row = mysql_fetch_array($products))
-							{
-								echo "<option value=".$row['id'].">".$row['Product_Name']."</option>";
-							}
-							?>
-							</select></td>
-						</tr>
-						<tr>
-							<td align="right">Quantity:</td>
-							
-							<td><input name="quantity" type="text" id="add-avail-input" size="10" maxlength="11" /></td>
-						</tr>
-						<tr>
-							<td align="right">Remarks</td>
-							<td><input type="text" name="remarks" id="add-avail-input" /></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td id="add-td">
-							<input type="hidden" name="username" value="<?php echo $_GET['id'];?>" />
-							<input type="hidden" name="name" value="<?php echo $_GET['name'];?>" />
-							<input type="submit" value="Add" id="add-btn" />
-							</td>
-						</tr>
-					</table>
-				</div>
-			</form>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
+			
+			
 			<form name="search"
 				action="../products-bought/search.php?id=<?php echo $_GET['id']?>&name=<?php echo $_GET['name']?>"
 				method="post">
@@ -165,6 +122,11 @@ mysql_close($con);
 					</tr>
 				</table>
 
+			<div id="add-service">
+				<a href="../products-bought/add/index.php?id=<?php echo $_GET['id'].'&'.'name='.$_GET['name']; ?>">Add Product Bought </a>
+			</div>
+			<p>&nbsp;</p>
+			
 				<table width="850" id="recordlist" cellspacing="0">
 
 					<th width="98">Date</th>
@@ -187,6 +149,8 @@ mysql_close($con);
                
             </table>
 			</form>
+			
+			
 		</div>
 		<!-- InstanceEndEditable -->
 		<!-- InstanceBeginEditable name="content-right" -->
