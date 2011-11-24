@@ -54,6 +54,8 @@ mysql_close($con);
 <link rel="stylesheet" type="text/css" href="../css/adminstyle.css" media="screen" />
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css" media="screen" />
+<script type="text/javascript" src="../../js/dialog_box.js"></script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -91,7 +93,7 @@ mysql_close($con);
             </table>
             
             <div id="createacct">
-				<form method="post" action="../../profile/update/">
+				<form name="form1" method="post" action="../../profile/update/" onsubmit="return validate_account_form()">
 
 					<p id="header-account">ACCOUNT INFORMATION</p>
 					<div id="l2">

@@ -2,16 +2,13 @@
 session_start();
 if(isset($_SESSION['session_user'])&&isset($_SESSION['session_user_type'])&&isset($_SESSION['authenticated'])){
 	if($_SESSION['session_user_type'] == 'Husai Customer'){		
-		header('location: ../');
-		exit;
+		include("../../../application/views/services/services-all.php");
 	}else if($_SESSION['session_user_type'] == 'Husai Administrator'){
-		
-		echo $_POST['username'];
-		//include("../../../application/views/accounts/add/account-save.php");
+		include("../../../application/views/services/view/service-profile.php");
 	}
 	exit;
 }else{
-	include("../");
+	include("../../../application/views/services/services-all.php");
 	exit;
 }
 

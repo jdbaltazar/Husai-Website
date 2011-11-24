@@ -55,7 +55,7 @@ else
 <!-- InstanceEndEditable -->
 </head>
 
-<body>
+<body onload="document.search_form.service_searchfield.focus();" >
 
 	<div id="wrapper">
 
@@ -99,7 +99,7 @@ else
 			</table>
 			<p>&nbsp;</p>
 
-			<form action="search.php" method="post">
+			<form name="search_form" action="search.php" method="post">
 				<table width="450" id="service-search" cellspacing="10">
 					<tr>
 						<td width="251"><input type="text" name="service_searchfield"

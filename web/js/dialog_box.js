@@ -179,12 +179,12 @@ function validate_service_form() {
 	var service_name = removeSpaces(document.forms["imgUpload"]["service-name"].value);
 	var service_description = removeSpaces(document.forms["imgUpload"]["service-desc"].value);
 	var service_price = removeSpaces(document.forms["imgUpload"]["service-price"].value);
-	var filepath = document.forms["imgUpload"]["filepath"].value;
+	var filepath = document.forms["imgUpload"]["image"].value;
 
 	if (getBtnClicked() == 'Upload'){
 		
 		if(filepath == null || filepath == ""){
-			showDialog('Error', "Choose a file to upload", 'error');
+			showDialog('Error', "Choose a file to upload!", 'error');
 			return false;
 		}
 		else	
@@ -218,7 +218,7 @@ function validate_product_form() {
 	var product_name = removeSpaces(document.forms["imgUpload"]["product-name"].value);
 	var product_description = removeSpaces(document.forms["imgUpload"]["product-desc"].value);
 	var product_price = removeSpaces(document.forms["imgUpload"]["product-price"].value);
-	var filepath = document.forms["imgUpload"]["filepath"].value; 
+	var filepath = document.forms["imgUpload"]["image"].value; 
 
 	if (getBtnClicked() == 'Upload'){
 		
@@ -348,7 +348,7 @@ function hasFile() {
 	var filepath = document.forms["imgUpload"]["image"].value;
 	
 		if(filepath == null || filepath == ""){
-			showDialog('Error', "Choose a file to upload", 'error');
+			showDialog('Error', "Choose a file to upload!", 'error');
 			return false;
 		}
 		else	

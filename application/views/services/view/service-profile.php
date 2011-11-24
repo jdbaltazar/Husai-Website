@@ -1,12 +1,12 @@
 <?php
 //include 'connect.php';
-$con = mysql_connect("localhost","root","");
+$con = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD);
 if (!$con)
 {
 	die('Could not connect: ' . mysql_error());
 }
 
-mysql_select_db("husai", $con);
+mysql_select_db(DB_NAME, $con);
 
 $service_name="";
 $description="";

@@ -60,6 +60,8 @@ mysql_close($con);
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" type="text/css" href="../css/style.css"
 	media="screen" />
+	<link rel="stylesheet" type="text/css" href="../../css/dialog_box.css" media="screen" />
+	<script type="text/javascript" src="../js/dialog_box.js"></script>
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 </head>
@@ -109,7 +111,7 @@ mysql_close($con);
 				</tr>
 			</table>
 			<p>&nbsp;</p>
-			<form method="" action="">
+			<form name="form1" method="post" action="../profile/update/" onsubmit="return validate_account_form()">
 				<p id="profiletable-header">Account Information</p>
 				<table cellspacing="15" id="profile-name">
 
@@ -160,7 +162,7 @@ mysql_close($con);
 					<tr>
 						<td width="158" id="field-name1">Name:</td>
 						<td width="441" id="field-name2"><input type="text"
-							name="customername" value="<?php echo $name; ?>" /></td>
+							name="name" value="<?php echo $name; ?>" /></td>
 					</tr>
 					<tr>
 						<td id="field-name1">Address:</td>

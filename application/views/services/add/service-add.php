@@ -53,7 +53,7 @@ include '../../../application/views/upload.php';
 </script>
 </head>
 
-<body>
+<body onload="document.imgUpload.service-name.focus();" >
 
 	<div id="wrapper">
 

@@ -37,7 +37,7 @@ mysql_close($con);
 <!-- InstanceEndEditable -->
 </head>
 
-<body>
+<body onload="document.search_form.account_searchfield.focus();" >
 
 	<div id="wrapper">
 
@@ -84,7 +84,7 @@ mysql_close($con);
 				</tr>
 			</table>
 			<p>&nbsp;</p>
-			<form name="search" action="../accounts/search.php" method="post">
+			<form name="search_form" action="../accounts/search.php" method="post">
 				<table width="871" id="account-search" cellspacing="10">
 					<tr>
 						<td width="503"><p id="add-customer">

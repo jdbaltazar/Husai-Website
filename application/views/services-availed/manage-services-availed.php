@@ -13,7 +13,7 @@ if (!$con)
 mysql_select_db(DB_NAME, $con);
 
 if(!isset($query))
-$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$_GET['id']."' order by availed_service.date_availed desc";
+$query = "SELECT availed_service.date_availed, availed_service.therapist, service.service_name, service.category, availed_service.remarks, availed_service.id from availed_service join service on service.id=availed_service.service_id where availed_service.username='".$_GET['id']."' order by availed_service.date_availed desc";
 $result = mysql_query("".$query);
 $services = mysql_query("SELECT id, Service_Name FROM service where Status='Available'");
 
@@ -211,7 +211,7 @@ mysql_close($con);
 					echo "<tr>";
 					echo "<td>".$row[0]."</td>";
                     echo "<td>".$row[1]."</td>";
-                    echo "<td>".$row[2]."</td>";
+                    echo "<td><a href=\"view/index.php?id=".$row[5]."\">".$row[2]."</a></td>";
                     echo "<td>".$row[3]."</td>";
                     echo "<td>".$row[4]."</td>";
                     echo "</tr>";

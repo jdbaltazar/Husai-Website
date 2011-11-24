@@ -12,6 +12,7 @@ mysql_select_db(DB_NAME, $con);
 $bdate = $_POST['byear']."-".$_POST['bmonth']."-".$_POST['bday'];
 $username  = trim($_POST['username']);
 $password = trim($_POST['password']);
+$password2 = trim($_POST['password2']);
 $name = trim($_POST['name']);
 $address = trim($_POST['address']);
 $sex = trim($_POST['sex']);
@@ -29,10 +30,10 @@ $update_acct = "update account set Password='$password', Name='$name', Address='
 
 if (!mysql_query($update_acct,$con))
 {
-	//die('Error: ' . mysql_error());
-	header('Location: ../../accounts');
+	die('Error: ' . mysql_error());
 }
 else{
+	sleep(2);
 	header('Location: ../../accounts');
 }
 
